@@ -13,6 +13,8 @@
 安定版は`master`ブランチにマージします．
 
 ## 担当チーム
+* embedding_\*チームの皆さんは自分のチームの実装が終わったらentire_designチーム（上回生の場合はserverチームの場合もあります）を手伝ってあげてね
+
 ### entire_design
 **サイト全体のデザイン，実装を担当**
 
@@ -29,6 +31,11 @@ Unityは標準でWeb（HTML）書き出し機能が有りますが，1ページ�
 **動画をサイトに埋め込む部分の実装を担当**  
 
 [Video.js](https://videojs.com/)あたりのモジュールを使って，Web上で動画を埋め込めるように，かつ動画プレイヤーの見た目のデザインをする
+
+### embedding_3D
+**3Dモデルをサイトに埋め込む部分の実装を担当**
+
+[Sketchfab](https://help.sketchfab.com/hc/en-us/articles/203509907-Embedding-your-models)らへんを使うことになると思われる．割とウェイト低め
 
 ### server
 **サーバーの実装，コメントのバックエンドとフロントエンドの実装を担当．**  
