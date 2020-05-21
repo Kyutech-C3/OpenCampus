@@ -43,4 +43,25 @@ Unityは標準でWeb（HTML）書き出し機能が有りますが，1ページ�
 PostgreSQL上に作品データとコメントをストアして，みんなの作ってくれたモジュールをテンプレートとして利用するFlask or Djangoのサーバーを実装する．コメントのフロントエンドも実装．
 
 ## Contributers
+### entire_design
+- Ryota_K
+- Akata
+- Anne
+- peru
+
+### embedding_video
+- tokiwameguru
+
+### embedding_unity
+- Kinakonoko
+
+### embedding_3D
+- imokenpi42
+
+### server
+- rkun123
+- Simo-C3
+- naga-naga
+- catgolem
+
 ## LICENCE
