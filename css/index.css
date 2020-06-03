@@ -1,0 +1,153 @@
+@charset "UTF-8";
+
+/* 基本の設定
+ -------------------------------------------- */
+
+/* gradation_sample を全体に適用させたい時に以下をコメントアウトする
+   (bodyの中身を全てdiv等で囲む必要あり)
+  */
+/*
+html {height:100%;}
+body {height:100%;}
+*/
+
+
+body{
+ margin:0;
+}
+
+section h3{
+  background-color: #CEC;
+}
+
+/* リンクの下線を消す  */
+/* a { text-decoration: none;} */
+/* 訪問時やマウスホバーした時, クリックしたときの装飾も消す  */
+/* a:link,a:visited,
+a:hover,a:active{
+  color:#000;
+} */
+
+#gradation_sample {
+  background: -moz-linear-gradient(top, rgba(255, 210, 180, 1);, rgba(255, 255, 255, 1));
+  background: -webkit-linear-gradient(top, rgba(255, 210, 180, 1), rgba(255, 255, 255, 1));
+  background: linear-gradient(to bottom,rgba(255, 210, 180, 1), rgba(255, 255, 255, 1));
+}
+
+#web{
+
+}
+
+#game3D{
+
+}
+
+#game2D{
+
+}
+
+#lineBot{
+
+}
+
+#modeling{
+
+}
+
+.clear{
+  clear: both;
+}
+
+.non_marginTop{
+  margin-top: 0;
+}
+
+/* ヘッダー
+ -------------------------------------------- */
+header{
+  width: 100%;
+  padding: 32px 0 0;  /* 上方向にだけパディング  */
+  background: url("../images/gorilla.jpg") 50% 10%; /* ゴリラの顔が常に見えるように位置調整  */
+}
+
+ header nav ul{
+ 	text-align: center;
+  background-color: #5CF;
+  margin: 0;  /* header と main の間にマージンを作らせないため  */
+ }
+
+/* 上下に16px, 左右に32pxだけ要素を太らせる  */
+ header nav ul li{
+   padding:16px 32px;
+ 	 display: inline-block;
+ }
+
+#contact{
+
+}
+
+.gmailForm{
+
+}
+
+.gmailButton{
+  background-color: rgba(200,200,200, 0.5);
+  font-size: 32px;
+  margin: 8px 16px 8px;
+  padding: 8px 16px 8px;
+  border-radius:15px; /* 角を丸くする */
+}
+
+.twitterForm{
+
+}
+
+.twitterButton{
+  background-color: rgba(50,200,255, 1.0);
+  font-size: 32px;
+  margin: 8px 16px 8px;
+  padding: 8px 16px 8px;
+  border-radius:15px;
+}
+
+
+/* メインエリア
+ -------------------------------------------- */
+main{
+  margin: 0;
+}
+
+.worksImage{
+  float: left;
+  margin: 16px;
+}
+
+.gotoPlayWindow{
+  background-color: #57F;
+  color:#FFF;
+  padding: 0.5% 10%;
+  margin: 1% 5%;
+  font-size: 100%;
+}
+
+
+/* フッター
+ -------------------------------------------- */
+ footer {
+ 	background-color: #BBE;
+ 	text-align:center;
+ 	width: 100%;
+ 	padding: 16px 0;
+ }
+
+
+/* ----------------------
+  画面の横幅が599px以下の場合に適用（スマートフォン用）
+  ---------------------- */
+
+@media screen and (max-width: 599px) {
+  header nav ul li{
+    padding:0;
+  	 display: inline-block;
+  }
+}
