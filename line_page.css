@@ -1,0 +1,17 @@
+body{
+    background:#CCCCCC;
+}
+.Title{
+    background: #c2edff;/*背景色*/
+    padding: 0.5em;/*文字まわり（上下左右）の余白*/
+}
+.Team{
+
+}
+.Product{
+
+}
+.Sousa_Title{
+    font-size: large;
+    font-weight: bold; 
+}
