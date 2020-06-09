@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/humburger.css">
-    <script></script>
+    <script src="js/scroll.js"></script>
     <title>C3OpenCampus2020</title>
   </head>
 
@@ -17,16 +17,16 @@
         <label class="nav-unshown" id="nav-close" for="nav-input"></label>
         <div id="nav-content">
           <ul>
-            <li>WEBデザイン</li>
+            <li><a href="javascript:scrollWeb();">WEBデザイン</a></li>
             <li><a href="index.html">>TeamA</a></li>
-            <li>2Dゲーム</li>
-            <li><a href="index.html">>TeamB</a></li>
-            <li>3Dゲーム</li>
+            <li><a href="javascript:scrollGame3D();">3Dゲーム</a></li>
             <li><a href="index.html">>TeamC</a></li>
-            <li>LineBOT</li>
-            <li>3Dモデリング</li>
-            <li>部長から一言</li>
-            <li>部誌</li>
+            <li><a href="javascript:scrollGame2D();">2Dゲーム</a></li>
+            <li><a href="index.html">>TeamB</a></li>
+            <li><a href="javascript:scrollLineBot();">LineBOT</a></li>
+            <li><a href="javascript:scrollModeling();">3Dモデリング</a></li>
+            <li><a href="javascript:scrollClubPresident();">部長から一言</a></li>
+            <li><a href="javascript:scrollClubJournal();">部誌</a></li>
           </ul>
         </div>
       </div>
@@ -85,7 +85,10 @@
             <p>作品の紹介</p>
           <p class="clear"></p>
           <button class="gotoPlayWindow" onclick="location.href='./index.html'">プレイする >>></button>
+          </section>
 
+          <section id="game2D">
+            <h2>2Dゲーム</h2>
           <h3>チームXXX -〇〇〇〇の製作</h3>
           <image class="worksImage" src="images/gorilla.jpg" alt="ゴリラの画像" width="50%" height="50%">
             <p>作品の紹介</p>
@@ -109,6 +112,18 @@
             <p>作品の紹介</p>
           <p class="clear"></p>
           <button class="gotoPlayWindow" onclick="location.href='./index.html'">詳しく見る >>></button>
+        </section>
+
+        <section id="clubPresident">
+          <h2>部長からの一言</h2>
+          ああああ
+          <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        </section>
+
+        <section id="clubJournal">
+          <h2>部誌</h2>
+          リンクとか
+                    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
         </section>
 
       </div>
