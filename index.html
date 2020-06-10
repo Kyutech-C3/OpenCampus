@@ -49,19 +49,18 @@
 
       <nav>
         <ul>
-          <li>Webデザイン</li>
-          <li>3Dゲーム</li>
-          <li>2Dゲーム</li>
-          <li>LineBot</li>
-          <li>3Dモデリング</li>
+          <button type="button" onclick="scrollWeb();"><li class="web">Webデザイン</li></button>
+          <button type="button" onclick="scrollGame3D();"><li class="game3D">3Dゲーム</li></button>
+          <button type="button" onclick="scrollGame2D();"><li class="game2D">2Dゲーム</li></button>
+          <button type="button" onclick="scrollLineBot();"><li class="lineBot">LineBot</li></button>
+          <button type="button" onclick="scrollModeling();"><li class="modeling">3Dモデリング</li></button>
         </ul>
       </nav>
     </header>
 
     <main>
       <div id="gradation_sample">
-
-        <section id="web">
+        <section id="web" class="web">
           <!-- 見出しはトップにマージンを持つので, 最初の見出しだけマージンをもたないようにする -->
           <h2 class="non_marginTop">webデザイン</h2>
           <h3>チームWC -当webの製作</h3>
@@ -70,7 +69,7 @@
           <p class="clear"></p>
         </section>
 
-        <section id="game3D">
+        <section id="game3D" class="game3D">
           <h2>3Dゲーム</h2>
           <h3>チームFPS -〇〇〇〇の製作</h3>
           <image class="worksImage" src="images/gorilla.jpg" alt="ゴリラの画像" width="50%" height="50%">
@@ -87,7 +86,7 @@
           <button class="gotoPlayWindow" onclick="location.href='./index.html'">プレイする >>></button>
           </section>
 
-          <section id="game2D">
+          <section id="game2D" class="game2D">
             <h2>2Dゲーム</h2>
           <h3>チームXXX -〇〇〇〇の製作</h3>
           <image class="worksImage" src="images/gorilla.jpg" alt="ゴリラの画像" width="50%" height="50%">
@@ -96,7 +95,7 @@
           <button class="gotoPlayWindow" onclick="location.href='./index.html'">プレイする >>></button>
         </section>
 
-        <section id="lineBot">
+        <section id="lineBot" class="lineBot">
           <h2>LineBot</h2>
           <h3>チーム人狼 -人狼BOTの製作</h3>
           <image class="worksImage" src="images/gorilla.jpg" alt="ゴリラの画像" width="50%" height="50%">
@@ -105,7 +104,7 @@
           <button class="gotoPlayWindow" onclick="location.href='./index.html'">試してみる >>></button>
         </section>
 
-        <section id="modeling">
+        <section id="modeling" class="modeling">
           <h2>3Dモデリング</h2>
           <h3>チームバ美肉 -バーチャル美少女のモデリング</h3>
           <image class="worksImage" src="images/gorilla.jpg" alt="ゴリラの画像" width="50%" height="50%">
@@ -114,19 +113,18 @@
           <button class="gotoPlayWindow" onclick="location.href='./index.html'">詳しく見る >>></button>
         </section>
 
-        <section id="clubPresident">
-          <h2>部長からの一言</h2>
-          ああああ
-          <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-        </section>
-
-        <section id="clubJournal">
-          <h2>部誌</h2>
-          リンクとか
-                    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-        </section>
-
       </div>
+      <section id="clubPresident">
+        <h2>部長からの一言</h2>
+        ああああ
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+      </section>
+
+      <section id="clubJournal">
+        <h2>部誌</h2>
+        リンクとか
+                  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+      </section>
     </main>
 
     <footer>

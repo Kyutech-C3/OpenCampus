@@ -1,3 +1,4 @@
+// id名でそれぞれの項目の場所へスクロールする
 function scrollWeb(){
   document.getElementById("web").scrollIntoView(true);
 }
