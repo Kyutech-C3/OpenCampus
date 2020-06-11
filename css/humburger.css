@@ -68,7 +68,7 @@
 #nav-content {
   overflow: auto;
   position: fixed;
-  top: 10%;
+  top: 5%;
   left: 0;
   z-index: 9999;/*最前面に*/
   width: 20%;/*右側に隙間を作る（閉じるカバーを表示）*/
