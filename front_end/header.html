@@ -6,16 +6,31 @@
     <title>C3 OpenCampus 2020</title>
     <script src="https://use.fontawesome.com/releases/v5.3.1/js/all.js" defer></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+    <style type="text/css">
+        .video{
+            position:relative;
+            width:100%;
+            padding-top:56.25%;
+        }
+        .video iframe{
+            position:absolute;
+            top:0;
+            right:0;
+            width:100%;
+            height:100%;
+        }
+        
+    </style>
+        
 </head>
 <body>
     <div id="header">
         <section class="hero is-small is-info is-bold">
             <div class="hero-head">
-
             </div>
             <div class="hero-body">
                 <div class="container has-text-centered">
-                    <p class="title">
+                    <p class="title is-2 is-spaced">
                         C3 Summer Exhibition
                     </p>
                     <p class="subtitle">
@@ -24,14 +39,82 @@
                 </div>
             </div>
         </section>
-        <div id="youtube">
+        <div class="columns is-gapless is-multiline">
+            <div class="column is-2">
+                <div style="background-color: #000000"></div>
+            </div>
+            <div class="column is-8">
+                <div id="youtube">
+                    <div class="video">
+					    <iframe src=
+                        "https://www.youtube.com/embed/live_stream?channel=UCeRY2jujVBYRqmilrCZytFw"
+                        frameborder="0" allowfullscreen></iframe>
+				    </div>
+                </div>
+            </div>
+            <div class="column is-2">
+                <div style="background-color: #000000"></div>
+            </div>
 
-        </div>
-        <div id="twitter">
-
-        </div>
-        <div id="aboutC3">
-            
+            <div class="column is-8">
+                <div id="aboutC3">
+                    <div style="background-color: #62e342">
+                        <div class="container has-text-centered">
+                            <br>
+                            <h1 class="title has-text-white">C3とは...？
+                            </h1>
+                            <br>
+                        </div>
+                        <div>
+                            <figure class="image container is-128x128">
+                                <img class="is-rounded" src="images/c3logo.jpeg">
+                            </figure>
+                            <h3 class="text has-text-black has-text-centered">
+                                <p>
+                                    <br>
+                                    C3とは、「Composite Computer Club」の略称で、<br>
+                                    その名の通りパソコンを使った活動を行うサークルです。<br>
+                                    パソコンを使う活動なら何でも良いのです。<br>
+                                    プログラミングや、WEBページ作成、<br>
+                                    タブレットを使用したお絵かき、<br>
+                                    DTMで作曲、3Dモデルでバ美肉、<br>
+                                    それらを使ってゲームを作るなどなど...<br>
+                                    <br>
+                                    部の中でコミュニティを作って勉強会を開いたり、<br>
+                                    チームを組んで共同制作をしたりと、<br>
+                                    現在は63人の部員が活動しています。<br>
+                                    <br>
+                                    普段は部活動紹介やオープンキャンパス、<br>
+                                    工大祭の際に部員の制作した作品を展示していますが、<br>
+                                    今回オンラインでのオープンキャンパスということで、<br>
+                                    このサイトでC3部員の作品を紹介します！<br>
+                                    <br>
+                                    ぜひお楽しみください！<br>
+                                    <br>
+                                </p>
+                            </h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="column is-4">
+                <div id="twitter">
+                    <div style="background-color: #42afe3">
+                        <div class="container has-text-centered">
+                            <br>
+                            <h1 class="title has-text-white">Twitter</h1>
+                            <br>
+                        </div>
+                        <div align="center">
+                            <a class="twitter-timeline" data-width="300" data-height="603"
+                            data-chrome="noheader nofooter" 
+                            href="https://twitter.com/c3_kyutech?ref_src=twsrc%5Etfw"></a> 
+                            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8">
+                            </script>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </body>
