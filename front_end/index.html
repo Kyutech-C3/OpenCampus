@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/humburger.css">
+    <script src="js/scroll.js"></script>
+    <title>C3OpenCampus2020</title>
+  </head>
+
+  <body>
+    <header>
+      <!-- ハンバーガーメニュー  -->
+      <div id="nav-drawer" class="humburger_design">
+        <input id="nav-input" type="checkbox" class="nav-unshown">
+        <label id="nav-open" for="nav-input"><span></span></label>
+        <label class="nav-unshown" id="nav-close" for="nav-input"></label>
+        <div id="nav-content">
+          <h3>メニュー</h3>
+          <ul>
+            <li><a href="javascript:scrollWeb();">WEBデザイン</a></li>
+            <li><a href="index.html">>TeamA</a></li>
+            <li><a href="javascript:scrollGame3D();">3Dゲーム</a></li>
+            <li><a href="index.html">>TeamC</a></li>
+            <li><a href="javascript:scrollGame2D();">2Dゲーム</a></li>
+            <li><a href="index.html">>TeamB</a></li>
+            <li><a href="javascript:scrollLineBot();">LineBOT</a></li>
+            <li><a href="javascript:scrollModeling();">3Dモデリング</a></li>
+            <li><a href="javascript:scrollClubPresident();">部長から一言</a></li>
+            <li><a href="javascript:scrollClubJournal();">部誌</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <h1 class="non_marginTop">Kyutech C3 Summer</h1>
+      <div id="contact">
+        <div class="gmailForm">
+          <!--  画像クリックでメール起動  -->
+          <a href="mailto:club.c3.kyutech@gmail.com"><image src="images/icons8-gmail-48.png" width="40px" height="40px"></a>
+            <!-- ボタンクリックでメール起動 -->
+          <button class="gmailButton" onclick="location.href='mailto:club.c3.kyutech@gmail.com'">contact</button>
+        </div>
+        <div class="twitterForm">
+          <!--  画像クリックでメール起動  -->
+          <a href="https://mobile.twitter.com/c3_kyutech"><image src="images/Twitter_Logo_WhiteOnBlue.png" width="40px" height="40px"></a>
+            <!-- ボタンクリックでメール起動 -->
+          <button class="twitterButton" onclick="location.href='https://mobile.twitter.com/c3_kyutech'">twitter</button>
+        </div>
+      </div>
+
+      <nav>
+        <ul>
+          <button type="button" onclick="scrollWeb();"><li class="web">Webデザイン</li></button>
+          <button type="button" onclick="scrollGame3D();"><li class="game3D">3Dゲーム</li></button>
+          <button type="button" onclick="scrollGame2D();"><li class="game2D">2Dゲーム</li></button>
+          <button type="button" onclick="scrollLineBot();"><li class="lineBot">LineBot</li></button>
+          <button type="button" onclick="scrollModeling();"><li class="modeling">3Dモデリング</li></button>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <div>
+        <section id="web" class="web">
+          <!-- 見出しはトップにマージンを持つので, 最初の見出しだけマージンをもたないようにする -->
+          <h2 class="non_marginTop vertical">webデザイン</h2>
+          <div class="works">
+              <image src="images/gorilla.jpg" alt="ゴリラの画像" width="100%">
+              <h3>チームWC -当webの製作</h3>
+              <p>作品の紹介, 活動内容, 苦労ポイント</p>
+          </div>
+        <p class="clear"></p>
+        </section>
+
+        <section id="game3D" class="game3D">
+          <h2 class="vertical">3Dゲーム</h2>
+          <div class="works">
+              <image src="images/gorilla.jpg" alt="ゴリラの画像" width="100%">
+              <h3>チームFPS -〇〇の制作</h3>
+              <p>作品の紹介, 活動内容, 苦労ポイント</p>
+              <button class="gotoPlayWindow" onclick="location.href='./index.html'">プレイする!</button>
+          </div>
+
+          <div class="works">
+              <image src="images/gorilla.jpg" alt="ゴリラの画像" width="100%">
+              <h3>チームXXX -〇〇の制作</h3>
+              <p>作品の紹介, 活動内容, 苦労ポイント</p>
+              <button class="gotoPlayWindow" onclick="location.href='./index.html'">プレイする!</button>
+          </div>
+
+          <p class="clear"></p>
+          </section>
+
+          <section id="game2D" class="game2D">
+            <h2 class="vertical">2Dゲーム</h2>
+            <div class="works">
+                <image src="images/gorilla.jpg" alt="ゴリラの画像" width="100%">
+                <h3>チームXXX -〇〇の制作</h3>
+                <p>作品の紹介, 活動内容, 苦労ポイント</p>
+                <button class="gotoPlayWindow" onclick="location.href='./index.html'">プレイする!</button>
+            </div>
+
+        <p class="clear"></p>
+        </section>
+
+        <section id="lineBot" class="lineBot">
+          <h2 class="vertical">LineBot</h2>
+          <div class="works">
+              <image src="images/gorilla.jpg" alt="ゴリラの画像" width="100%">
+              <h3>チームXXX -〇〇の制作</h3>
+              <p>作品の紹介, 活動内容, 苦労ポイント</p>
+              <button class="gotoPlayWindow" onclick="location.href='./index.html'">プレイする!</button>
+          </div>
+
+        <p class="clear"></p>
+        </section>
+
+        <section id="modeling" class="modeling">
+          <h2 class="vertical">3Dモデリング</h2>
+          <div class="works">
+              <image src="images/gorilla.jpg" alt="ゴリラの画像" width="100%">
+              <h3>チームXXX -〇〇の制作</h3>
+              <p>作品の紹介, 活動内容, 苦労ポイント</p>
+              <button class="gotoPlayWindow" onclick="location.href='./index.html'">プレイする!</button>
+          </div>
+          
+        <p class="clear"></p>
+        </section>
+
+      </div>
+      <section id="clubPresident">
+        <h2>部長からの一言</h2>
+        ああああ
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+      </section>
+
+      <section id="clubJournal">
+        <h2>部誌</h2>
+        リンクとか
+                  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+      </section>
+    </main>
+
+    <footer>
+      フッター
+    </footer>
+  </body>
+</html>
