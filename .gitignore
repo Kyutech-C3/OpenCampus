@@ -1,1 +1,4 @@
-*.sqlite3
+db.sqlite3
+*.log
+local_settings.py
+__pycache__/
