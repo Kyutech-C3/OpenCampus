@@ -182,4 +182,9 @@ main{
     text-align: center;
     margin: 32px 0;
   }
+  .vertical{
+    writing-mode: horizontal-tb;
+    text-orientation: mixed;
+  }
+
 }
