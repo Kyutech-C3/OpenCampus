@@ -71,7 +71,7 @@ a:hover,a:active{
 header{
   width: 100%;
   padding: 32px 0 0;  /* 上方向にだけパディング  */
-  background: url("../images/gorilla.jpg") 50% 10%; /* ゴリラの顔が常に見えるように位置調整  */
+  /* background: url("../images/gorilla.jpg") 50% 10%;  */ /* ゴリラの顔が常に見えるように位置調整  */
 }
 
  header nav ul{
@@ -182,4 +182,9 @@ main{
     text-align: center;
     margin: 32px 0;
   }
+  .vertical{
+    writing-mode: horizontal-tb;
+    text-orientation: mixed;
+  }
+
 }
