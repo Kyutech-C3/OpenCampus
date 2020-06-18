@@ -1,0 +1,29 @@
+{% if work %}
+<title>OpenCampus2020_WorksPage</title>
+<head><h1 center>OpenCampus2020_WorksPage</h1></head>
+    <head><strong>Works page test.</strong></head>
+    <ul>
+        <style>
+            .sample3_btn {
+                display: inline-block;
+                padding: 10px 20px 10px 20px;
+                text-decoration: none;
+                color: rgba(255, 255, 255, 0.534);
+                background: rgb(192, 214, 255);
+                font-weight: bold;
+                border: solid 4px rgb(192, 240, 255);
+                border-radius: 8px;
+            }
+            
+            .sample3_btn:hover {
+                background: white;
+                color: pink;
+            }
+        </style>
+            <li><a href="templates/base.html" class="sample3_btn">{{work.id}}</a></li>
+            <iframe src="https://www.javadrive.jp/python/" width="800" height="500"></iframe>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/9MjAJSoaoSo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </ul>
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}
