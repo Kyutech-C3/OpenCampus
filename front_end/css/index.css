@@ -14,7 +14,7 @@ body {height:100%;}
 
 body{
  margin:0;
- padding: 0;
+ /* padding: 0; */
 }
 
 /* リンクの下線を消す  */
@@ -31,40 +31,6 @@ a:hover,a:active{
   background: linear-gradient(to bottom,rgba(255, 210, 180, 1), rgba(255, 255, 255, 1));
 } */
 
-/* 文字を縦書きにする  */
-.vertical{
-  writing-mode: vertical-rl;
-  text-orientation: upright; /* すべて縦方向に表示 */
-  text-align: center;
-}
-
-.web{
-  background-color:rgba(140, 180, 240, 1.0);
-}
-
-.game3D{
-  background-color:rgba(120, 240, 160, 1.0);
-}
-
-.game2D{
-  background-color:rgba(255, 230, 100, 1.0);
-}
-
-.lineBot{
-  background-color:rgba(255, 180, 80, 1.0);
-}
-
-.modeling{
-  background-color:rgba(255, 160, 120, 1.0);
-}
-
-.clear{
-  clear: both;
-}
-
-.non_marginTop{
-  margin-top: 0;
-}
 
 /* ヘッダー
  -------------------------------------------- */
@@ -139,8 +105,18 @@ main{
   width:40%;
   background-color: rgba(230,230,230,0.5);
   text-align: center;
-  margin: 32px 64px;
+  margin: 32px 32px;
   float:left;
+}
+
+/* 右側の作品  */
+.rightPos{
+  margin-top: 20%;
+}
+
+/* 左側の作品（3,5,7...番目の作品に適用）  */
+.leftPos{
+  margin-left: 8%;
 }
 
 .worksImage{
@@ -151,10 +127,53 @@ main{
 .gotoPlayWindow{
   background-color: #57F;
   color:#FFF;
-  padding: 0.5% 10%;
+  padding: 16px 64px;
   margin: 1% 5%;
-  font-size: 100%;
+  font-size: 2em;
+  font-weight: bold;
 }
+
+
+/* 文字を縦書きにする  */
+.vertical{
+  writing-mode: vertical-rl;
+  text-orientation: upright; /* すべて縦方向に表示 */
+  text-align: center;
+  font-size: 3em;
+  font-weight: bold;
+  margin-left: 1%;
+  float:left;
+}
+
+.web{
+  background-color:rgba(140, 180, 240, 1.0);
+}
+
+.game3D{
+  background-color:rgba(120, 240, 160, 1.0);
+}
+
+.game2D{
+  background-color:rgba(255, 230, 100, 1.0);
+}
+
+.lineBot{
+  background-color:rgba(255, 180, 80, 1.0);
+}
+
+.modeling{
+  background-color:rgba(255, 160, 120, 1.0);
+}
+
+.clear{
+  clear: both;
+}
+
+.non_marginTop{
+  margin-top: 0;
+  margin-right: 0;
+}
+
 
 
 /* フッター
@@ -184,6 +203,7 @@ main{
   }
   .vertical{
     writing-mode: horizontal-tb;
+    margin: auto;
     text-orientation: mixed;
   }
 
