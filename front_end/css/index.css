@@ -48,21 +48,21 @@ a:hover,a:active{
 
 /* ヘッダー
  -------------------------------------------- */
-header{
-  width: 100%;
-  padding: 32px 0 0;  /* 上方向にだけパディング  */
-  /* background: url("../images/gorilla.jpg") 50% 10%;  */ /* ゴリラの顔が常に見えるように位置調整  */
+
+.content-nav{
+
 }
 
- header nav ul{
+ .content-nav__list{
  	text-align: center;
+  /* background-color: rgba(0,0,0,1.0); */
   /*
   background-color: #5CF; */
   margin-bottom: 0;  /* header と main の間にマージンを作らせないため  */
  }
 
 /* 上下に16px, 左右に32pxだけ要素を太らせる  */
- header nav ul li{
+.content-nav__item{
    padding:16px 32px;
  	 display: inline-block;
    /*  ボタンの設定   */
@@ -77,36 +77,8 @@ header{
  header button .game2D,
  header button .lineBot,
  header button .modeling{
-   /* opacity: 0; */
+   /* width:100%; */
  }
-
-#contact{
-
-}
-
-.gmailForm{
-
-}
-
-.gmailButton{
-  background-color: rgba(200,200,200, 0.5);
-  font-size: 32px;
-  margin: 8px 16px 8px;
-  padding: 8px 16px 8px;
-  border-radius:15px; /* 角を丸くする */
-}
-
-.twitterForm{
-
-}
-
-.twitterButton{
-  background-color: rgba(50,200,255, 1.0);
-  font-size: 32px;
-  margin: 8px 16px 8px;
-  padding: 8px 16px 8px;
-  border-radius:15px;
-}
 
 
 /* メインエリア
@@ -228,7 +200,6 @@ main{
 
 .non_marginTop{
   margin-top: 0;
-  margin-right: 0;
 }
 
 
@@ -248,7 +219,7 @@ main{
   ---------------------- */
 
 @media screen and (max-width: 599px) {
-  header nav ul li{
+  .content-nav__item{
     padding:0;
   	display: inline-block;
   }

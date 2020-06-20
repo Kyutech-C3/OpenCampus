@@ -22,8 +22,10 @@
     </style>
     <meta charset="utf-8">
     <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="css/humburger.css">
+    <link rel="stylesheet" href="css/hamburger.css">
     <script src="js/scroll.js"></script>
+    <!-- JQuery の導入 -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
   </head>
 
   <body>
@@ -122,33 +124,40 @@
           </div>
       </div>
       <!-- ハンバーガーメニュー  -->
-      <div id="nav-drawer" class="humburger_design">
-        <input id="nav-input" type="checkbox" class="nav-unshown">
-        <label id="nav-open" for="nav-input"><span></span></label>
-        <label class="nav-unshown" id="nav-close" for="nav-input"></label>
-        <div id="nav-content">
-          <h3>メニュー</h3>
-          <ul>
-            <li><a href="javascript:scrollWeb();">WEBデザイン</a></li>
-            <li><a href="index.html">>TeamA</a></li>
-            <li><a href="javascript:scrollGame3D();">3Dゲーム</a></li>
-            <li><a href="index.html">>TeamC</a></li>
-            <li><a href="javascript:scrollGame2D();">2Dゲーム</a></li>
-            <li><a href="index.html">>TeamB</a></li>
-            <li><a href="javascript:scrollLineBot();">LineBOT</a></li>
-            <li><a href="javascript:scrollModeling();">3Dモデリング</a></li>
-            <li><a href="javascript:scrollClubPresident();">部長から一言</a></li>
-            <li><a href="javascript:scrollClubJournal();">部誌</a></li>
+
+      <div class="header">
+        <!-- メニューの中身  -->
+        <nav class="global-nav">
+          <ul class="global-nav__list">
+            <li class="global-nav__genre js-scroll-item"><a href="javascript:scrollWeb();">WEBデザイン</a></li>
+            <li class="global-nav__item"><a href="index.html">>TeamA</a></li>
+            <li class="global-nav__genre js-scroll-item"><a href="javascript:scrollGame3D();">3Dゲーム</a></li>
+            <li class="global-nav__item"><a href="index.html">>TeamC</a></li>
+            <li class="global-nav__genre js-scroll-item"><a href="javascript:scrollGame2D();">2Dゲーム</a></li>
+            <li class="global-nav__item"><a href="index.html">>TeamB</a></li>
+            <li class="global-nav__genre js-scroll-item"><a href="javascript:scrollLineBot();">LineBOT</a></li>
+            <li class="global-nav__genre js-scroll-item"><a href="javascript:scrollModeling();">3Dモデリング</a></li>
+            <li class="global-nav__genre js-scroll-item"><a href="javascript:scrollClubPresident();">部長から一言</a></li>
+            <li class="global-nav__genre js-scroll-item"><a href="javascript:scrollClubJournal();">部誌</a></li>
           </ul>
+        </nav>
+        <!-- ハンバーガーの3本線  -->
+        <div class="hamburger" id="js-hamburger">
+          <span class="hamburger__line hamburger__line--1"></span>
+          <span class="hamburger__line hamburger__line--2"></span>
+          <span class="hamburger__line hamburger__line--3"></span>
         </div>
+        <!-- メニューが開いた時に背景を黒くする  -->
+        <div class="black-bg" id="js-black-bg"></div>
       </div>
-      <nav>
-        <ul>
-          <button type="button" onclick="scrollWeb();"><li class="web">Webデザイン</li></button>
-          <button type="button" onclick="scrollGame3D();"><li class="game3D">3Dゲーム</li></button>
-          <button type="button" onclick="scrollGame2D();"><li class="game2D">2Dゲーム</li></button>
-          <button type="button" onclick="scrollLineBot();"><li class="lineBot">LineBot</li></button>
-          <button type="button" onclick="scrollModeling();"><li class="modeling">3Dモデリング</li></button>
+
+      <nav class="content-nav">
+        <ul class="content-nav__list">
+          <button type="button" onclick="scrollWeb();"><li class="content-nav__item web">Webデザイン</li></button>
+          <button type="button" onclick="scrollGame3D();"><li class="content-nav__item  game3D">3Dゲーム</li></button>
+          <button type="button" onclick="scrollGame2D();"><li class="content-nav__item  game2D">2Dゲーム</li></button>
+          <button type="button" onclick="scrollLineBot();"><li class="content-nav__item  lineBot">LineBot</li></button>
+          <button type="button" onclick="scrollModeling();"><li class="content-nav__item  modeling">3Dモデリング</li></button>
         </ul>
       </nav>
     </header>
@@ -246,6 +255,8 @@
         リンクとか
                   <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
       </section>
+      <!-- htmlが読まれた後にjsを読み込む（そうしないとaddEventListenerのプロパティがnullになる）  -->
+      <script src="js/hamburger.js"></script>
     </main>
 
     <footer>
