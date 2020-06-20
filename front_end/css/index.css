@@ -17,6 +17,20 @@
 /* 基本の設定
  -------------------------------------------- */
 
+/* flexboxの導入  */
+ .flex-container {
+   display: -webkit-box;
+   display: -ms-flexbox;
+   display: flex;
+ }
+
+/* 横いっぱいに広げる  */
+.flex-item{
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  width: 100%;
+}
 /* gradation_sample を全体に適用させたい時に以下をコメントアウトする
    (bodyの中身を全てdiv等で囲む必要あり)
   */
@@ -64,7 +78,6 @@ a:hover,a:active{
 /* 上下に16px, 左右に32pxだけ要素を太らせる  */
 .content-nav__item{
    padding:16px 32px;
- 	 display: inline-block;
    /*  ボタンの設定   */
    cursor: pointer; /* マウスカーソルを乗せると指になる */
    outline: none;
