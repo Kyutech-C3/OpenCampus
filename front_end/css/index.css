@@ -31,34 +31,14 @@
   align-items: stretch;
   width: 100%;
 }
-/* gradation_sample を全体に適用させたい時に以下をコメントアウトする
-   (bodyの中身を全てdiv等で囲む必要あり)
-  */
 
 html {height:100%;}
 body {height:100%;}
-
-
 
 body{
  margin:0;
  /* padding: 0; */
 }
-
-/* リンクの下線を消す  */
-/* a { text-decoration: none;} */
-/* 訪問時やマウスホバーした時, クリックしたときの装飾も消す  */
-/* a:link,a:visited,
-a:hover,a:active{
-  color:#000;
-} */
-
-/* #gradation_sample {
-  background: -moz-linear-gradient(top, rgba(255, 210, 180, 1);, rgba(255, 255, 255, 1));
-  background: -webkit-linear-gradient(top, rgba(255, 210, 180, 1), rgba(255, 255, 255, 1));
-  background: linear-gradient(to bottom,rgba(255, 210, 180, 1), rgba(255, 255, 255, 1));
-} */
-
 
 /* ヘッダー
  -------------------------------------------- */
@@ -134,14 +114,20 @@ main{
 }
 
 
-/* 文字を縦書きにする  */
-.vertical{
+/* 縦書きの見出し  */
+.vertical_h{
   writing-mode: vertical-rl;
   text-orientation: upright; /* すべて縦方向に表示 */
   font-size: 3em;
   font-weight: bold;
   margin-left: 1%;
   float:left;
+}
+
+/* 横書きの見出し  */
+.horizontal_h{
+  font-size: 3em;
+  font-weight: bold;
 }
 
 .web{
@@ -208,6 +194,28 @@ main{
   background: var(--gray);
 }
 
+
+.clubPresident__content{
+  /*  vertical-alignはインラインにしか効かないので注意（spanなどと併用すると良い） */
+  /* display: table-cell; */
+  display: inline-block;
+}
+
+.clubPresident__Image{
+  float:left;
+  margin: 32px;
+  width: 45%;
+}
+
+.clubPresident__Message{
+  margin:32px;
+  border:solid;
+  border-color: #AAA;
+  border-radius: 16px; /* 半径が16pxの角丸 */
+  width: 45%;
+  color:#111;
+  overflow: hidden; /* 回り込ませない  */
+}
 
 .clear{
   clear: both;

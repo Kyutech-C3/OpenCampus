@@ -170,7 +170,7 @@
       <div>
         <section id="web">
           <!-- 見出しはトップにマージンを持つので, 最初の見出しだけマージンをもたないようにする -->
-          <h2 class="non_marginTop vertical">webデザイン</h2>
+          <h2 class="non_marginTop vertical_h">webデザイン</h2>
           <div class="works">
               <image src="images/gorilla.jpg" alt="ゴリラの画像" width="100%">
               <h3>チームWC -当webの製作</h3>
@@ -180,7 +180,7 @@
         </section>
 
         <section id="game3D">
-          <h2 class="vertical">3Dゲーム</h2>
+          <h2 class="vertical_h">3Dゲーム</h2>
           <div class="works">
               <image src="images/gorilla.jpg" alt="ゴリラの画像" width="100%">
               <h3>チームFPS -〇〇の制作</h3>
@@ -213,7 +213,7 @@
           </section>
 
           <section id="game2D">
-            <h2 class="vertical">2Dゲーム</h2>
+            <h2 class="vertical_h">2Dゲーム</h2>
             <div class="works">
                 <image src="images/gorilla.jpg" alt="ゴリラの画像" width="100%">
                 <h3>チームXXX -〇〇の制作</h3>
@@ -225,7 +225,7 @@
         </section>
 
         <section id="lineBot">
-          <h2 class="vertical">LineBot</h2>
+          <h2 class="vertical_h">LineBot</h2>
           <div class="works">
               <image src="images/gorilla.jpg" alt="ゴリラの画像" width="100%">
               <h3>チームXXX -〇〇の制作</h3>
@@ -237,7 +237,7 @@
         </section>
 
         <section id="modeling" class="modeling">
-          <h2 class="vertical">3Dモデリング</h2>
+          <h2 class="vertical_h">3Dモデリング</h2>
           <div class="works">
               <image src="images/gorilla.jpg" alt="ゴリラの画像" width="100%">
               <h3>チームXXX -〇〇の制作</h3>
@@ -249,14 +249,24 @@
 
       </div>
       <section id="clubPresident">
-        <h2>部長からの一言</h2>
-        ああああ
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <h2 class="horizontal_h">部長からの一言</h2>
+        <div class="clubPresident__content">
+          <image class="clubPresident__Image" src="images/gorilla.jpg" alt="ゴリラの画像" width="50%" height="50%">
+          <p class="clubPresident__Message">
+            三次元空間座標(x,y,z)を二次元空間座標(u,v)に変換するのがUV展開であり、その座標を数値でいじくり回すのにノードを使います。
+            ノードはレンダリングするときの手順を設定するものです。
+            プログラミングのようにノードを組むことでプロシージャル(手続き型)のテクスチャを作ることができるので、
+            規則性がありながらもランダムなテクスチャを作る場合は非常に便利です。
+            岩の表面や人体の虹彩などはプロシージャルテクスチャを用いる場合が多いです。
+            かといって手書きのテクスチャが不要かと言われれば、そうではなく、服のシワなど描いた方が早い時は手書きをします。
+          </p>
+          <p class="clear"></p>
+        </div>
       </section>
 
       <section id="clubJournal">
-        <h2>部誌</h2>
-        リンクとか
+        <h2 class="horizontal_h">部誌</h2>
+        リンクとかなんか色々あれば
                   <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
       </section>
       <!-- htmlが読まれた後にjsを読み込む（そうしないとaddEventListenerのプロパティがnullになる）  -->
