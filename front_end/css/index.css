@@ -87,6 +87,7 @@ main{
   margin: 0;
 }
 
+/* fadeInOut.cssでは, 透明度（opacity）の定義を行っているので注意  */
 .works{
   width:40%;
   background-color: rgba(230,230,230,0.5);
