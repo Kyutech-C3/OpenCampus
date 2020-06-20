@@ -94,6 +94,7 @@ main{
   text-align: center;
   margin: 32px 32px;
   float:left;
+  z-index: 10;
 }
 
 /* 右側の作品  */
