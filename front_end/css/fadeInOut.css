@@ -1,0 +1,13 @@
+/* 画面外にいる状態 */
+.fadein {
+	/* 透明度を設定  */
+	opacity : 0.1;
+	transform : translate(0, 50px);
+	transition : all 500ms;	/* 時間の指定  */
+	}
+
+/* 画面内に入った状態 */
+.fadein.scrollin {
+	opacity : 1;
+	transform : translate(0, 0);
+}
