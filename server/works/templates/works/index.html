@@ -1,0 +1,6 @@
+{% extends 'base.html'%}
+{% load sass_tags %}
+
+{% block content %}
+{% include 'works/partial/_card.html' with works=works %}
+{% endblock %}
