@@ -4,7 +4,11 @@ from .models import Work, Team
 
 
 def index(request):
-    return HttpResponse("Hello, you can see works.")
+    works = Work.objects.all()
+    context = {
+            "works": works
+            }
+    return render(request, 'works/index.html', context)
 
 def detail(request, work_id):
     work = Work.objects.get(pk=work_id)
