@@ -4,13 +4,19 @@
   ------------------------------------------- */
   :root {
     /*  カスタムプロパティは「--」ではじめる  */
+    /* _light は薄めの色 */
     --gray:rgba(220, 220, 220,1.0);
     --white:rgba(255,255,255,1.0);
     --blue: rgba(140, 180, 240, 1.0);
+    --blue_light: rgba(180, 220, 250, 1.0);
     --green: rgba(120, 240, 160, 1.0);
+    --green_light: rgba(160, 250, 200, 1.0);
     --yellow: rgba(255, 230, 100, 1.0);
+    --yellow_light: rgba(255, 240, 150, 1.0);
     --orenge: rgba(255, 180, 80, 1.0);
+    --orenge_light: rgba(255, 220, 120, 1.0);
     --red: rgba(255, 160, 120, 1.0);
+    --red_light: rgba(255, 200, 160, 1.0);
   }
 
 
@@ -87,7 +93,6 @@ main{
   text-align: center;
   margin: 32px 32px;
   float:left;
-  z-index: 10;
 }
 
 /* 右側の作品  */
@@ -97,7 +102,7 @@ main{
 
 /* 左側の作品（3,5,7...番目の作品に適用）  */
 .leftPos{
-  margin-left: 8%;
+  margin-left: 8.5%;
 }
 
 .worksImage{
@@ -122,10 +127,13 @@ main{
   font-weight: bold;
   margin-left: 1%;
   float:left;
+  padding-top: 0.5em;
 }
 
 /* 横書きの見出し  */
 .horizontal_h{
+  /* margin: 0 1em; */
+  padding: 0.5em 1em 0.2em;
   font-size: 3em;
   font-weight: bold;
 }
@@ -135,9 +143,9 @@ main{
 }
 
 #web{
-  background: -moz-linear-gradient(top, var(--blue), var(--green));
-  background: -webkit-linear-gradient(top, var(--blue), var(--green));
-  background: linear-gradient(to bottom,  var(--blue), var(--green));
+  background: -moz-linear-gradient(top, var(--blue), var(--blue_light));
+  background: -webkit-linear-gradient(top, var(--blue), var(--blue_light));
+  background: linear-gradient(to bottom,  var(--blue), var(--blue_light));
 }
 
 .game3D{
@@ -145,9 +153,9 @@ main{
 }
 
 #game3D{
-  background: -moz-linear-gradient(top, var(--green), var(--yellow));
-  background: -webkit-linear-gradient(top, var(--green), var(--yellow));
-  background: linear-gradient(to bottom,var(--green), var(--yellow));
+  background: -moz-linear-gradient(top, var(--green), var(--green_light));
+  background: -webkit-linear-gradient(top, var(--green), var(--green_light));
+  background: linear-gradient(to bottom,var(--green), var(--green_light));
 }
 
 .game2D{
@@ -155,9 +163,9 @@ main{
 }
 
 #game2D{
-  background: -moz-linear-gradient(top, var(--yellow), var(--orenge));
-  background: -webkit-linear-gradient(top, var(--yellow), var(--orenge));
-  background: linear-gradient(to bottom,var(--yellow), var(--orenge));
+  background: -moz-linear-gradient(top, var(--yellow), var(--yellow_light));
+  background: -webkit-linear-gradient(top, var(--yellow), var(--yellow_light));
+  background: linear-gradient(to bottom,var(--yellow), var(--yellow_light));
 }
 
 .lineBot{
@@ -165,9 +173,9 @@ main{
 }
 
 #lineBot{
-  background: -moz-linear-gradient(top, var(--orenge),var(--red));
-  background: -webkit-linear-gradient(top, var(--orenge), var(--red));
-  background: linear-gradient(to bottom, var(--orenge), var(--red));
+  background: -moz-linear-gradient(top, var(--orenge),var(--orenge_light));
+  background: -webkit-linear-gradient(top, var(--orenge), var(--orenge_light));
+  background: linear-gradient(to bottom, var(--orenge), var(--orenge_light));
 }
 
 .modeling{
@@ -175,9 +183,9 @@ main{
 }
 
 #modeling{
-  background: -moz-linear-gradient(top, var(--red), var(--white));
-  background: -webkit-linear-gradient(top, var(--red), var(--white));
-  background: linear-gradient(to bottom,var(--red), var(--white));
+  background: -moz-linear-gradient(top, var(--red), var(--red_light));
+  background: -webkit-linear-gradient(top, var(--red), var(--red_light));
+  background: linear-gradient(to bottom,var(--red), var(--red_light));
 }
 
 #clubPresident{
@@ -199,22 +207,26 @@ main{
   /*  vertical-alignはインラインにしか効かないので注意（spanなどと併用すると良い） */
   /* display: table-cell; */
   display: inline-block;
+  margin: 1em;
+  padding-left: 1em;
 }
 
 .clubPresident__Image{
   float:left;
   margin: 32px;
   width: 45%;
+  padding: 0.5em 2em 0.5em 3em;
 }
 
 .clubPresident__Message{
-  margin:32px;
-  border:solid;
-  border-color: #AAA;
-  border-radius: 16px; /* 半径が16pxの角丸 */
-  width: 45%;
+  margin: 4em;
+  padding: 2em 4em 1em 3em;
+  /* border:solid;
+  border-color: #AAA; */
+  /* border-radius: 16px; /* 半径が16pxの角丸 */
+  width: auto;
   color:#111;
-  overflow: hidden; /* 回り込ませない  */
+  overflow: hidden;  /* 回り込ませない  */
 }
 
 .clear{
@@ -238,24 +250,52 @@ main{
 
 @media screen and (max-width: 599px) {
   .content-nav__item{
-    padding:0;
+    padding:0.5em;
   	display: inline-block;
   }
   /* h2.vertical{
     text-align: center;
     margin: auto;
   } */
-  .works{
-    width:100%;
-    background-color: rgba(230,230,230,0.5);
-    margin: 32px 0;
+  /* 右側の作品  */
+  .rightPos{
+    margin-top: 0;
+    clear: both;
   }
-  .vertical{
+
+  /* 左側の作品（3,5,7...番目の作品に適用）  */
+  .leftPos{
+    margin-left: 0;
+    clear: both;
+  }
+
+  .worksImage{
+    margin: 0;
+  }
+
+  .works{
+    width:90%;
+    /* margin: 1em 1em 1em 0; */
+    margin: 1em 0.8em 1em 1.5em;
+    /* padding: 1em */
+  }
+  .vertical_h{
     writing-mode: horizontal-tb;
     clear:both;
     text-align: center;
     text-orientation: mixed;
-    margin-left: 5%;
+    padding-left: 5%;
   }
 
+  .clubPresident__Image{
+    width: 100%;
+    margin: 0;
+    padding: 0.5em 0.5em 0.5em 0.3em;
+  }
+
+  .clubPresident__Message{
+    width: auto;
+    margin: 0;
+    padding: 0.5em 1em;
+  }
 }
