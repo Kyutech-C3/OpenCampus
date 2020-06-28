@@ -93,7 +93,6 @@ main{
   text-align: center;
   margin: 32px 32px;
   float:left;
-  z-index: 10;
 }
 
 /* 右側の作品  */
@@ -103,7 +102,7 @@ main{
 
 /* 左側の作品（3,5,7...番目の作品に適用）  */
 .leftPos{
-  margin-left: 8%;
+  margin-left: 8.5%;
 }
 
 .worksImage{
@@ -128,10 +127,13 @@ main{
   font-weight: bold;
   margin-left: 1%;
   float:left;
+  padding-top: 0.5em;
 }
 
 /* 横書きの見出し  */
 .horizontal_h{
+  /* margin: 0 1em; */
+  padding: 0.5em 1em 0.2em;
   font-size: 3em;
   font-weight: bold;
 }
@@ -205,22 +207,26 @@ main{
   /*  vertical-alignはインラインにしか効かないので注意（spanなどと併用すると良い） */
   /* display: table-cell; */
   display: inline-block;
+  margin: 1em;
+  padding-left: 1em;
 }
 
 .clubPresident__Image{
   float:left;
   margin: 32px;
   width: 45%;
+  padding: 0.5em 2em 0.5em 3em;
 }
 
 .clubPresident__Message{
-  margin:32px;
-  border:solid;
-  border-color: #AAA;
-  border-radius: 16px; /* 半径が16pxの角丸 */
-  width: 45%;
+  margin: 4em;
+  padding: 2em 4em 1em 3em;
+  /* border:solid;
+  border-color: #AAA; */
+  /* border-radius: 16px; /* 半径が16pxの角丸 */
+  width: auto;
   color:#111;
-  overflow: hidden; /* 回り込ませない  */
+  overflow: hidden;  /* 回り込ませない  */
 }
 
 .clear{
@@ -244,24 +250,52 @@ main{
 
 @media screen and (max-width: 599px) {
   .content-nav__item{
-    padding:0;
+    padding:0.5em;
   	display: inline-block;
   }
   /* h2.vertical{
     text-align: center;
     margin: auto;
   } */
-  .works{
-    width:100%;
-    background-color: rgba(230,230,230,0.5);
-    margin: 32px 0;
+  /* 右側の作品  */
+  .rightPos{
+    margin-top: 0;
+    clear: both;
   }
-  .vertical{
+
+  /* 左側の作品（3,5,7...番目の作品に適用）  */
+  .leftPos{
+    margin-left: 0;
+    clear: both;
+  }
+
+  .worksImage{
+    margin: 0;
+  }
+
+  .works{
+    width:90%;
+    /* margin: 1em 1em 1em 0; */
+    margin: 1em 0.8em 1em 1.5em;
+    /* padding: 1em */
+  }
+  .vertical_h{
     writing-mode: horizontal-tb;
     clear:both;
     text-align: center;
     text-orientation: mixed;
-    margin-left: 5%;
+    padding-left: 5%;
   }
 
+  .clubPresident__Image{
+    width: 100%;
+    margin: 0;
+    padding: 0.5em 0.5em 0.5em 0.3em;
+  }
+
+  .clubPresident__Message{
+    width: auto;
+    margin: 0;
+    padding: 0.5em 1em;
+  }
 }
