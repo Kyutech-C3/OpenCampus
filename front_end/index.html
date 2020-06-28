@@ -21,15 +21,18 @@
 
     </style>
     <meta charset="utf-8">
+    <!-- CSSの導入 -->
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/hamburger.css">
     <link rel="stylesheet" href="css/fadeInOut.css">
+    <link rel="stylesheet" href="css/footer.css">
     <!-- JQuery の導入 -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="js/scroll.js"></script>
     <!-- JQuery を使うjs は, JQueryより後に読み込む必要がある  -->
     <script src="js/fadeInOut.js"></script>
     <script src="js/isSmartPhone.js"></script>
+    <script type="text/javascript" src="js/footer.js"></script>
   </head>
 
   <body>
@@ -271,10 +274,16 @@
       </section>
       <!-- htmlが読まれた後にjsを読み込む（そうしないとaddEventListenerのプロパティがnullになる）  -->
       <script src="js/hamburger.js"></script>
+      <!--headerまで戻る固定ボタン-->
+      <a href="#top" class="topBtn" id="topBtn">TOP</a>
     </main>
-
-    <footer>
-      フッター
+    <footer class="footer">
+      <div class="page_title">
+        <a href="">C3OpenCumpus特設サイト</a>
+      </div>
+      <div class="copyright">
+        C3©2020
+      </div>
     </footer>
   </body>
 </html>
