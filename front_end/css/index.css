@@ -4,13 +4,19 @@
   ------------------------------------------- */
   :root {
     /*  カスタムプロパティは「--」ではじめる  */
+    /* _light は薄めの色 */
     --gray:rgba(220, 220, 220,1.0);
     --white:rgba(255,255,255,1.0);
     --blue: rgba(140, 180, 240, 1.0);
+    --blue_light: rgba(180, 220, 250, 1.0);
     --green: rgba(120, 240, 160, 1.0);
+    --green_light: rgba(160, 250, 200, 1.0);
     --yellow: rgba(255, 230, 100, 1.0);
+    --yellow_light: rgba(255, 240, 150, 1.0);
     --orenge: rgba(255, 180, 80, 1.0);
+    --orenge_light: rgba(255, 220, 120, 1.0);
     --red: rgba(255, 160, 120, 1.0);
+    --red_light: rgba(255, 200, 160, 1.0);
   }
 
 
@@ -135,9 +141,9 @@ main{
 }
 
 #web{
-  background: -moz-linear-gradient(top, var(--blue), var(--green));
-  background: -webkit-linear-gradient(top, var(--blue), var(--green));
-  background: linear-gradient(to bottom,  var(--blue), var(--green));
+  background: -moz-linear-gradient(top, var(--blue), var(--blue_light));
+  background: -webkit-linear-gradient(top, var(--blue), var(--blue_light));
+  background: linear-gradient(to bottom,  var(--blue), var(--blue_light));
 }
 
 .game3D{
@@ -145,9 +151,9 @@ main{
 }
 
 #game3D{
-  background: -moz-linear-gradient(top, var(--green), var(--yellow));
-  background: -webkit-linear-gradient(top, var(--green), var(--yellow));
-  background: linear-gradient(to bottom,var(--green), var(--yellow));
+  background: -moz-linear-gradient(top, var(--green), var(--green_light));
+  background: -webkit-linear-gradient(top, var(--green), var(--green_light));
+  background: linear-gradient(to bottom,var(--green), var(--green_light));
 }
 
 .game2D{
@@ -155,9 +161,9 @@ main{
 }
 
 #game2D{
-  background: -moz-linear-gradient(top, var(--yellow), var(--orenge));
-  background: -webkit-linear-gradient(top, var(--yellow), var(--orenge));
-  background: linear-gradient(to bottom,var(--yellow), var(--orenge));
+  background: -moz-linear-gradient(top, var(--yellow), var(--yellow_light));
+  background: -webkit-linear-gradient(top, var(--yellow), var(--yellow_light));
+  background: linear-gradient(to bottom,var(--yellow), var(--yellow_light));
 }
 
 .lineBot{
@@ -165,9 +171,9 @@ main{
 }
 
 #lineBot{
-  background: -moz-linear-gradient(top, var(--orenge),var(--red));
-  background: -webkit-linear-gradient(top, var(--orenge), var(--red));
-  background: linear-gradient(to bottom, var(--orenge), var(--red));
+  background: -moz-linear-gradient(top, var(--orenge),var(--orenge_light));
+  background: -webkit-linear-gradient(top, var(--orenge), var(--orenge_light));
+  background: linear-gradient(to bottom, var(--orenge), var(--orenge_light));
 }
 
 .modeling{
@@ -175,9 +181,9 @@ main{
 }
 
 #modeling{
-  background: -moz-linear-gradient(top, var(--red), var(--white));
-  background: -webkit-linear-gradient(top, var(--red), var(--white));
-  background: linear-gradient(to bottom,var(--red), var(--white));
+  background: -moz-linear-gradient(top, var(--red), var(--red_light));
+  background: -webkit-linear-gradient(top, var(--red), var(--red_light));
+  background: linear-gradient(to bottom,var(--red), var(--red_light));
 }
 
 #clubPresident{
