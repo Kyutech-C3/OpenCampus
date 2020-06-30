@@ -23,10 +23,21 @@
                 color: pink;
             }
         </style>
-            <li><a href="templates/base.html" class="sample3_btn">{{work.id}}</a></li>
-            <iframe src="https://www.javadrive.jp/python/" width="800" height="500"></iframe>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/9MjAJSoaoSo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <li><a href="templates/base.html" class="sample3_btn">{{work.id}}</a></li>
     </ul>
+    <h2>Comment</h2>
+    {% for comment in comments %}
+      <hr>
+      <div>
+        <strong>{{comment.name}}</strong>
+        <p>{{comment.text}}
+      </div>
+      
+    {% endfor%}
+    <form method="POST">{% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit">Send</button>
+    </form>
 {% else %}
     <p>No polls are available.</p>
 {% endif %}
