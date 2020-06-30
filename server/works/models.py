@@ -80,6 +80,9 @@ class Work(models.Model):
     def __str__(self):
         return self.title
 
+    def get_absolute_url(self):
+        return reverse('detail', args=(str(self.id),))
+
 class Comment(models.Model):
     work = models.ForeignKey(Work, on_delete=models.CASCADE)
     name = models.CharField(max_length=255)
