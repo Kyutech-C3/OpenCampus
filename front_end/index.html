@@ -70,11 +70,15 @@
           </div>
           <script type="text/javascript">
             window.onload = function(){
-              var startTime = new Date('2020/7/2 20:00:00');
-              var endTime = new Date('2020/7/2 20:40:00');
+              var startTime1 = new Date('2020/7/2 20:00:00');
+              var endTime1 = new Date('2020/7/2 20:40:00');
+              var startTime2 = new Date('2020/7/23 12:00:00');
+              var endTime2 = new Date('2020/7/23 17:00:00');
               var nowTime = new Date();
-              if(startTime<nowTime && nowTime<endTime) {
+              if(startTime1<nowTime && nowTime<endTime1) {
                 document.getElementById("youtube").style.display="block";
+              }else if(startTime2<nowTime && nowTime<endTime2){
+
               }
             }
           </script>
