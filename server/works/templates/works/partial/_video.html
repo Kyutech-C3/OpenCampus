@@ -1,69 +1,10 @@
 {% load static %}
+{% load sass_tags %}
 <link href="https://vjs.zencdn.net/7.8.2/video-js.css" rel="stylesheet" />
+<link href="{% sass_src 'works/partial/_video.scss' %}" rel="stylesheet">
 
 <!-- If you'd like to support IE8 (for Video.js versions prior to v7) -->
 <script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
-<style>
-  /* ここのwidthとheightはビデオのwidthとheightと対応させる */
-  .videos-class{
-    position: relative;
-    width: 640;
-    height: 264;
-  }
-  /* playアイコンとpause(stop)アイコンのアニメーション */
-  .fade-animation{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-
-    position: absolute;
-    top: 17%;
-    left: 45%;
-
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(40px);
-    transition: all 3s;
-  }
-  .fade-animation.is-show{
-    opacity: 1;
-    visibility: visible;
-  }
-  .fade-animation.is-fadeout{
-    animation : fadeOut 1.5s;
-    animation-fill-mode: both;
-  }
-  @keyframes fadeOut {
-    0% {
-      opacity: 1;
-    }
-    100% {
-      opacity: 0;
-    }
-  }
-
-  /* 動画の最後に出るreplayアイコンのアニメーション */
-  .replay-icon{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-
-    position: absolute;
-    top: 0%;
-    left: 37%;
-
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(40px);
-    transition: all 3s;
-  }
-  .replay-icon.is-show{
-    opacity: 1;
-    visibility: visible;
-  }
-</style>
 
 <body>
   <div class="videos-class">
