@@ -1,3 +1,4 @@
+{% load static %}
 <head>
   <link href="https://vjs.zencdn.net/7.8.2/video-js.css" rel="stylesheet" />
 
@@ -79,12 +80,12 @@
       preload="auto"
       width="640"
       height="264"
-      poster="myvideo/brim.jpg"
+      poster="{% static 'works/video/1/brim.jpg' %}"
       data-setup="{}"
       >
 
       <!-- 再生する動画ファイル -->
-      <source src="myvideo/nokus.mp4" type="video/mp4" />
+      <source src="{% static 'works/video/1/nokus.mp4' %}" type="video/mp4" />
       <!-- <source src="MY_VIDEO.webm" type="video/webm" /> -->
       <p class="vjs-no-js">
         To view this video please enable JavaScript, and consider upgrading to a
@@ -100,15 +101,15 @@
 
     <div class="element fade-animation">
       <!-- 一時停止ボタンのアニメーション用の画像 -->
-      <img id="stopC3"  src="myvideo/C3stop.png"></div>
+      <img id="stopC3"  src="{% static 'works/video/1/C3stop.png' %}"></div>
 
       <div class="element fade-animation">
         <!-- 再生ボタンのアニメーション用の画像 -->
-        <img id="playC3"  src="myvideo/C3play.png"></div>
+        <img id="playC3"  src="{% static 'works/video/1/C3play.png' %}"></div>
 
         <div class="element replay-icon">
           <!-- リプレイボタンのアニメーション用の画像 -->
-          <img id="replayC3"  src="myvideo/C3replay.png"></div>
+          <img id="replayC3"  src="{% static 'works/video/1/C3replay.png' %}"></div>
         </div>
 
       </div>
