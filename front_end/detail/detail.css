@@ -1,5 +1,5 @@
-body{
-    background:#CCCCCC;
+main{
+    background:#DDDDDD;
 }
 .Title{
     background: #c2edff;/*背景色*/
@@ -9,7 +9,7 @@ body{
 
 .Subject{
     font-size: 4ex;
-    font-weight: bold; 
+    font-weight: bold;
 }
 
 .Paragraph{
@@ -30,4 +30,14 @@ iframe {
 }
 .button{
     bottom: 0;
+}
+
+details {
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    padding: .5em .5em 0;
+}
+
+.box{
+  background-color: #EEE;
 }
