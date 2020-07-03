@@ -1,10 +1,5 @@
-<<<<<<< HEAD
-main{
-    background:#DDDDDD;
-=======
 body{
     background:#CCCCCC;
->>>>>>> ec0fa369a2616a04c18eaee521cee65f517e8f08
 }
 .Title{
     background: #c2edff;/*背景色*/
@@ -14,11 +9,7 @@ body{
 
 .Subject{
     font-size: 4ex;
-<<<<<<< HEAD
     font-weight: bold;
-=======
-    font-weight: bold; 
->>>>>>> ec0fa369a2616a04c18eaee521cee65f517e8f08
 }
 
 .Paragraph{
@@ -39,18 +30,4 @@ iframe {
 }
 .button{
     bottom: 0;
-<<<<<<< HEAD
 }
-
-details {
-    border: 1px solid #aaa;
-    border-radius: 4px;
-    padding: .5em .5em 0;
-}
-
-.box{
-  background-color: #EEE;
-}
-=======
-}
->>>>>>> ec0fa369a2616a04c18eaee521cee65f517e8f08
