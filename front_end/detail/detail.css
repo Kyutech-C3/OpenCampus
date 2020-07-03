@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 main{
     background:#DDDDDD;
+=======
+body{
+    background:#CCCCCC;
+>>>>>>> ec0fa369a2616a04c18eaee521cee65f517e8f08
 }
 .Title{
     background: #c2edff;/*背景色*/
@@ -9,7 +14,11 @@ main{
 
 .Subject{
     font-size: 4ex;
+<<<<<<< HEAD
     font-weight: bold;
+=======
+    font-weight: bold; 
+>>>>>>> ec0fa369a2616a04c18eaee521cee65f517e8f08
 }
 
 .Paragraph{
@@ -30,6 +39,7 @@ iframe {
 }
 .button{
     bottom: 0;
+<<<<<<< HEAD
 }
 
 details {
@@ -41,3 +51,6 @@ details {
 .box{
   background-color: #EEE;
 }
+=======
+}
+>>>>>>> ec0fa369a2616a04c18eaee521cee65f517e8f08
