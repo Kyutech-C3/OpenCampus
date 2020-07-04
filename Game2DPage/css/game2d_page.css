@@ -2,18 +2,18 @@ body{
     background:#CCCCCC;
 }
 .Title{
-    background: #c2edff;/*背景色*/
+    background: rgba(255, 230, 100, 1.0);/*背景色*/
     padding: 0.5em;/*文字まわり（上下左右）の余白*/
     font-size: x-large;
 }
 
 .Subject{
-    font-size: 4ex;
+    font-size: 3ex;
     font-weight: bold; 
 }
 
 .Paragraph{
-    font-size: x-large;
+    padding: 0.5em;/*文字まわり（上下左右）の余白*/
 }
 
 .right {

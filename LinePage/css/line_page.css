@@ -1,0 +1,33 @@
+body{
+    background:#CCCCCC;
+}
+.Title{
+    background: rgba(255, 180, 80, 1.0);/*背景色*/
+    padding: 0.5em;/*文字まわり（上下左右）の余白*/
+    font-size: x-large;
+}
+
+.Subject{
+    font-size: 3ex;
+    font-weight: bold; 
+}
+
+.Paragraph{
+    padding: 0.5em;/*文字まわり（上下左右）の余白*/
+}
+
+.right {
+    margin: 0 0 0 auto;
+}
+
+iframe {
+    border: 1px solid black;
+    width: 100%;
+}
+
+.image{
+    object-fit: contain;
+}
+.button{
+    bottom: 0;
+}
