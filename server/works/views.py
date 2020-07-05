@@ -5,10 +5,14 @@ from .forms import CommentPostForm
 
 
 def index(request):
-    works = Work.objects.all()
     context = {
-            "works": works
-            }
+            "unity3d": Work.objects.filter(type_choice=Work.WorkType.UNITY_3D),
+            "unity2d": Work.objects.filter(type_choice=Work.WorkType.UNITY_2D),
+            "video": Work.objects.filter(type_choice=Work.WorkType.VIDEO),
+            "model3d": Work.objects.filter(type_choice=Work.WorkType.MODEL_3D),
+            "other": Work.objects.filter(type_choice=Work.WorkType.OTHER)
+        }
+
     return render(request, 'works/index.html', context)
 
 def detail(request, work_id):
