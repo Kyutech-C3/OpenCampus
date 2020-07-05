@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>作品名</title>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css">
+      <link rel="stylesheet" href="./detail.css" />
+      <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+      <link rel="stylesheet" href="../css/footer.css">
+      <script type="text/javascript" src="../js/footer.js"></script>
+    </head>
+    <body>
+      <header>
+      </header>
+      <main>
+        <div class="Title">
+            <h1>作品名：あつまれゴリラの里</h1>
+            <h1>チーム名：ウホッ♡ウホホ？ホホッ!!</h1>
+        </div>
+
+        <!--作品の画像・動画・ゲーム・３Dモデル .etc-->
+        <div class="columns">
+            <div class="column is-half">
+                <figure calss="image is-16by9">
+                    <iframe class="has-ratio" width="1920" height="480" src="img/gorilla.jpg" frameborder="0" allowfullscreen></iframe>
+                </figure>
+            </div>
+            <div class="column">
+                <!--作品の解説・使用方法 .etc-->
+                <details>
+                  <summary class="Subject">操作方法</summary>
+                  <ul class="Paragraph">
+                      <li>W … 前に進む</li>
+                      <li>S … 後に進む</li>
+                      <li>D … 右を向く</li>
+                      <li>A … 左を向く</li>
+                      <li>Space … ジャンプ</li>
+                      <li>左クリック … 仲間を呼ぶ</li>
+                      <li>右クリック … ウホッ♡</li>
+                      <li>F … ウホッ!!</li>
+                  </ul>
+                </details>
+
+                <details>
+                  <summary class="Subject">ゲーム説明</summary>
+                  <p class="Paragraph">動物園のゴリラが脱走して大繁殖した!!奴らは知能を手に入れて、完全な自由を手にするために人間の街を襲っているらしい。君の力が必要だ‼さあ、我らの街をともに守ろう。</p>
+                  <p class="Paragraph">ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡</p>
+                </details>
+            </div>
+        </div>
+
+        <div class="columns">
+            <div class="column is-four-fifths"></div>
+            <div class="column">
+                <!-- GOODとコメントの入力ボタン  -->
+                <a class="button is-medium is-rounded"><span class="icon"><i class="fas fa-thumbs-up right"></i></span><span>GOOD!!</span></a>
+                <a class="button is-medium is-success is-focused"><span class="icon"><i class="fas fa-pen"></i></span><span>Comment</span></a>
+                <!-- コメント入力フォーム  -->
+                <form method="post" action="detail.html">
+                  <p><input type="text" placeholder="コメント" required maxlength='100'></p>
+                  <p><input type="submit" value="送信する"></p>
+                </form>
+            </div>
+        </div>
+        <div class="commment">
+          <details>
+            <summary class="Subject">コメント一覧</summary>
+            <div class="box">
+              <p>2020/07/02 19:41　コメント</p>
+              <p>2020/07/02 19:41　コメント</p>
+              <p>2020/07/02 19:41　コメント</p>
+            </div>
+          </details>
+        </div>
+      </main>
+
+      <a href="#top" class="topBtn" id="topBtn">TOP</a><!--/固定ボタン-->
+      <footer class="footer">
+        <div class="page_title">
+          <a href="">C3OpenCumpus特設サイト</a>
+        </div>
+        <div class="copyright">
+          C3©2020
+        </div>
+      </footer>
+    </body>
+</html>
