@@ -3,12 +3,12 @@
 
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>2Dゲーム Virtual Guy</title>
+  <title>3Dモデリング</title>
   <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css">
   <meta charset="utf-8">
   <!-- CSSの導入 -->
-  <link rel="stylesheet" href="css/game2d_page.css">
+  <link rel="stylesheet" href="css/model3d_page.css">
   <link rel="stylesheet" href="css/footer.css">
   <!-- JQuery の導入 -->
   <!-- JQuery を使うjs は, JQueryより後に読み込む必要がある  -->
@@ -40,8 +40,8 @@
   <main>
     <!-- title -->
     <div class="Title">
-      <h1 class="title">作品名：Virtual Guy</h1>
-      <p class="subtitle">チーム名：2dドット</p>
+      <h1 class="title">作品名：高橋さん</h1>
+      <p class="subtitle">制作者名：peru（バ美肉）</p>
     </div>
     <div class="columns">
       <div class="column is-half">
@@ -52,59 +52,58 @@
         </figure>
       </div>
       <div class="column">
-        <!--作品の解説・使用方法 .etc-->
-        <h2 class="Subject">ゲーム紹介</h2>
-        <p class="Paragraph">
-          <b>ゲーム説明：</b><br>
-          このゲームは、探索型2dアクションゲームです。<br>
-          マップを探索して鍵を集めて先に進み、ボスを倒せばゲームクリアです。
-        </p>
-        <p class="Paragraph">
-          <b>使用ツール：</b><br>
-          Unity 2019.3.14f1
-        </p>
-        <br>
-        <h2 class="Subject">操作方法</h2>
-        <ul class="Paragraph">
-          <li>矢印← ... 左に移動</li>
-          <li>矢印→ ... 右に移動</li>
-          <li>矢印↑ ... ジャンプ</li>
-          <li>矢印↓ ... (すり抜け床の上にいるとき)床をすり抜ける</li>
-        </ul>
-        <p class="Paragraph">
-          敵は踏みつけたら倒せます。(マリオの踏みつけと同じ)<br>
-	        敵に当たると体力が減ります。<br>
-          体力が無くなると、セーブポイントに戻されます。<br>
-          フルーツを取ると体力が回復します。<br>
-          <br>
-          鍵を取ると進める場所が増えます。<br>
-          マップ上には、アクションを増やすアイテムが存在します。<br>
-          もし先に進めなくなったら、アイテムを探してみましょう。
-        </p>
-        <br>
-        <h2 class="Subject">製作者からひとこと</h2>
-        <p class="Paragraph">
-          <b>Kuroki：</b><br>
-          プレイヤー･敵キャラを作りました。<br>
-          このゲームで使ったUnityアセット「Pixel Adventure」は、<br>
-          無料かつ素材が豊富なのでぜひ使ってみてください。<br>
-          <b>Crucio：</b><br>
-          ステージ･ギミックを作りました。
-        </p>
+        <details>
+          <summary class="Subject">作品紹介</summary>
+          <p class="Paragraph">
+            <b>作品説明：</b><br>
+            「ゆーま！」という作品の高橋さんが元ネタです。<br>
+            美しくかわいい姿を再現しました。
+          </p>
+          <p class="Paragraph">
+            <b>使用ツール：</b><br>
+            Blender
+          </p>
+        </details>
+
+        <details>
+          <summary class="Subject">制作者からひとこと</summary>
+          <p class="Paragraph">
+            <b>peru：</b><br>
+            がんばって作りました。<br>
+          </p>
+        </details>
       </div>
     </div>
     <!-- botton etc -->
     <div class="columns">
       <div class="column is-four-fifths"></div>
       <div class="column">
+        <!-- GOODとコメントの入力ボタン  -->
         <a class="button is-medium is-rounded"><span class="icon"><i
               class="fas fa-thumbs-up right"></i></span><span>GOOD!!</span></a>
         <a class="button is-medium is-success is-focused"><span class="icon"><i
               class="fas fa-pen"></i></span><span>Comment</span></a>
+        <!-- コメント入力フォーム  -->
+        <form method="post" action="detail.html">
+          <p><input type="text" placeholder="コメント" required maxlength='100'></p>
+          <p><input type="submit" value="送信する"></p>
+        </form>
       </div>
+    </div>
+    <div class="commment">
+      <details>
+        <summary class="Subject">コメント一覧</summary>
+        <div class="box">
+          <p>2020/07/02 19:41　コメント</p>
+          <p>2020/07/02 19:41　コメント</p>
+          <p>2020/07/02 19:41　コメント</p>
+        </div>
+      </details>
     </div>
   </main>
 
+  <a href="#top" class="topBtn" id="topBtn">TOP</a>
+  <!--/固定ボタン-->
   <footer class="footer">
     <div class="page_title">
       <a href="">C3OpenCumpus特設サイト</a>

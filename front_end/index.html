@@ -69,16 +69,18 @@
             </div>
           </div>
           <script type="text/javascript">
-            window.onload = function(){
+            window.onload = function () {
               var startTime1 = new Date('2020/7/2 20:00:00');
               var endTime1 = new Date('2020/7/2 20:40:00');
               var startTime2 = new Date('2020/7/23 12:00:00');
               var endTime2 = new Date('2020/7/23 17:00:00');
               var nowTime = new Date();
-              if(startTime1<nowTime && nowTime<endTime1) {
-                document.getElementById("youtube").style.display="block";
-              }else if(startTime2<nowTime && nowTime<endTime2){
-
+              if (startTime1 < nowTime && nowTime < endTime1) {
+                document.getElementById("youtube").style.display = "block";
+              } else if (startTime2 < nowTime && nowTime < endTime2) {
+                document.getElementById("youtube").style.display = "block";
+              }else{
+                document.getElementById("youtube").style.display = "none";
               }
             }
           </script>
@@ -148,7 +150,7 @@
         </div>
       </div><!-- end columns -->
     </div><!-- end header -->
-    
+
     <!-- ハンバーガーメニュー  -->
     <div class="header">
       <!-- メニューの中身  -->
@@ -192,11 +194,25 @@
       <section id="web">
         <!-- 見出しはトップにマージンを持つので, 最初の見出しだけマージンをもたないようにする -->
         <h2 class="non_marginTop vertical_h">webデザイン</h2>
-        <div class="works">
-          <image src="images/gorilla.jpg" alt="ゴリラの画像" width="100%">
-            <h3>チームWC -当webの製作</h3>
-            <p>作品の紹介, 活動内容, 苦労ポイント</p>
-            <button class="gotoPlayWindow" onclick="location.href='./index.html'">プレイする!</button>
+        <div class="card works">
+            <div style="background-color: lightblue;">
+              <div class="card-image">
+                <figure class="image is-1by1">
+                  <img src="images/c3logo.jpeg" alt="logo" width="800" height="800">
+                </figure>
+              </div>
+              <div class="card-content">
+                <div class="media">
+                  <div class="media-content has-text-centered">
+                    <p class="title">C3 OpenCampus 特設サイト</p>
+                    <p class="subtitle">制作チーム名：いったんWCおわりました</p>
+                  </div>
+                </div>
+                <div class="content">
+                  <button class="gotoPlayWindow" onclick="location.href='./index.html'">詳細を見る!</button>
+                </div>
+              </div>
+            </div>
         </div>
         <p class="clear"></p>
       </section>
@@ -204,31 +220,31 @@
       <section id="game3D">
         <h2 class="vertical_h">3Dゲーム</h2>
         <div class="works">
-          <image src="images/gorilla.jpg" alt="ゴリラの画像" width="100%">
-            <h3>チームFPS -〇〇の制作</h3>
-            <p>作品の紹介, 活動内容, 苦労ポイント</p>
-            <button class="gotoPlayWindow" onclick="location.href='./index.html'">プレイする!</button>
+          <img src="images/gorilla.jpg" alt="ゴリラの画像" width="100%">
+          <h3>チームFPS -〇〇の制作</h3>
+          <p>作品の紹介, 活動内容, 苦労ポイント</p>
+          <button class="gotoPlayWindow" onclick="location.href='./index.html'">プレイする!</button>
         </div>
 
         <div class="works rightPos">
-          <image src="images/gorilla.jpg" alt="ゴリラの画像" width="100%">
-            <h3>チームXXX -〇〇の制作</h3>
-            <p>作品の紹介, 活動内容, 苦労ポイント</p>
-            <button class="gotoPlayWindow" onclick="location.href='./index.html'">プレイする!</button>
+          <img src="images/gorilla.jpg" alt="ゴリラの画像" width="100%">
+          <h3>チームダクソ -〇〇の制作</h3>
+          <p>作品の紹介, 活動内容, 苦労ポイント</p>
+          <button class="gotoPlayWindow" onclick="location.href='./index.html'">プレイする!</button>
         </div>
 
         <div class="works leftPos">
-          <image src="images/gorilla.jpg" alt="ゴリラの画像" width="100%">
-            <h3>チームFPS -〇〇の制作</h3>
-            <p>作品の紹介, 活動内容, 苦労ポイント</p>
-            <button class="gotoPlayWindow" onclick="location.href='./index.html'">プレイする!</button>
+          <img src="images/gorilla.jpg" alt="ゴリラの画像" width="100%">
+          <h3>野性的速度班 -〇〇の制作</h3>
+          <p>作品の紹介, 活動内容, 苦労ポイント</p>
+          <button class="gotoPlayWindow" onclick="location.href='./index.html'">プレイする!</button>
         </div>
 
         <div class="works rightPos">
-          <image src="images/gorilla.jpg" alt="ゴリラの画像" width="100%">
-            <h3>チームXXX -〇〇の制作</h3>
-            <p>作品の紹介, 活動内容, 苦労ポイント</p>
-            <button class="gotoPlayWindow" onclick="location.href='./index.html'">プレイする!</button>
+          <img src="images/gorilla.jpg" alt="ゴリラの画像" width="100%">
+          <h3>三国志戦略ゲーム班 -〇〇の制作</h3>
+          <p>作品の紹介, 活動内容, 苦労ポイント</p>
+          <button class="gotoPlayWindow" onclick="location.href='./index.html'">プレイする!</button>
         </div>
 
         <p class="clear"></p>
@@ -237,10 +253,24 @@
       <section id="game2D">
         <h2 class="vertical_h">2Dゲーム</h2>
         <div class="works">
-          <image src="images/gorilla.jpg" alt="ゴリラの画像" width="100%">
-            <h3>チームXXX -〇〇の制作</h3>
-            <p>作品の紹介, 活動内容, 苦労ポイント</p>
-            <button class="gotoPlayWindow" onclick="location.href='./index.html'">プレイする!</button>
+          <img src="images/gorilla.jpg" alt="ゴリラの画像" width="100%">
+          <h3>advゲームノベル班 -〇〇の制作</h3>
+          <p>作品の紹介, 活動内容, 苦労ポイント</p>
+          <button class="gotoPlayWindow" onclick="location.href='./index.html'">プレイする!</button>
+        </div>
+
+        <div class="works rightPos">
+          <img src="images/gorilla.jpg" alt="ゴリラの画像" width="100%">
+          <h3>魔法アクションゲーム -〇〇の制作</h3>
+          <p>作品の紹介, 活動内容, 苦労ポイント</p>
+          <button class="gotoPlayWindow" onclick="location.href='./index.html'">プレイする!</button>
+        </div>
+
+        <div class="works leftPos">
+          <img src="images/gorilla.jpg" alt="ゴリラの画像" width="100%">
+          <h3>2dドット -〇〇の制作</h3>
+          <p>作品の紹介, 活動内容, 苦労ポイント</p>
+          <button class="gotoPlayWindow" onclick="location.href='./index.html'">プレイする!</button>
         </div>
 
         <p class="clear"></p>
@@ -249,10 +279,10 @@
       <section id="lineBot">
         <h2 class="vertical_h">LineBot</h2>
         <div class="works">
-          <image src="images/gorilla.jpg" alt="ゴリラの画像" width="100%">
-            <h3>チームXXX -〇〇の制作</h3>
-            <p>作品の紹介, 活動内容, 苦労ポイント</p>
-            <button class="gotoPlayWindow" onclick="location.href='./index.html'">プレイする!</button>
+          <img src="images/gorilla.jpg" alt="ゴリラの画像" width="100%">
+          <h3>チーム人狼 -〇〇の制作</h3>
+          <p>作品の紹介, 活動内容, 苦労ポイント</p>
+          <button class="gotoPlayWindow" onclick="location.href='./index.html'">プレイする!</button>
         </div>
 
         <p class="clear"></p>
@@ -262,7 +292,7 @@
         <h2 class="vertical_h">3Dモデリング</h2>
         <div class="works">
           <image src="images/gorilla.jpg" alt="ゴリラの画像" width="100%">
-            <h3>チームXXX -〇〇の制作</h3>
+            <h3>チームバ美肉 -〇〇の制作</h3>
             <p>作品の紹介, 活動内容, 苦労ポイント</p>
             <button class="gotoPlayWindow" onclick="location.href='./index.html'">プレイする!</button>
         </div>

@@ -80,11 +80,11 @@
         </ul>
         <p class="Paragraph">
           敵に当たると残機が減ります。<br>
-	        ハートを取ると残機が回復します。<br>
+          ハートを取ると残機が回復します。<br>
           星を取るとスコアが倍になります。
         </p>
         <br>
-        <h2 class="Subject">製作者からひとこと</h2>
+        <h2 class="Subject">制作者からひとこと</h2>
         <p class="Paragraph">
           <b>peru：</b><br>
           かなり高難易度に設定しました。覚悟してください。<br>
@@ -97,14 +97,32 @@
     <div class="columns">
       <div class="column is-four-fifths"></div>
       <div class="column">
+        <!-- GOODとコメントの入力ボタン  -->
         <a class="button is-medium is-rounded"><span class="icon"><i
               class="fas fa-thumbs-up right"></i></span><span>GOOD!!</span></a>
         <a class="button is-medium is-success is-focused"><span class="icon"><i
               class="fas fa-pen"></i></span><span>Comment</span></a>
+        <!-- コメント入力フォーム  -->
+        <form method="post" action="detail.html">
+          <p><input type="text" placeholder="コメント" required maxlength='100'></p>
+          <p><input type="submit" value="送信する"></p>
+        </form>
       </div>
+    </div>
+    <div class="commment">
+      <details>
+        <summary class="Subject">コメント一覧</summary>
+        <div class="box">
+          <p>2020/07/02 19:41　コメント</p>
+          <p>2020/07/02 19:41　コメント</p>
+          <p>2020/07/02 19:41　コメント</p>
+        </div>
+      </details>
     </div>
   </main>
 
+  <a href="#top" class="topBtn" id="topBtn">TOP</a>
+  <!--/固定ボタン-->
   <footer class="footer">
     <div class="page_title">
       <a href="">C3OpenCumpus特設サイト</a>
