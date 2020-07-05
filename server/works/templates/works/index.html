@@ -1,6 +1,238 @@
 {% extends 'base.html'%}
 {% load sass_tags %}
+{% load static %}
 
 {% block content %}
-{% include 'works/partial/_card.html' with works=works %}
+    <meta charset="utf-8">
+
+    <!-- CSSの導入 -->
+    <link rel="stylesheet" href="{% static 'works/css/hamburger.css' %}">
+    <link rel="stylesheet" href="{% static 'works/css/fadeInOut.css' %}">
+    <link rel="stylesheet" href="{% static 'works/css/index.css' %}">
+    <link rel="stylesheet" href="{% static 'works/css/footer.css' %}">
+
+    <!-- JQuery の導入 -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="{% static 'works/js/scroll.js' %}"></script>
+
+    <!-- JQuery を使うjs は, JQueryより後に読み込む必要がある  -->
+    <script src="{% static 'works/js/removecontent.js' %}"></script>
+    <script src="{% static 'works/js/fadeInOut.js' %}"></script>
+    <script src="{% static 'works/js/isSmartPhone.js' %}"></script>
+    <script src="{% static 'works/js/hamburger.js' %}"></script>
+  <script type="text/javascript" src="{% static 'works/js/footer.js' %}"></script>
+    <header>
+      <div id="header">
+          <div class="columns is-gapless is-multiline">
+              <div class="column is-12">
+                  <div id="youtube">
+                      <div class="video">
+                          <iframe src="https://www.youtube.com/embed/live_stream?channel=UCeRY2jujVBYRqmilrCZytFw" frameborder="0" allowfullscreen></iframe>
+                      </div>
+                  </div>
+              </div>
+              <div class="column is-8">
+                  <div id="aboutC3">
+                      <div style="background-color: #62e342">
+                          <div class="container has-text-centered">
+                              <br>
+                              <h1 class="title has-text-white">C3とは...？
+                              </h1>
+                              <br>
+                          </div>
+                          <div>
+                              <figure class="image container is-128x128">
+                                  <img class="is-rounded" src="images/c3logo.jpeg">
+                              </figure>
+                              <h3 class="text has-text-black has-text-centered">
+                                  <p>
+                                      <br>
+                                      C3とは、「Composite Computer Club」の略称で、<br>
+                                      その名の通りパソコンを使った活動を行うサークルです。<br>
+                                      パソコンを使う活動なら何でも良いのです。<br>
+                                      プログラミングや、WEBページ作成、<br>
+                                      タブレットを使用したお絵かき、<br>
+                                      DTMで作曲、3Dモデルでバ美肉、<br>
+                                      それらを使ってゲームを作るなどなど...<br>
+                                      <br>
+                                      部の中でコミュニティを作って勉強会を開いたり、<br>
+                                      チームを組んで共同制作をしたりと、<br>
+                                      現在は63人の部員が活動しています。<br>
+                                      <br>
+                                      普段は部活動紹介やオープンキャンパス、<br>
+                                      工大祭の際に部員の制作した作品を展示していますが、<br>
+                                      今回オンラインでのオープンキャンパスということで、<br>
+                                      このサイトでC3部員の作品を紹介します！<br>
+                                      <br>
+                                      ぜひお楽しみください！<br>
+                                      <br>
+                                  </p>
+                              </h3>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="column is-4">
+                  <div id="twitter">
+                      <div style="background-color: #42afe3">
+                          <div class="container has-text-centered">
+                              <br>
+                              <h1 class="title has-text-white">Twitter</h1>
+                              <br>
+                          </div>
+                          <div align="center">
+                              <a class="twitter-timeline" data-width="300" data-height="603"
+                              data-chrome="noheader nofooter"
+                              href="https://twitter.com/c3_kyutech?ref_src=twsrc%5Etfw"></a>
+                              <script async src="https://platform.twitter.com/widgets.js" charset="utf-8">
+                              </script>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <!-- ハンバーガーメニュー  -->
+
+      <div class="header">
+        <!-- メニューの中身  -->
+        <nav class="global-nav">
+          <ul class="global-nav__list">
+            <li class="global-nav__genre js-scroll-item"><a href="javascript:scrollWeb();">WEBデザイン</a></li>
+            <li class="global-nav__item"><a href="index.html">>TeamA</a></li>
+            <li class="global-nav__genre js-scroll-item"><a href="javascript:scrollGame3D();">3Dゲーム</a></li>
+            <li class="global-nav__item"><a href="index.html">>TeamC</a></li>
+            <li class="global-nav__genre js-scroll-item"><a href="javascript:scrollGame2D();">2Dゲーム</a></li>
+            <li class="global-nav__item"><a href="index.html">>TeamB</a></li>
+            <li class="global-nav__genre js-scroll-item"><a href="javascript:scrollLineBot();">LineBOT</a></li>
+            <li class="global-nav__genre js-scroll-item"><a href="javascript:scrollModeling();">3Dモデリング</a></li>
+            <li class="global-nav__genre js-scroll-item"><a href="javascript:scrollClubPresident();">部長から一言</a></li>
+            <li class="global-nav__genre js-scroll-item"><a href="javascript:scrollClubJournal();">部誌</a></li>
+          </ul>
+        </nav>
+        <!-- ハンバーガーの3本線  -->
+        <div class="hamburger" id="js-hamburger">
+          <span class="hamburger__line hamburger__line--1"></span>
+          <span class="hamburger__line hamburger__line--2"></span>
+          <span class="hamburger__line hamburger__line--3"></span>
+        </div>
+        <!-- メニューが開いた時に背景を黒くする  -->
+        <div class="black-bg" id="js-black-bg"></div>
+      </div>
+
+      <nav class="content-nav">
+        <ul class="content-nav__list flex-container">
+          <li onclick="scrollWeb();" class="content-nav__item flex-item web">Webデザイン</li>
+          <li onclick="scrollGame3D();"  class="content-nav__item flex-item game3D">3Dゲーム</li>
+          <li onclick="scrollGame2D();" class="content-nav__item flex-item game2D">2Dゲーム</li>
+          <li onclick="scrollLineBot();" class="content-nav__item flex-item lineBot">LineBot</li>
+          <li onclick="scrollModeling();" class="content-nav__item flex-item modeling">3Dモデリング</li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <div>
+          <section id="web">
+            <h2 class="non_marginTop vertical_h">webデザイン</h2>
+            {% for work in other %}
+              <div class="works">
+                <img class="works_image" src="{{ MEDIA_ROOT }}{{ work.card_image }}" alt="ゴリラの画像" width="100%">
+                  <h3>{{ work.title }}</h3>
+                  <p>{{ work.description }}</p>
+                  <button class="gotoPlayWindow" onclick="location.href='./index.html'">プレイする!</button>
+              </div>
+            {% endfor %}
+            <p class="clear"></p>
+          </section>
+
+        <section id="game3D">
+          <h2 class="vertical_h">3Dゲーム</h2>
+          {% for work in unity3d %}
+            <div class="works">
+              <img src="{{ MEDIA_ROOT }}{{ work.card_image }}" alt="ゴリラの画像" width="100%">
+                <h3>{{ work.title }}</h3>
+                <p>{{ work.description }}</p>
+                <button class="gotoPlayWindow" onclick="location.href='./index.html'">プレイする!</button>
+            </div>
+          {% endfor %}
+
+          <p class="clear"></p>
+          </section>
+
+          <section id="game2D">
+            <h2 class="vertical_h">2Dゲーム</h2>
+            {% for work in unity2d %}
+              <div class="works">
+                <img src="{{ MEDIA_ROOT }}{{ work.card_image }}" alt="ゴリラの画像" width="100%">
+                  <h3>{{ work.title }}</h3>
+                  <p>{{ work.description }}</p>
+                  <button class="gotoPlayWindow" onclick="location.href='./index.html'">プレイする!</button>
+              </div>
+            {% endfor %}
+
+        <p class="clear"></p>
+        </section>
+
+        <section id="lineBot">
+          <h2 class="vertical_h">LineBot</h2>
+            {% for work in video %}
+              <div class="works">
+                <img src="{{ MEDIA_ROOT }}{{ work.card_image }}" alt="ゴリラの画像" width="100%">
+                  <h3>{{ work.title }}</h3>
+                  <p>{{ work.description }}</p>
+                  <button class="gotoPlayWindow" onclick="location.href='./index.html'">プレイする!</button>
+              </div>
+            {% endfor %}
+
+        <p class="clear"></p>
+        </section>
+
+        <section id="modeling" class="modeling">
+          <h2 class="vertical_h">3Dモデリング</h2>
+            {% for work in model3d %}
+              <div class="works">
+                <img src="{{ MEDIA_ROOT }}{{ work.card_image }}" alt="ゴリラの画像" width="100%">
+                  <h3>{{ work.title }}</h3>
+                  <p>{{ work.description }}</p>
+                  <button class="gotoPlayWindow" onclick="location.href='./index.html'">プレイする!</button>
+              </div>
+            {% endfor %}
+        <p class="clear"></p>
+        </section>
+
+      </div>
+      <section id="clubPresident">
+        <h2 class="horizontal_h">部長からの一言</h2>
+        <div class="clubPresident__content">
+          <img class="clubPresident__Image" src="images/ClubPresidentImage.jpg" alt="ゴリラの画像" width="50%" height="50%">
+          <p class="clubPresident__Message">
+            三次元空間座標(x,y,z)を二次元空間座標(u,v)に変換するのがUV展開であり、その座標を数値でいじくり回すのにノードを使います。
+            ノードはレンダリングするときの手順を設定するものです。
+            プログラミングのようにノードを組むことでプロシージャル(手続き型)のテクスチャを作ることができるので、
+            規則性がありながらもランダムなテクスチャを作る場合は非常に便利です。
+            岩の表面や人体の虹彩などはプロシージャルテクスチャを用いる場合が多いです。
+            かといって手書きのテクスチャが不要かと言われれば、そうではなく、服のシワなど描いた方が早い時は手書きをします。
+          </p>
+          <p class="clear"></p>
+        </div>
+      </section>
+
+      <section id="clubJournal">
+        <h2 class="horizontal_h">部誌</h2>
+        リンクとかなんか色々あれば
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+      </section>
+      <!-- htmlが読まれた後にjsを読み込む（そうしないとaddEventListenerのプロパティがnullになる）  -->
+      <!--headerまで戻る固定ボタン-->
+      <a href="#top" class="topBtn" id="topBtn">TOP</a>
+    </main>
+    <footer class="footer">
+      <div class="page_title">
+        <a href="">C3OpenCumpus特設サイト</a>
+      </div>
+      <div class="copyright">
+        C3©2020
+      </div>
+    </footer>
 {% endblock %}
