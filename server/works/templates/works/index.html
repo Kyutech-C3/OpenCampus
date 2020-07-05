@@ -136,11 +136,25 @@
           <section id="web">
             <h2 class="non_marginTop vertical_h">webデザイン</h2>
             {% for work in other %}
-              <div class="works">
-                <img class="works_image" src="{{ work.card_image.url }}" alt="ゴリラの画像" width="100%">
-                  <h3>{{ work.title }}</h3>
-                  <p>{{ work.description }}</p>
-                  <button class="gotoPlayWindow" onclick="location.href='./index.html'">プレイする!</button>
+              <div class="card works">
+                <div style="background-color: lightblue;">
+                  <div class="card-image">
+                    <figure class="image is-1by1">
+                      <img src="{{ work.card_image.url }}" alt="logo" width="800" height="800">
+                    </figure>
+                  </div>
+                  <div class="card-content">
+                    <div class="media">
+                      <div class="media-content has-text-centered">
+                        <p class="title">{{ work.title }}</p>
+                        <p class="subtitle">制作チーム名：{{ work.team.name }}</p>
+                      </div>
+                    </div>
+                    <div class="content">
+                      <button class="gotoPlayWindow" onclick="location.href='./index.html'">詳細を見る!</button>
+                    </div>
+                  </div>
+                </div>
               </div>
             {% endfor %}
             <p class="clear"></p>
@@ -149,11 +163,25 @@
         <section id="game3D">
           <h2 class="vertical_h">3Dゲーム</h2>
           {% for work in unity3d %}
-            <div class="works">
-              <img src="{{ work.card_image.url }}" alt="ゴリラの画像" width="100%">
-                <h3>{{ work.title }}</h3>
-                <p>{{ work.description }}</p>
-                <button class="gotoPlayWindow" onclick="location.href='./index.html'">プレイする!</button>
+            <div class="card works">
+              <div style="background-color: lightblue;">
+                <div class="card-image">
+                  <figure class="image is-1by1">
+                    <img src="{{ work.card_image.url }}" alt="logo" width="800" height="800">
+                  </figure>
+                </div>
+                <div class="card-content">
+                  <div class="media">
+                    <div class="media-content has-text-centered">
+                      <p class="title">{{ work.title }}</p>
+                      <p class="subtitle">制作チーム名：{{ work.team.name }}</p>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <button class="gotoPlayWindow" onclick="location.href='./index.html'">詳細を見る!</button>
+                  </div>
+                </div>
+              </div>
             </div>
           {% endfor %}
 
@@ -163,11 +191,25 @@
           <section id="game2D">
             <h2 class="vertical_h">2Dゲーム</h2>
             {% for work in unity2d %}
-              <div class="works">
-                <img src="{{ work.card_image.url }}" alt="ゴリラの画像" width="100%">
-                  <h3>{{ work.title }}</h3>
-                  <p>{{ work.description }}</p>
-                  <button class="gotoPlayWindow" onclick="location.href='./index.html'">プレイする!</button>
+              <div class="card works">
+                <div style="background-color: lightblue;">
+                  <div class="card-image">
+                    <figure class="image is-1by1">
+                      <img src="{{ work.card_image.url }}" alt="logo" width="800" height="800">
+                    </figure>
+                  </div>
+                  <div class="card-content">
+                    <div class="media">
+                      <div class="media-content has-text-centered">
+                        <p class="title">{{ work.title }}</p>
+                        <p class="subtitle">制作チーム名：{{ work.team.name }}</p>
+                      </div>
+                    </div>
+                    <div class="content">
+                      <button class="gotoPlayWindow" onclick="location.href='./index.html'">詳細を見る!</button>
+                    </div>
+                  </div>
+                </div>
               </div>
             {% endfor %}
 
@@ -177,11 +219,25 @@
         <section id="lineBot">
           <h2 class="vertical_h">LineBot</h2>
             {% for work in video %}
-              <div class="works">
-                <img src="{{ work.card_image.url }}" alt="ゴリラの画像" width="100%">
-                  <h3>{{ work.title }}</h3>
-                  <p>{{ work.description }}</p>
-                  <button class="gotoPlayWindow" onclick="location.href='./index.html'">プレイする!</button>
+              <div class="card works">
+                <div style="background-color: lightblue;">
+                  <div class="card-image">
+                    <figure class="image is-1by1">
+                      <img src="{{ work.card_image.url }}" alt="logo" width="800" height="800">
+                    </figure>
+                  </div>
+                  <div class="card-content">
+                    <div class="media">
+                      <div class="media-content has-text-centered">
+                        <p class="title">{{ work.title }}</p>
+                        <p class="subtitle">制作チーム名：{{ work.team.name }}</p>
+                      </div>
+                    </div>
+                    <div class="content">
+                      <button class="gotoPlayWindow" onclick="location.href='./index.html'">詳細を見る!</button>
+                    </div>
+                  </div>
+                </div>
               </div>
             {% endfor %}
 
@@ -191,11 +247,25 @@
         <section id="modeling" class="modeling">
           <h2 class="vertical_h">3Dモデリング</h2>
             {% for work in model3d %}
-              <div class="works">
-                <img src="{{ work.card_image.url }}" alt="ゴリラの画像" width="100%">
-                  <h3>{{ work.title }}</h3>
-                  <p>{{ work.description }}</p>
-                  <button class="gotoPlayWindow" onclick="location.href='./index.html'">プレイする!</button>
+              <div class="card works">
+                <div style="background-color: lightblue;">
+                  <div class="card-image">
+                    <figure class="image is-1by1">
+                      <img src="{{ work.card_image.url }}" alt="logo" width="800" height="800">
+                    </figure>
+                  </div>
+                  <div class="card-content">
+                    <div class="media">
+                      <div class="media-content has-text-centered">
+                        <p class="title">{{ work.title }}</p>
+                        <p class="subtitle">制作チーム名：{{ work.team.name }}</p>
+                      </div>
+                    </div>
+                    <div class="content">
+                      <button class="gotoPlayWindow" onclick="location.href='./index.html'">詳細を見る!</button>
+                    </div>
+                  </div>
+                </div>
               </div>
             {% endfor %}
         <p class="clear"></p>
