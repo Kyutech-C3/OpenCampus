@@ -1,87 +1,140 @@
 <!DOCTYPE html>
 <html>
-    <head>
-      <title>作品名</title>
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css">
-      <link rel="stylesheet" href="./detail.css" />
-      <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-      <link rel="stylesheet" href="../css/footer.css">
-      <script type="text/javascript" src="../js/footer.js"></script>
-    </head>
-    <body>
-      <header>
-      </header>
-      <main>
-        <div class="Title">
-            <h1>作品名：あつまれゴリラの里</h1>
-            <h1>チーム名：ウホッ♡ウホホ？ホホッ!!</h1>
-        </div>
 
-        <!--作品の画像・動画・ゲーム・３Dモデル .etc-->
-        <div class="columns">
-            <div class="column is-half">
-                <figure calss="image is-16by9">
-                    <iframe class="has-ratio" width="1920" height="480" src="img/gorilla.jpg" frameborder="0" allowfullscreen></iframe>
-                </figure>
-            </div>
-            <div class="column">
-                <!--作品の解説・使用方法 .etc-->
-                <details>
-                  <summary class="Subject">操作方法</summary>
-                  <ul class="Paragraph">
-                      <li>W … 前に進む</li>
-                      <li>S … 後に進む</li>
-                      <li>D … 右を向く</li>
-                      <li>A … 左を向く</li>
-                      <li>Space … ジャンプ</li>
-                      <li>左クリック … 仲間を呼ぶ</li>
-                      <li>右クリック … ウホッ♡</li>
-                      <li>F … ウホッ!!</li>
-                  </ul>
-                </details>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>作品名</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css">
+  <meta charset="utf-8">
 
-                <details>
-                  <summary class="Subject">ゲーム説明</summary>
-                  <p class="Paragraph">動物園のゴリラが脱走して大繁殖した!!奴らは知能を手に入れて、完全な自由を手にするために人間の街を襲っているらしい。君の力が必要だ‼さあ、我らの街をともに守ろう。</p>
-                  <p class="Paragraph">ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡ウホッ♡</p>
-                </details>
-            </div>
-        </div>
+  <link rel="stylesheet" href="./detail.css" />
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <link rel="stylesheet" href="../css/footer.css">
+  <script type="text/javascript" src="../js/footer.js"></script>
+</head>
 
-        <div class="columns">
-            <div class="column is-four-fifths"></div>
-            <div class="column">
-                <!-- GOODとコメントの入力ボタン  -->
-                <a class="button is-medium is-rounded"><span class="icon"><i class="fas fa-thumbs-up right"></i></span><span>GOOD!!</span></a>
-                <a class="button is-medium is-success is-focused"><span class="icon"><i class="fas fa-pen"></i></span><span>Comment</span></a>
-                <!-- コメント入力フォーム  -->
-                <form method="post" action="detail.html">
-                  <p><input type="text" placeholder="コメント" required maxlength='100'></p>
-                  <p><input type="submit" value="送信する"></p>
-                </form>
-            </div>
+<body>
+  <header>
+    <!-- header -->
+    <div id="header">
+      <section class="hero is-small is-dark is-bold">
+        <div class="hero-head">
         </div>
-        <div class="commment">
-          <details>
-            <summary class="Subject">コメント一覧</summary>
-            <div class="box">
-              <p>2020/07/02 19:41　コメント</p>
-              <p>2020/07/02 19:41　コメント</p>
-              <p>2020/07/02 19:41　コメント</p>
-            </div>
-          </details>
+        <!-- top -->
+        <div class="hero-body">
+          <div class="container has-text-centered">
+            <h1 class="title is-size-1 is-spaced">
+              C3 Summer Exhibition
+            </h1>
+            <p class="subtitle">
+              ~ in Kyutech Open Campus 2020 ~
+            </p>
+          </div>
         </div>
-      </main>
+      </section>
+    </div>
+  </header>
 
-      <a href="#top" class="topBtn" id="topBtn">TOP</a><!--/固定ボタン-->
-      <footer class="footer">
-        <div class="page_title">
-          <a href="">C3OpenCumpus特設サイト</a>
+  <!-- main content -->
+  <main>
+    <!-- title -->
+    <div class="Title">
+      <h1 class="title">作品名：Virtual Guy</h1>
+      <p class="subtitle">チーム名：2dドット</p>
+    </div>
+    <div class="columns">
+      <!--作品の画像・動画・ゲーム・３Dモデル .etc-->
+      <div class="column is-half">
+        <figure calss="image is-16by9">
+          <iframe class="has-ratio" width="1920" height="480" src="img/gorilla.jpg" frameborder="0"
+            allowfullscreen></iframe>
+        </figure>
+      </div>
+      <!--作品の解説・使用方法 .etc-->
+      <div class="column">
+        <details>
+          <summary class="Subject">ゲーム紹介</summary>
+          <p class="Paragraph">
+            <b>ゲーム説明：</b><br>
+            このゲームは、探索型2dアクションゲームです。<br>
+            マップを探索して鍵を集めて先に進み、ボスを倒せばゲームクリアです。
+          </p>
+          <p class="Paragraph">
+            <b>使用ツール：</b><br>
+            Unity 2019.3.14f1
+          </p>
+        </details>
+        <details>
+          <summary class="Subject">操作方法</summary>
+          <ul class="Paragraph">
+            <li>矢印← ... 左に移動</li>
+            <li>矢印→ ... 右に移動</li>
+            <li>矢印↑ ... ジャンプ</li>
+            <li>矢印↓ ... (すり抜け床の上にいるとき)床をすり抜ける</li>
+          </ul>
+          <p class="Paragraph">
+            敵は踏みつけたら倒せます。(マリオの踏みつけと同じ)<br>
+            敵に当たると体力が減ります。<br>
+            体力が無くなると、セーブポイントに戻されます。<br>
+            フルーツを取ると体力が回復します。<br>
+            <br>
+            鍵を取ると進める場所が増えます。<br>
+            マップ上には、アクションを増やすアイテムが存在します。<br>
+            もし先に進めなくなったら、アイテムを探してみましょう。
+          </p>
+        </details>
+        <details>
+          <summary class="Subject">製作者からひとこと</summary>
+          <p class="Paragraph">
+            <b>Kuroki：</b><br>
+            プレイヤー･敵キャラを作りました。<br>
+            このゲームで使ったUnityアセット「Pixel Adventure」は、<br>
+            無料かつ素材が豊富なのでぜひ使ってみてください。<br>
+            <b>Crucio：</b><br>
+            ステージ･ギミックを作りました。
+          </p>
+        </details>
+      </div>
+    </div>
+
+    <div class="columns">
+      <div class="column is-four-fifths"></div>
+      <div class="column">
+        <!-- GOODとコメントの入力ボタン  -->
+        <a class="button is-medium is-rounded"><span class="icon"><i
+              class="fas fa-thumbs-up right"></i></span><span>GOOD!!</span></a>
+        <a class="button is-medium is-success is-focused"><span class="icon"><i
+              class="fas fa-pen"></i></span><span>Comment</span></a>
+        <!-- コメント入力フォーム  -->
+        <form method="post" action="detail.html">
+          <p><input type="text" placeholder="コメント" required maxlength='100'></p>
+          <p><input type="submit" value="送信する"></p>
+        </form>
+      </div>
+    </div>
+    <div class="commment">
+      <details>
+        <summary class="Subject">コメント一覧</summary>
+        <div class="box">
+          <p>2020/07/02 19:41　コメント</p>
+          <p>2020/07/02 19:41　コメント</p>
+          <p>2020/07/02 19:41　コメント</p>
         </div>
-        <div class="copyright">
-          C3©2020
-        </div>
-      </footer>
-    </body>
+      </details>
+    </div>
+  </main>
+
+  <a href="#top" class="topBtn" id="topBtn">TOP</a>
+  <!--/固定ボタン-->
+  <footer class="footer">
+    <div class="page_title">
+      <a href="">C3OpenCumpus特設サイト</a>
+    </div>
+    <div class="copyright">
+      C3©2020
+    </div>
+  </footer>
+</body>
+
 </html>

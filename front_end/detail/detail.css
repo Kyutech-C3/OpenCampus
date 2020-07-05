@@ -8,13 +8,13 @@ body{
 }
 
 .Subject{
-    font-size: 4ex;
+    font-size: 3ex;
     font-weight: bold;
-    margin: 2%;
+    margin: 1%;
 }
 
 .Paragraph{
-    font-size: x-large;
+    padding: 0.5em;/*文字まわり（上下左右）の余白*/
 }
 
 .right {
@@ -34,7 +34,7 @@ iframe {
 }
 
 .columns{
-  margin: 1%;
+  margin: 0.5%;
 }
 
 /* .comment{
