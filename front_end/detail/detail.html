@@ -17,9 +17,10 @@
             <h1>作品名：あつまれゴリラの里</h1>
             <h1>チーム名：ウホッ♡ウホホ？ホホッ!!</h1>
         </div>
+
+        <!--作品の画像・動画・ゲーム・３Dモデル .etc-->
         <div class="columns">
             <div class="column is-half">
-                <!--作品の画像・動画・ゲーム・３Dモデル .etc-->
                 <figure calss="image is-16by9">
                     <iframe class="has-ratio" width="1920" height="480" src="img/gorilla.jpg" frameborder="0" allowfullscreen></iframe>
                 </figure>
@@ -56,19 +57,21 @@
                 <a class="button is-medium is-success is-focused"><span class="icon"><i class="fas fa-pen"></i></span><span>Comment</span></a>
                 <!-- コメント入力フォーム  -->
                 <form method="post" action="detail.html">
-                  <p><input type="text" name="email"　placeholder="コメント" required></p>
+                  <p><input type="text" placeholder="コメント" required maxlength='100'></p>
                   <p><input type="submit" value="送信する"></p>
                 </form>
             </div>
         </div>
-        <details>
-          <summary class="Subject">コメント一覧</summary>
-          <div class="box">
-            <p>2020/07/02 19:41　コメント</p>
-            <p>2020/07/02 19:41　コメント</p>
-            <p>2020/07/02 19:41　コメント</p>
-          </div>
-        </details>
+        <div class="commment">
+          <details>
+            <summary class="Subject">コメント一覧</summary>
+            <div class="box">
+              <p>2020/07/02 19:41　コメント</p>
+              <p>2020/07/02 19:41　コメント</p>
+              <p>2020/07/02 19:41　コメント</p>
+            </div>
+          </details>
+        </div>
       </main>
 
       <a href="#top" class="topBtn" id="topBtn">TOP</a><!--/固定ボタン-->
