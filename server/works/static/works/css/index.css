@@ -65,10 +65,10 @@
  }
 
 /* 横いっぱいに広げる  */
-.flex-itrem{
+.flex-item{
   -webkit-box-align: stretch;
   -ms-flex-align: stretch;
-  align-itrems: stretch;
+  align-items: stretch;
   width: 100%;
 }
 
@@ -95,7 +95,7 @@ body{
  }
 
 /* 上下に16px, 左右に32pxだけ要素を太らせる  */
-.content-nav__itrem{
+.content-nav__item{
    padding:16px 32px;
    /*  ボタンの設定   */
    cursor: pointer; /* マウスカーソルを乗せると指になる */
@@ -293,7 +293,7 @@ main{
   ---------------------- */
 
 @media screen and (max-width: 599px) {
-  .content-nav__itrem{
+  .content-nav__item{
     padding: 0.5rem;
   	display: inline-block;
   }

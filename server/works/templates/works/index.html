@@ -137,7 +137,7 @@
             <h2 class="non_marginTop vertical_h">webデザイン</h2>
             {% for work in other %}
               <div class="works">
-                <img class="works_image" src="{{ MEDIA_ROOT }}{{ work.card_image }}" alt="ゴリラの画像" width="100%">
+                <img class="works_image" src="{{ work.card_image.url }}" alt="ゴリラの画像" width="100%">
                   <h3>{{ work.title }}</h3>
                   <p>{{ work.description }}</p>
                   <button class="gotoPlayWindow" onclick="location.href='./index.html'">プレイする!</button>
@@ -150,7 +150,7 @@
           <h2 class="vertical_h">3Dゲーム</h2>
           {% for work in unity3d %}
             <div class="works">
-              <img src="{{ MEDIA_ROOT }}{{ work.card_image }}" alt="ゴリラの画像" width="100%">
+              <img src="{{ work.card_image.url }}" alt="ゴリラの画像" width="100%">
                 <h3>{{ work.title }}</h3>
                 <p>{{ work.description }}</p>
                 <button class="gotoPlayWindow" onclick="location.href='./index.html'">プレイする!</button>
@@ -164,7 +164,7 @@
             <h2 class="vertical_h">2Dゲーム</h2>
             {% for work in unity2d %}
               <div class="works">
-                <img src="{{ MEDIA_ROOT }}{{ work.card_image }}" alt="ゴリラの画像" width="100%">
+                <img src="{{ work.card_image.url }}" alt="ゴリラの画像" width="100%">
                   <h3>{{ work.title }}</h3>
                   <p>{{ work.description }}</p>
                   <button class="gotoPlayWindow" onclick="location.href='./index.html'">プレイする!</button>
@@ -178,7 +178,7 @@
           <h2 class="vertical_h">LineBot</h2>
             {% for work in video %}
               <div class="works">
-                <img src="{{ MEDIA_ROOT }}{{ work.card_image }}" alt="ゴリラの画像" width="100%">
+                <img src="{{ work.card_image.url }}" alt="ゴリラの画像" width="100%">
                   <h3>{{ work.title }}</h3>
                   <p>{{ work.description }}</p>
                   <button class="gotoPlayWindow" onclick="location.href='./index.html'">プレイする!</button>
@@ -192,7 +192,7 @@
           <h2 class="vertical_h">3Dモデリング</h2>
             {% for work in model3d %}
               <div class="works">
-                <img src="{{ MEDIA_ROOT }}{{ work.card_image }}" alt="ゴリラの画像" width="100%">
+                <img src="{{ work.card_image.url }}" alt="ゴリラの画像" width="100%">
                   <h3>{{ work.title }}</h3>
                   <p>{{ work.description }}</p>
                   <button class="gotoPlayWindow" onclick="location.href='./index.html'">プレイする!</button>
