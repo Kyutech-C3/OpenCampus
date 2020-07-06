@@ -11,7 +11,7 @@
   <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <link rel="stylesheet" href="../css/footer.css">
-  <script type="text/javascript" src="../js/footer.js"></script>
+  <!-- <script type="text/javascript" src="../js/footer.js"></script> -->
 </head>
 
 <body>
@@ -106,23 +106,33 @@
               class="fas fa-thumbs-up right"></i></span><span>GOOD!!</span></a>
         <a class="button is-medium is-success is-focused"><span class="icon"><i
               class="fas fa-pen"></i></span><span>Comment</span></a>
-        <!-- コメント入力フォーム  -->
-        <form method="post" action="detail.html">
-          <p><input type="text" placeholder="コメント" required maxlength='100'></p>
-          <p><input type="submit" value="送信する"></p>
-        </form>
       </div>
     </div>
-    <div class="commment">
-      <details>
-        <summary class="Subject">コメント一覧</summary>
-        <div class="box">
-          <p>2020/07/02 19:41　コメント</p>
-          <p>2020/07/02 19:41　コメント</p>
-          <p>2020/07/02 19:41　コメント</p>
-        </div>
-      </details>
+    <!-- コメント入力フォーム  -->
+    <div class="comment">
+      <div class="field">
+        <form method="post" class="commentForm" action="detail.html">
+          <label class="label">コメント</label>
+          <div class="field is-grouped">
+            <p class="control is-expanded">
+              <input class="input is-medium" type="text" placeholder="コメント" required maxlength='100'>
+            </p>
+            <p class="control">
+              <input class="commentButton button is-medium" type="submit" value="送信">
+            </p>
+          </div>
+          <p class="help">※100文字まで</p>
+       </form>
+      </div>
     </div>
+    <details>
+      <summary class="Subject">コメント一覧</summary>
+      <div class="box commentList">
+        <p>2020/07/02 19:41　コメント</p>
+        <p>2020/07/02 19:41　コメント</p>
+        <p>2020/07/02 19:41　コメント</p>
+      </div>
+    </details>
   </main>
 
   <a href="#top" class="topBtn" id="topBtn">TOP</a>
