@@ -10,6 +10,7 @@ body{
 .Subject{
     font-size: 3ex;
     font-weight: bold; 
+    margin: 1%;
 }
 
 .Paragraph{
@@ -31,3 +32,11 @@ iframe {
 .button{
     bottom: 0;
 }
+
+.columns{
+    margin: 0.5%;
+}
+
+/* .comment{
+  margin: 1%;
+} 
