@@ -42,7 +42,7 @@
                           </div>
                           <div>
                               <figure class="image container is-128x128">
-                                  <img class="is-rounded" src="images/c3logo.jpeg">
+                                  <img class="is-rounded" src="/media/images/c3logo.jpeg">
                               </figure>
                               <h3 class="text has-text-black has-text-centered">
                                   <p>
@@ -136,26 +136,7 @@
           <section id="web">
             <h2 class="non_marginTop vertical_h">webデザイン</h2>
             {% for work in other %}
-              <div class="card works">
-                <div style="background-color: lightblue;">
-                  <div class="card-image">
-                    <figure class="image is-1by1">
-                      <img src="{{ work.card_image.url }}" alt="logo" width="800" height="800">
-                    </figure>
-                  </div>
-                  <div class="card-content">
-                    <div class="media">
-                      <div class="media-content has-text-centered">
-                        <p class="title">{{ work.title }}</p>
-                        <p class="subtitle">制作チーム名：{{ work.team.name }}</p>
-                      </div>
-                    </div>
-                    <div class="content">
-                      <button class="gotoPlayWindow" onclick="location.href='./index.html'">詳細を見る!</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              {% include 'works/partial/_card.html' %}
             {% endfor %}
             <p class="clear"></p>
           </section>
@@ -163,26 +144,7 @@
         <section id="game3D">
           <h2 class="vertical_h">3Dゲーム</h2>
           {% for work in unity3d %}
-            <div class="card works">
-              <div style="background-color: lightblue;">
-                <div class="card-image">
-                  <figure class="image is-1by1">
-                    <img src="{{ work.card_image.url }}" alt="logo" width="800" height="800">
-                  </figure>
-                </div>
-                <div class="card-content">
-                  <div class="media">
-                    <div class="media-content has-text-centered">
-                      <p class="title">{{ work.title }}</p>
-                      <p class="subtitle">制作チーム名：{{ work.team.name }}</p>
-                    </div>
-                  </div>
-                  <div class="content">
-                    <button class="gotoPlayWindow" onclick="location.href='./index.html'">詳細を見る!</button>
-                  </div>
-                </div>
-              </div>
-            </div>
+            {% include 'works/partial/_card.html' %}
           {% endfor %}
 
           <p class="clear"></p>
@@ -191,26 +153,7 @@
           <section id="game2D">
             <h2 class="vertical_h">2Dゲーム</h2>
             {% for work in unity2d %}
-              <div class="card works">
-                <div style="background-color: lightblue;">
-                  <div class="card-image">
-                    <figure class="image is-1by1">
-                      <img src="{{ work.card_image.url }}" alt="logo" width="800" height="800">
-                    </figure>
-                  </div>
-                  <div class="card-content">
-                    <div class="media">
-                      <div class="media-content has-text-centered">
-                        <p class="title">{{ work.title }}</p>
-                        <p class="subtitle">制作チーム名：{{ work.team.name }}</p>
-                      </div>
-                    </div>
-                    <div class="content">
-                      <button class="gotoPlayWindow" onclick="location.href='./index.html'">詳細を見る!</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              {% include 'works/partial/_card.html' %}
             {% endfor %}
 
         <p class="clear"></p>
@@ -219,26 +162,7 @@
         <section id="lineBot">
           <h2 class="vertical_h">LineBot</h2>
             {% for work in video %}
-              <div class="card works">
-                <div style="background-color: lightblue;">
-                  <div class="card-image">
-                    <figure class="image is-1by1">
-                      <img src="{{ work.card_image.url }}" alt="logo" width="800" height="800">
-                    </figure>
-                  </div>
-                  <div class="card-content">
-                    <div class="media">
-                      <div class="media-content has-text-centered">
-                        <p class="title">{{ work.title }}</p>
-                        <p class="subtitle">制作チーム名：{{ work.team.name }}</p>
-                      </div>
-                    </div>
-                    <div class="content">
-                      <button class="gotoPlayWindow" onclick="location.href='./index.html'">詳細を見る!</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              {% include 'works/partial/_card.html' %}
             {% endfor %}
 
         <p class="clear"></p>
@@ -247,26 +171,7 @@
         <section id="modeling" class="modeling">
           <h2 class="vertical_h">3Dモデリング</h2>
             {% for work in model3d %}
-              <div class="card works">
-                <div style="background-color: lightblue;">
-                  <div class="card-image">
-                    <figure class="image is-1by1">
-                      <img src="{{ work.card_image.url }}" alt="logo" width="800" height="800">
-                    </figure>
-                  </div>
-                  <div class="card-content">
-                    <div class="media">
-                      <div class="media-content has-text-centered">
-                        <p class="title">{{ work.title }}</p>
-                        <p class="subtitle">制作チーム名：{{ work.team.name }}</p>
-                      </div>
-                    </div>
-                    <div class="content">
-                      <button class="gotoPlayWindow" onclick="location.href='./index.html'">詳細を見る!</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              {% include 'works/partial/_card.html' %}
             {% endfor %}
         <p class="clear"></p>
         </section>
@@ -275,7 +180,7 @@
       <section id="clubPresident">
         <h2 class="horizontal_h">部長からの一言</h2>
         <div class="clubPresident__content">
-          <img class="clubPresident__Image" src="images/ClubPresidentImage.jpg" alt="ゴリラの画像" width="50%" height="50%">
+          <img class="clubPresident__Image" src="/media/images/clubPresident.jpg" alt="ゴリラの画像" width="50%" height="50%">
           <p class="clubPresident__Message">
             三次元空間座標(x,y,z)を二次元空間座標(u,v)に変換するのがUV展開であり、その座標を数値でいじくり回すのにノードを使います。
             ノードはレンダリングするときの手順を設定するものです。
@@ -299,7 +204,7 @@
     </main>
     <footer class="footer">
       <div class="page_title">
-        <a href="">C3OpenCumpus特設サイト</a>
+        <a href="">C3 OpenCampus特設サイト</a>
       </div>
       <div class="copyright">
         C3©2020
