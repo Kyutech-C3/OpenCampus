@@ -1,4 +1,4 @@
-function toggleNav() {
+window.addEventListener('load', function() {
   var body = document.body;
   var hamburger = document.getElementById('js-hamburger');
   var blackBg = document.getElementById('js-black-bg');
@@ -21,5 +21,4 @@ function toggleNav() {
         body.classList.remove('nav-open');
       }
   }
-}
-toggleNav();
+});

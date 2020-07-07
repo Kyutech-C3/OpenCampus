@@ -98,14 +98,12 @@
         <!-- メニューの中身  -->
         <nav class="global-nav">
           <ul class="global-nav__list">
-            <li class="global-nav__genre js-scroll-item"><a href="javascript:scrollWeb();">WEBデザイン</a></li>
-            <li class="global-nav__item"><a href="index.html">>TeamA</a></li>
-            <li class="global-nav__genre js-scroll-item"><a href="javascript:scrollGame3D();">3Dゲーム</a></li>
-            <li class="global-nav__item"><a href="index.html">>TeamC</a></li>
-            <li class="global-nav__genre js-scroll-item"><a href="javascript:scrollGame2D();">2Dゲーム</a></li>
-            <li class="global-nav__item"><a href="index.html">>TeamB</a></li>
-            <li class="global-nav__genre js-scroll-item"><a href="javascript:scrollLineBot();">LineBOT</a></li>
-            <li class="global-nav__genre js-scroll-item"><a href="javascript:scrollModeling();">3Dモデリング</a></li>
+            {% for genre in genres%}
+            <li class="global-nav__genre js-scroll-item"><a href="#{{ genre.title }}">{{ genre.title }}</a></li>
+              {% for work in genre.work_set.all %}
+              <li class="global-nav__item"><a href="{% url 'work' work.pk %}">>{{ work.title }}</a></li>
+              {% endfor %}
+            {% endfor %}
             <li class="global-nav__genre js-scroll-item"><a href="javascript:scrollClubPresident();">部長から一言</a></li>
             <li class="global-nav__genre js-scroll-item"><a href="javascript:scrollClubJournal();">部誌</a></li>
           </ul>
