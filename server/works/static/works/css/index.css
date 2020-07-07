@@ -175,6 +175,10 @@ body{
    /* background:transparent; */
  }
 
+ .content-nav__item a {
+   text-decoration: none;
+ }
+
  header button .web,
  header button .game3D,
  header button .game2D,
@@ -247,54 +251,10 @@ main section {
   font-weight: bold;
 }
 
-.web{
-  background-color:var(--blue);
-}
-
-#web{
+section.genre {
   background: -moz-linear-gradient(top, var(--blue), var(--blue_light));
   background: -webkit-linear-gradient(top, var(--blue), var(--blue_light));
   background: linear-gradient(to bottom,  var(--blue), var(--blue_light));
-}
-
-.game3D{
-  background-color:var(--green);
-}
-
-#game3D{
-  background: -moz-linear-gradient(top, var(--green), var(--green_light));
-  background: -webkit-linear-gradient(top, var(--green), var(--green_light));
-  background: linear-gradient(to bottom,var(--green), var(--green_light));
-}
-
-.game2D{
-    background-color:var(--yellow);
-}
-
-#game2D{
-  background: -moz-linear-gradient(top, var(--yellow), var(--yellow_light));
-  background: -webkit-linear-gradient(top, var(--yellow), var(--yellow_light));
-  background: linear-gradient(to bottom,var(--yellow), var(--yellow_light));
-}
-
-.lineBot{
-    background-color:var(--orenge);
-}
-
-#lineBot{
-  background: -moz-linear-gradient(top, var(--orenge),var(--orenge_light));
-  background: -webkit-linear-gradient(top, var(--orenge), var(--orenge_light));
-  background: linear-gradient(to bottom, var(--orenge), var(--orenge_light));
-}
-
-.modeling{
-    background-color:var(--red);
-}
-
-#modeling{
-  background: -moz-linear-gradient(top, var(--red), var(--red_light));
-  background: -webkit-linear-gradient(top, var(--red), var(--red_light));
-  background: linear-gradient(to bottom,var(--red), var(--red_light));
 }
 
 #clubPresident{

@@ -3,14 +3,12 @@ from django.shortcuts import render, redirect
 from .models import Work, Team, Comment
 from .forms import CommentPostForm
 
+from .models import Work, Team, Genre
 
 def index(request):
+    genres = Genre.objects.all()
     context = {
-            "unity3d": Work.objects.filter(type_choice=Work.WorkType.UNITY_3D),
-            "unity2d": Work.objects.filter(type_choice=Work.WorkType.UNITY_2D),
-            "video": Work.objects.filter(type_choice=Work.WorkType.VIDEO),
-            "model3d": Work.objects.filter(type_choice=Work.WorkType.MODEL_3D),
-            "other": Work.objects.filter(type_choice=Work.WorkType.OTHER)
+            "genres": genres,
         }
 
     return render(request, 'works/index.html', context)

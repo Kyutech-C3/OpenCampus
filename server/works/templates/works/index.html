@@ -122,59 +122,29 @@
 
       <nav class="content-nav">
         <ul class="content-nav__list flex-container">
-          <li onclick="scrollWeb();" class="content-nav__item flex-item web">Webデザイン</li>
-          <li onclick="scrollGame3D();"  class="content-nav__item flex-item game3D">3Dゲーム</li>
-          <li onclick="scrollGame2D();" class="content-nav__item flex-item game2D">2Dゲーム</li>
-          <li onclick="scrollLineBot();" class="content-nav__item flex-item lineBot">LineBot</li>
-          <li onclick="scrollModeling();" class="content-nav__item flex-item modeling">3Dモデリング</li>
+          {% for genre in genres %}
+          <li class="content-nav__item flex-item genre_button" style="background-color: {{ genre.bg_color }}"><a href="#{{ genre.title }}" style="color: {{ genre.text_color }}">{{ genre.title }}</a></li>
+          {% endfor %}
         </ul>
       </nav>
     </header>
 
     <main>
       <div>
-          <section id="web">
-            <h2 class="non_marginTop vertical_h">webデザイン</h2>
-            {% for work in other %}
+        {% for genre in genres %}
+        <section id="{{ genre.title }}" style="
+          background-color: {{ genre.bg_color }}
+          background: -moz-linear-gradient(top, {{ genre.bg_color }}, {{ genre.bg_color_lighten }});
+          background: -webkit-linear-gradient(top, {{ genre.bg_color }}, {{ genre.bg_color_lighten }});
+          background: linear-gradient(to bottom,  {{ genre.bg_color }}, {{ genre.bg_color_lighten }});
+          ">
+          <h2 class="non_marginTop vertical_h" style="color: {{ genre.text_color }}">{{ genre.title }}</h2>
+            {% for work in genre.work_set.all %}
               {% include 'works/partial/_card.html' %}
             {% endfor %}
             <p class="clear"></p>
           </section>
-
-        <section id="game3D">
-          <h2 class="vertical_h">3Dゲーム</h2>
-          {% for work in unity3d %}
-            {% include 'works/partial/_card.html' %}
-          {% endfor %}
-
-          <p class="clear"></p>
-          </section>
-
-          <section id="game2D">
-            <h2 class="vertical_h">2Dゲーム</h2>
-            {% for work in unity2d %}
-              {% include 'works/partial/_card.html' %}
-            {% endfor %}
-
-        <p class="clear"></p>
-        </section>
-
-        <section id="lineBot">
-          <h2 class="vertical_h">LineBot</h2>
-            {% for work in video %}
-              {% include 'works/partial/_card.html' %}
-            {% endfor %}
-
-        <p class="clear"></p>
-        </section>
-
-        <section id="modeling" class="modeling">
-          <h2 class="vertical_h">3Dモデリング</h2>
-            {% for work in model3d %}
-              {% include 'works/partial/_card.html' %}
-            {% endfor %}
-        <p class="clear"></p>
-        </section>
+        {% endfor %}
 
       </div>
       <section id="clubPresident">
