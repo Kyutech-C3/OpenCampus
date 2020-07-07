@@ -26,7 +26,7 @@ class Work(models.Model):
     description = models.TextField(default="None")
     team = models.ForeignKey(Team, on_delete=models.CASCADE)
     type_choice = models.TextField(choices=WorkType.choices, default=WorkType.OTHER)
-    card_image = models.ImageField(null=False, upload_to='images/')
+    card_image = models.ImageField(null=False, upload_to='images/system/')
 
 class Comment(models.Model):
     work = models.ForeignKey(Work, on_delete=models.CASCADE)
