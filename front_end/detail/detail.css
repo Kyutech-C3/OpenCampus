@@ -29,14 +29,17 @@ iframe {
 .image{
     object-fit: contain;
 }
+
 .button{
     bottom: 0;
 }
 
-.columns{
-  margin: 0.5%;
+.comment{
+  margin: 1%;
+  padding: 0.5em 1em;
+  background-color: rgba(235,235,235,0.5);
 }
 
-/* .comment{
+.commentList{
   margin: 1%;
-} */
+}
