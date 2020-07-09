@@ -33,13 +33,21 @@ class Genre(models.Model):
         return self.title
 
     def bg_color_lighten(self):
+        delta = 0.1
         c = Color(self.bg_color)
-        c.luminance += 0.1
+        if(c.luminance + delta > 1):
+            c.luminance = 1
+        else:
+            c.luminance += delta
         return c.hex_l
 
     def card_color(self):
+        delta = 0.3
         c = Color(self.bg_color)
-        c.luminance += 0.3
+        if(c.luminance + delta > 1):
+            c.luminance = 1
+        else:
+            c.luminance += delta
         return c.hex_l
 
     def text_color(self):
