@@ -1,0 +1,48 @@
+body{
+    background:#CCCCCC;
+}
+.Title{
+    background: #c2edff;/*背景色*/
+    padding: 0.5em;/*文字まわり（上下左右）の余白*/
+    font-size: x-large;
+}
+
+.Subject{
+    font-size: 3ex;
+    font-weight: bold;
+    margin: 1%;
+}
+
+.Paragraph{
+    padding: 0.5em;/*文字まわり（上下左右）の余白*/
+}
+
+.right {
+    margin: 0 0 0 auto;
+}
+
+iframe {
+    border: 1px solid black;
+    width: 100%;
+}
+
+.image{
+    object-fit: contain;
+}
+
+.button{
+    bottom: 0;
+}
+
+.comment{
+  margin: 1%;
+  padding: 0.5em 1em;
+  background-color: rgba(235,235,235,0.5);
+}
+
+.commentList{
+  margin: 1%;
+}
+@media screen and (max-width: 599px){
+  
+ }

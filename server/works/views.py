@@ -13,9 +13,7 @@ def index(request):
 
 def detail(request, work_id):
     work = Work.objects.get(pk=work_id)
-    team = work.team
     context = {
         "work":work,
-        "team":team,
     }
     return render(request, 'works/detail.html', context)
