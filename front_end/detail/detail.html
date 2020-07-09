@@ -115,26 +115,26 @@
       </div>
     </div>
     <!-- コメント入力フォーム  -->
-    <div class="comment">
-      <div class="field">
-        <form method="post" class="commentForm" action="detail.html">
-          <div class="field">
-            <label class="label">お名前</label>
-            <div class="control">
-              <input class="input" type="text" value="名無しさん" placeholder="お名前" maxlength='30'>
+    <div class="columns is-centered">
+      <div class="column is-half comment">
+          <form method="post" action="detail.html">
+            <div class="field">
+              <label class="label">お名前</label>
+              <div class="control">
+                <input class="input" type="text" value="名無しさん" placeholder="お名前" maxlength='30'>
+              </div>
             </div>
-          </div>
-          <label class="label">コメント</label>
-          <div class="field is-grouped">
-            <p class="control is-expanded">
-              <input class="input is-medium" type="text" placeholder="コメント" required maxlength='100'>
+            <div class="field">
+              <label class="label">コメント</label>
+              <div class="control">
+                <textarea class="textarea" placeholder="コメント" required maxlength='100'></textarea>
+              </div>
+            </div>
+            <p class="help">※100文字まで</p>
+            <p class="control commentButton">
+              <input class="button is-link is-medium" type="submit" value="送信">
             </p>
-            <p class="control">
-              <input class="commentButton button is-medium" type="submit" value="送信">
-            </p>
-          </div>
-          <p class="help">※100文字まで</p>
-       </form>
+         </form>
       </div>
     </div>
     <!-- コメント一覧の表示枠  -->

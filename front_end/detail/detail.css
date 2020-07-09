@@ -43,3 +43,7 @@ iframe {
 .commentList{
   margin: 1%;
 }
+
+.commentButton{
+  text-align:center;
+}
