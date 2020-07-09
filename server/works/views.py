@@ -1,13 +1,14 @@
 from django.http import HttpResponse
 from django.shortcuts import render
-from .models import Work, Team
 
+from .models import Work, Team, Genre
 
 def index(request):
-    works = Work.objects.all()
+    genres = Genre.objects.all()
     context = {
-            "works": works
-            }
+            "genres": genres,
+        }
+
     return render(request, 'works/index.html', context)
 
 def detail(request, work_id):

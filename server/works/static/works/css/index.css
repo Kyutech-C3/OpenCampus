@@ -1,0 +1,333 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@charset "UTF-8";
+
+/* 1280px以上 */
+@media screen and (min-width: 1280px) {
+  body {
+    margin: 0 15%;
+  }
+}
+
+/* 1024px以上 */
+@media screen and (min-width: 1024px) {
+  main div section {
+    padding-left: 3rem;
+  }
+
+  .vertical_h{
+    writing-mode: vertical-rl;
+    position: absolute;
+    margin-left: -3rem;
+    padding-top: 2rem;
+    text-orientation: sideways; /* すべて縦方向に表示 */
+    height: 100%;
+  }
+
+  .works {
+    width:40%;
+    margin: 2rem;
+  }
+  
+  .works:first-of-type {
+    margin-top: 2rem!important;
+  }
+
+  .works:nth-of-type(2) {
+    margin-top: 30%!important;
+  }
+
+  /* 奇数番目の場合は左に50%のmarginを設ける*/
+  .works:nth-of-type(odd) {
+    margin-top: calc(2rem - 30%);
+  }
+
+  .clubPresident__content{
+    /*  vertical-alignはインラインにしか効かないので注意（spanなどと併用すると良い） */
+    /* display: table-cell; */
+    display: inline-block;
+    margin: 1rem;
+    padding-left: 1rem;
+  }
+
+  .clubPresident__Image{
+    float:left;
+    margin: 32px;
+    width: 45%;
+    padding: 0.5rem 2rem 0.5rem 3rem;
+  }
+
+  .clubPresident__Message{
+    margin: 4rem;
+    padding: 2rem 4rem 1rem 3rem;
+    /* border:solid;
+    border-color: #AAA; */
+    /* border-radius: 16px; /* 半径が16pxの角丸 */
+    width: auto;
+    color:#111;
+    overflow: hidden;  /* 回り込ませない  */
+  }
+}
+/* 1023px以下 */
+@media screen and (max-width: 1023px) {
+
+  .content-nav__item{
+    padding: 0.5rem;
+  	display: inline-block;
+  }
+  /* h2.vertical{
+    text-align: center;
+    margin: auto;
+  } */
+  /* 右側の作品  */
+  .rightPos{
+    margin-top: 0;
+    clear: both;
+  }
+
+  /* 左側の作品（3,5,7...番目の作品に適用）  */
+  .leftPos{
+    margin-left: 0;
+    clear: both;
+  }
+
+  .worksImage{
+    margin: 0;
+  }
+
+  .works:first-of-type {
+    margin-top: 4rem;
+  }
+
+  .works{
+    width:90%;
+    /* margin: 1rem 1rem 1rem 0; */
+    margin: 1rem 0.8rem 1rem 1.5rem;
+    /* padding: 1rem */
+  }
+  .vertical_h{
+    writing-mode: horizontal-tb;
+    clear:both;
+    text-align: center;
+    text-orientation: mixed;
+    padding: none;
+  }
+
+  .clubPresident__content {
+    margin: 0 10%;
+  }
+
+  .clubPresident__Image{
+    width: 100%;
+    text-align: center;
+    margin: 0;
+    padding: 0.5rem 0.5rem 0.5rem 0.3rem;
+  }
+
+  .clubPresident__Message{
+    width: auto;
+    margin: 0;
+    padding: 0.5rem 1rem;
+  }
+
+  main div section {
+    padding: 2rem;
+  }
+}
+
+
+/* カスタムプロパティ（変数みたいなもの）の定義
+  ------------------------------------------- */
+  :root {
+    /*  カスタムプロパティは「--」ではじめる  */
+    /* _light は薄めの色 */
+    --gray:rgba(220, 220, 220,1.0);
+    --white:rgba(255,255,255,1.0);
+    --blue: rgba(140, 180, 240, 1.0);
+    --blue_light: rgba(180, 220, 250, 1.0);
+    --green: rgba(120, 240, 160, 1.0);
+    --green_light: rgba(160, 250, 200, 1.0);
+    --yellow: rgba(255, 230, 100, 1.0);
+    --yellow_light: rgba(255, 240, 150, 1.0);
+    --orenge: rgba(255, 180, 80, 1.0);
+    --orenge_light: rgba(255, 220, 120, 1.0);
+    --red: rgba(255, 160, 120, 1.0);
+    --red_light: rgba(255, 200, 160, 1.0);
+  }
+
+
+/* 基本の設定
+ -------------------------------------------- */
+
+/* flexboxの導入  */
+ .flex-container {
+   display: -webkit-box;
+   display: -ms-flexbox;
+   display: flex;
+ }
+
+/* 横いっぱいに広げる  */
+.flex-item{
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  width: 100%;
+}
+
+html {height:100%;}
+body {height:100%;}
+
+body{
+  font-family: 'Roboto', 'Noto Sans JP', sans-serif;
+  font-weight: 400;
+ /* padding: 0; */
+}
+
+/* ヘッダー
+ -------------------------------------------- */
+
+.content-nav{
+  z-index: 100;
+}
+
+.content-nav__list{
+  text-align: center;
+  overflow: auto hidden;
+  /* background-color: rgba(0,0,0,1.0); */
+  /*
+  background-color: #5CF; */
+  margin-bottom: 0;  /* header と main の間にマージンを作らせないため  */
+}
+
+/* 上下に16px, 左右に32pxだけ要素を太らせる  */
+.content-nav__item{
+   padding:16px 32px;
+   /*  ボタンの設定   */
+   cursor: pointer; /* マウスカーソルを乗せると指になる */
+   outline: none;
+   border: none;
+   white-space: nowrap;
+   /* background:transparent; */
+ }
+
+ .content-nav__item a {
+   text-decoration: none;
+ }
+
+ header button .web,
+ header button .game3D,
+ header button .game2D,
+ header button .lineBot,
+ header button .modeling{
+   /* width:100%; */
+ }
+
+
+/* メインエリア
+ -------------------------------------------- */
+main{
+  margin: 0;
+}
+
+main section {
+  min-height: 100%;
+}
+
+/* fadeInOut.cssでは, 透明度（opacity）の定義を行っているので注意  */
+.works{
+  background-color: rgba(230,230,230,0.5);
+  text-align: center;
+  float:left;
+}
+
+/* 作品カードの画像 */
+.works_image {
+  width: 100%;
+  height: auto;
+}
+
+/* 右側の作品  */
+.rightPos{
+  margin-top: 20%;
+}
+
+/* 左側の作品（3,5,7...番目の作品に適用）  */
+.leftPos{
+  margin-left: 8.5%;
+}
+
+.worksImage{
+  margin: 16px;
+}
+
+.gotoPlayWindow{
+  background-color: #57F;
+  color:#FFF;
+  padding: 16px 64px;
+  margin: 1% 5%;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+
+/* 縦書きの見出し  */
+.vertical_h{
+  font-size: 3rem;
+  font-weight: bold;
+  float:left;
+}
+
+/* 横書きの見出し  */
+.horizontal_h{
+  /* margin: 0 1rem; */
+  padding: 0.5rem 1rem 0.2rem;
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+section.genre {
+  background: -moz-linear-gradient(top, var(--blue), var(--blue_light));
+  background: -webkit-linear-gradient(top, var(--blue), var(--blue_light));
+  background: linear-gradient(to bottom,  var(--blue), var(--blue_light));
+}
+
+#clubPresident{
+  /* background: var(--white);  */
+  background: -moz-linear-gradient(top, var(--white), var(--gray));
+  background: -webkit-linear-gradient(top, var(--white), var(--gray));
+  background: linear-gradient(to bottom,var(--white), var(--gray));
+}
+
+#clubJournal{
+  /* background: -moz-linear-gradient(top, var(--gray), var(--white));
+  background: -webkit-linear-gradient(top, var(--gray), var(--white));
+  background: linear-gradient(to bottom,var(--gray), var(--white)); */
+  background: var(--gray);
+}
+
+
+
+.clear{
+  clear: both;
+}
+
+.non_marginTop{
+  margin-top: 0;
+}
+
+
+
+/* フッター
+ -------------------------------------------- */
+
+.video{
+    position:relative;
+    width:100%;
+    padding-top:56.25%;
+}
+.video iframe{
+    position:absolute;
+    top:0;
+    right:0;
+    width:100%;
+    height:100%;
+}
