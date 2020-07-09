@@ -73,7 +73,7 @@ class Work(models.Model):
     team = models.ForeignKey(Team, on_delete=models.CASCADE)
     type_choice = models.TextField(choices=WorkType.choices, default=WorkType.OTHER)
     card_image = models.ImageField(null=False, upload_to='images/system/')
-
+    
     def get_absolute_url(self):
         return reverse('detail', args=(str(self.id),))
 
@@ -93,3 +93,4 @@ class Comment(models.Model):
 
     def get_absolute_url(self):
         return reverse('work', args=(str(self.work.id),))
+
