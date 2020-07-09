@@ -92,4 +92,4 @@ class Comment(models.Model):
         return self.text
 
     def get_absolute_url(self):
-        return reverse('detail', args=(str(self.work.id),))
+        return reverse('work', args=(str(self.work.id),))
