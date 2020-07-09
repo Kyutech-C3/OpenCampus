@@ -1,9 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 @charset "UTF-8";
 
 /* 1280px以上 */
 @media screen and (min-width: 1280px) {
   body {
     margin: 0 15%;
+  }
+}
+
+/* 1024px以上 */
+@media screen and (min-width: 1024px) {
+  main div section {
+    padding-left: 3rem;
+  }
+
+  .vertical_h{
+    writing-mode: vertical-rl;
+    position: absolute;
+    margin-left: -3rem;
+    padding-top: 2rem;
+    text-orientation: sideways; /* すべて縦方向に表示 */
+    height: 100%;
   }
 
   .works {
@@ -14,6 +31,7 @@
   .works:first-of-type {
     margin-top: 2rem!important;
   }
+
   .works:nth-of-type(2) {
     margin-top: 30%!important;
   }
@@ -23,13 +41,96 @@
     margin-top: calc(2rem - 30%);
   }
 
-}
+  .clubPresident__content{
+    /*  vertical-alignはインラインにしか効かないので注意（spanなどと併用すると良い） */
+    /* display: table-cell; */
+    display: inline-block;
+    margin: 1rem;
+    padding-left: 1rem;
+  }
 
-/* 1280px未満 */
-@media screen and (max-width: 1279px) {
-  .works {
+  .clubPresident__Image{
+    float:left;
+    margin: 32px;
+    width: 45%;
+    padding: 0.5rem 2rem 0.5rem 3rem;
+  }
+
+  .clubPresident__Message{
+    margin: 4rem;
+    padding: 2rem 4rem 1rem 3rem;
+    /* border:solid;
+    border-color: #AAA; */
+    /* border-radius: 16px; /* 半径が16pxの角丸 */
     width: auto;
-    margin: 2rem;
+    color:#111;
+    overflow: hidden;  /* 回り込ませない  */
+  }
+}
+/* 1023px以下 */
+@media screen and (max-width: 1023px) {
+
+  .content-nav__item{
+    padding: 0.5rem;
+  	display: inline-block;
+  }
+  /* h2.vertical{
+    text-align: center;
+    margin: auto;
+  } */
+  /* 右側の作品  */
+  .rightPos{
+    margin-top: 0;
+    clear: both;
+  }
+
+  /* 左側の作品（3,5,7...番目の作品に適用）  */
+  .leftPos{
+    margin-left: 0;
+    clear: both;
+  }
+
+  .worksImage{
+    margin: 0;
+  }
+
+  .works:first-of-type {
+    margin-top: 4rem;
+  }
+
+  .works{
+    width:90%;
+    /* margin: 1rem 1rem 1rem 0; */
+    margin: 1rem 0.8rem 1rem 1.5rem;
+    /* padding: 1rem */
+  }
+  .vertical_h{
+    writing-mode: horizontal-tb;
+    clear:both;
+    text-align: center;
+    text-orientation: mixed;
+    padding: none;
+  }
+
+  .clubPresident__content {
+    margin: 0 10%;
+  }
+
+  .clubPresident__Image{
+    width: 100%;
+    text-align: center;
+    margin: 0;
+    padding: 0.5rem 0.5rem 0.5rem 0.3rem;
+  }
+
+  .clubPresident__Message{
+    width: auto;
+    margin: 0;
+    padding: 0.5rem 1rem;
+  }
+
+  main div section {
+    padding: 2rem;
   }
 }
 
@@ -65,10 +166,10 @@
  }
 
 /* 横いっぱいに広げる  */
-.flex-itrem{
+.flex-item{
   -webkit-box-align: stretch;
   -ms-flex-align: stretch;
-  align-itrems: stretch;
+  align-items: stretch;
   width: 100%;
 }
 
@@ -76,6 +177,8 @@ html {height:100%;}
 body {height:100%;}
 
 body{
+  font-family: 'Roboto', 'Noto Sans JP', sans-serif;
+  font-weight: 400;
  /* padding: 0; */
 }
 
@@ -83,25 +186,31 @@ body{
  -------------------------------------------- */
 
 .content-nav{
-
+  z-index: 100;
 }
 
- .content-nav__list{
- 	text-align: center;
+.content-nav__list{
+  text-align: center;
+  overflow: auto hidden;
   /* background-color: rgba(0,0,0,1.0); */
   /*
   background-color: #5CF; */
   margin-bottom: 0;  /* header と main の間にマージンを作らせないため  */
- }
+}
 
 /* 上下に16px, 左右に32pxだけ要素を太らせる  */
-.content-nav__itrem{
+.content-nav__item{
    padding:16px 32px;
    /*  ボタンの設定   */
    cursor: pointer; /* マウスカーソルを乗せると指になる */
    outline: none;
    border: none;
+   white-space: nowrap;
    /* background:transparent; */
+ }
+
+ .content-nav__item a {
+   text-decoration: none;
  }
 
  header button .web,
@@ -117,6 +226,10 @@ body{
  -------------------------------------------- */
 main{
   margin: 0;
+}
+
+main section {
+  min-height: 100%;
 }
 
 /* fadeInOut.cssでは, 透明度（opacity）の定義を行っているので注意  */
@@ -158,15 +271,9 @@ main{
 
 /* 縦書きの見出し  */
 .vertical_h{
-  writing-mode: vertical-rl;
-  position: absolute;
-  text-orientation: sideways; /* すべて縦方向に表示 */
   font-size: 3rem;
   font-weight: bold;
-  margin-left: -3rem;
   float:left;
-  padding-top: 0.5rem;
-  height: 100%;
 }
 
 /* 横書きの見出し  */
@@ -177,59 +284,10 @@ main{
   font-weight: bold;
 }
 
-.web{
-  background-color:var(--blue);
-}
-
-#web{
+section.genre {
   background: -moz-linear-gradient(top, var(--blue), var(--blue_light));
   background: -webkit-linear-gradient(top, var(--blue), var(--blue_light));
   background: linear-gradient(to bottom,  var(--blue), var(--blue_light));
-  padding-left: 3rem;
-}
-
-.game3D{
-  background-color:var(--green);
-}
-
-#game3D{
-  background: -moz-linear-gradient(top, var(--green), var(--green_light));
-  background: -webkit-linear-gradient(top, var(--green), var(--green_light));
-  background: linear-gradient(to bottom,var(--green), var(--green_light));
-  padding-left: 3rem;
-}
-
-.game2D{
-    background-color:var(--yellow);
-}
-
-#game2D{
-  background: -moz-linear-gradient(top, var(--yellow), var(--yellow_light));
-  background: -webkit-linear-gradient(top, var(--yellow), var(--yellow_light));
-  background: linear-gradient(to bottom,var(--yellow), var(--yellow_light));
-  padding-left: 3rem;
-}
-
-.lineBot{
-    background-color:var(--orenge);
-}
-
-#lineBot{
-  background: -moz-linear-gradient(top, var(--orenge),var(--orenge_light));
-  background: -webkit-linear-gradient(top, var(--orenge), var(--orenge_light));
-  background: linear-gradient(to bottom, var(--orenge), var(--orenge_light));
-  padding-left: 3rem;
-}
-
-.modeling{
-    background-color:var(--red);
-}
-
-#modeling{
-  background: -moz-linear-gradient(top, var(--red), var(--red_light));
-  background: -webkit-linear-gradient(top, var(--red), var(--red_light));
-  background: linear-gradient(to bottom,var(--red), var(--red_light));
-  padding-left: 3rem;
 }
 
 #clubPresident{
@@ -247,31 +305,6 @@ main{
 }
 
 
-.clubPresident__content{
-  /*  vertical-alignはインラインにしか効かないので注意（spanなどと併用すると良い） */
-  /* display: table-cell; */
-  display: inline-block;
-  margin: 1rem;
-  padding-left: 1rem;
-}
-
-.clubPresident__Image{
-  float:left;
-  margin: 32px;
-  width: 45%;
-  padding: 0.5rem 2rem 0.5rem 3rem;
-}
-
-.clubPresident__Message{
-  margin: 4rem;
-  padding: 2rem 4rem 1rem 3rem;
-  /* border:solid;
-  border-color: #AAA; */
-  /* border-radius: 16px; /* 半径が16pxの角丸 */
-  width: auto;
-  color:#111;
-  overflow: hidden;  /* 回り込ませない  */
-}
 
 .clear{
   clear: both;
@@ -285,64 +318,6 @@ main{
 
 /* フッター
  -------------------------------------------- */
-
-
-
-/* ----------------------
-  画面の横幅が599px以下の場合に適用（スマートフォン用）
-  ---------------------- */
-
-@media screen and (max-width: 599px) {
-  .content-nav__itrem{
-    padding: 0.5rem;
-  	display: inline-block;
-  }
-  /* h2.vertical{
-    text-align: center;
-    margin: auto;
-  } */
-  /* 右側の作品  */
-  .rightPos{
-    margin-top: 0;
-    clear: both;
-  }
-
-  /* 左側の作品（3,5,7...番目の作品に適用）  */
-  .leftPos{
-    margin-left: 0;
-    clear: both;
-  }
-
-  .worksImage{
-    margin: 0;
-  }
-
-  .works{
-    width:90%;
-    /* margin: 1rem 1rem 1rem 0; */
-    margin: 1rem 0.8rem 1rem 1.5rem;
-    /* padding: 1rem */
-  }
-  .vertical_h{
-    writing-mode: horizontal-tb;
-    clear:both;
-    text-align: center;
-    text-orientation: mixed;
-    padding-left: 5%;
-  }
-
-  .clubPresident__Image{
-    width: 100%;
-    margin: 0;
-    padding: 0.5rem 0.5rem 0.5rem 0.3rem;
-  }
-
-  .clubPresident__Message{
-    width: auto;
-    margin: 0;
-    padding: 0.5rem 1rem;
-  }
-}
 
 .video{
     position:relative;
