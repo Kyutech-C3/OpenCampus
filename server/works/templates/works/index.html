@@ -42,7 +42,7 @@
                           </div>
                           <div>
                               <figure class="image container is-128x128">
-                                  <img class="is-rounded" src="/media/images/c3logo.jpeg">
+                                <img class="is-rounded" src="/media/images/c3_logo.png">
                               </figure>
                               <h3 class="text has-text-black has-text-centered">
                                   <p>
@@ -99,9 +99,9 @@
         <nav class="global-nav">
           <ul class="global-nav__list">
             {% for genre in genres%}
-            <li class="global-nav__genre js-scroll-item"><a href="#{{ genre.title }}">{{ genre.title }}</a></li>
+            <li class="global-nav__genre js-scroll-item" style="background-color: {{ genre.card_color }}"><a href="#{{ genre.pk }}">{{ genre.title }}</a></li>
               {% for work in genre.work_set.all %}
-              <li class="global-nav__item"><a href="{% url 'work' work.pk %}">>{{ work.title }}</a></li>
+              <li class="global-nav__item"><a href="{% url 'work' work.pk %}">{{ work.title }}</a></li>
               {% endfor %}
             {% endfor %}
             <li class="global-nav__genre js-scroll-item"><a href="javascript:scrollClubPresident();">部長から一言</a></li>
@@ -121,7 +121,7 @@
       <nav class="content-nav">
         <ul class="content-nav__list flex-container">
           {% for genre in genres %}
-          <li class="content-nav__item flex-item genre_button" style="background-color: {{ genre.bg_color }}"><a href="#{{ genre.title }}" style="color: {{ genre.text_color }}">{{ genre.title }}</a></li>
+          <li class="content-nav__item flex-item genre_button" style="background-color: {{ genre.bg_color }}"><a href="#{{ genre.pk }}" style="color: {{ genre.text_color }}">{{ genre.title }}</a></li>
           {% endfor %}
         </ul>
       </nav>
@@ -130,7 +130,7 @@
     <main>
       <div>
         {% for genre in genres %}
-        <section id="{{ genre.title }}" style="
+        <section id="{{ genre.pk }}" style="
           background-color: {{ genre.bg_color }}
           background: -moz-linear-gradient(top, {{ genre.bg_color }}, {{ genre.bg_color_lighten }});
           background: -webkit-linear-gradient(top, {{ genre.bg_color }}, {{ genre.bg_color_lighten }});
@@ -148,7 +148,7 @@
       <section id="clubPresident">
         <h2 class="horizontal_h">部長からの一言</h2>
         <div class="clubPresident__content">
-          <img class="clubPresident__Image" src="/media/images/clubPresident.jpg" alt="ゴリラの画像" width="50%" height="50%">
+          <img class="clubPresident__Image" src="/media/images/president.jpg" alt="部長のアイコン">
           <p class="clubPresident__Message">
             三次元空間座標(x,y,z)を二次元空間座標(u,v)に変換するのがUV展開であり、その座標を数値でいじくり回すのにノードを使います。
             ノードはレンダリングするときの手順を設定するものです。

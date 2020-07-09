@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 @charset "UTF-8";
 
 /* 1280px以上 */
@@ -17,6 +18,7 @@
     writing-mode: vertical-rl;
     position: absolute;
     margin-left: -3rem;
+    padding-top: 2rem;
     text-orientation: sideways; /* すべて縦方向に表示 */
     height: 100%;
   }
@@ -39,6 +41,31 @@
     margin-top: calc(2rem - 30%);
   }
 
+  .clubPresident__content{
+    /*  vertical-alignはインラインにしか効かないので注意（spanなどと併用すると良い） */
+    /* display: table-cell; */
+    display: inline-block;
+    margin: 1rem;
+    padding-left: 1rem;
+  }
+
+  .clubPresident__Image{
+    float:left;
+    margin: 32px;
+    width: 45%;
+    padding: 0.5rem 2rem 0.5rem 3rem;
+  }
+
+  .clubPresident__Message{
+    margin: 4rem;
+    padding: 2rem 4rem 1rem 3rem;
+    /* border:solid;
+    border-color: #AAA; */
+    /* border-radius: 16px; /* 半径が16pxの角丸 */
+    width: auto;
+    color:#111;
+    overflow: hidden;  /* 回り込ませない  */
+  }
 }
 /* 1023px以下 */
 @media screen and (max-width: 1023px) {
@@ -80,14 +107,18 @@
   .vertical_h{
     writing-mode: horizontal-tb;
     clear:both;
-    margin-left: 3rem;
     text-align: center;
     text-orientation: mixed;
-    margin-left: 3.5rem;
+    padding: none;
+  }
+
+  .clubPresident__content {
+    margin: 0 10%;
   }
 
   .clubPresident__Image{
     width: 100%;
+    text-align: center;
     margin: 0;
     padding: 0.5rem 0.5rem 0.5rem 0.3rem;
   }
@@ -146,6 +177,8 @@ html {height:100%;}
 body {height:100%;}
 
 body{
+  font-family: 'Roboto', 'Noto Sans JP', sans-serif;
+  font-weight: 400;
  /* padding: 0; */
 }
 
@@ -153,6 +186,7 @@ body{
  -------------------------------------------- */
 
 .content-nav{
+  z-index: 100;
 }
 
 .content-nav__list{
@@ -240,7 +274,6 @@ main section {
   font-size: 3rem;
   font-weight: bold;
   float:left;
-  padding-top: 0.5rem;
 }
 
 /* 横書きの見出し  */
@@ -272,31 +305,6 @@ section.genre {
 }
 
 
-.clubPresident__content{
-  /*  vertical-alignはインラインにしか効かないので注意（spanなどと併用すると良い） */
-  /* display: table-cell; */
-  display: inline-block;
-  margin: 1rem;
-  padding-left: 1rem;
-}
-
-.clubPresident__Image{
-  float:left;
-  margin: 32px;
-  width: 45%;
-  padding: 0.5rem 2rem 0.5rem 3rem;
-}
-
-.clubPresident__Message{
-  margin: 4rem;
-  padding: 2rem 4rem 1rem 3rem;
-  /* border:solid;
-  border-color: #AAA; */
-  /* border-radius: 16px; /* 半径が16pxの角丸 */
-  width: auto;
-  color:#111;
-  overflow: hidden;  /* 回り込ませない  */
-}
 
 .clear{
   clear: both;
