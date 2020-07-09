@@ -38,13 +38,30 @@
 
   <!-- main content -->
   <main>
-    <!-- title -->
+    <!--  作品名とチーム名, GOODボタン, GOODを押された数をまとめた見出し  -->
     <div class="Title">
-      <h1 class="title">作品名：Virtual Guy</h1>
-      <p class="subtitle">制作チーム名：2dドット</p>
+      <div class="columns">
+        <!-- 作品名とチーム名 -->
+        <div class="column">
+          <h1 class="title">作品名：Virtual Guy</h1>
+          <p class="subtitle">制作チーム名：2dドット</p>
+        </div>
+        <!-- GOODボタン -->
+        <div class="column has-text-right">
+          <a class="button is-medium is-rounded"><span class="icon"><i class="fas fa-thumbs-up right"></i></span>
+            <span>GOOD!!</span></a>
+        </div>
+        <!-- GOODを押された数  -->
+        <div class="column is-1">
+          <div class="box">
+            999
+          </div>
+      </div>
     </div>
+  </div>
+    <!--作品(ゲームやCGモデル等), 紹介, 操作方法など-->
     <div class="columns">
-      <!--作品の画像・動画・ゲーム・３Dモデル .etc-->
+      <!-- 作品（ゲームやCGモデル等）  -->
       <div class="column is-half">
         <figure calss="image is-16by9">
           <iframe class="has-ratio" width="1920" height="480" src="img/gorilla.jpg" frameborder="0"
@@ -97,21 +114,16 @@
         </details>
       </div>
     </div>
-
-    <div class="columns">
-      <div class="column is-four-fifths"></div>
-      <div class="column">
-        <!-- GOODとコメントの入力ボタン  -->
-        <a class="button is-medium is-rounded"><span class="icon"><i
-              class="fas fa-thumbs-up right"></i></span><span>GOOD!!</span></a>
-        <a class="button is-medium is-success is-focused"><span class="icon"><i
-              class="fas fa-pen"></i></span><span>Comment</span></a>
-      </div>
-    </div>
     <!-- コメント入力フォーム  -->
     <div class="comment">
       <div class="field">
         <form method="post" class="commentForm" action="detail.html">
+          <div class="field">
+            <label class="label">お名前</label>
+            <div class="control">
+              <input class="input" type="text" value="名無しさん" placeholder="お名前" maxlength='30'>
+            </div>
+          </div>
           <label class="label">コメント</label>
           <div class="field is-grouped">
             <p class="control is-expanded">
@@ -125,6 +137,7 @@
        </form>
       </div>
     </div>
+    <!-- コメント一覧の表示枠  -->
     <details>
       <summary class="Subject">コメント一覧</summary>
       <div class="box commentList">
@@ -133,10 +146,11 @@
         <p>2020/07/02 19:41　コメント</p>
       </div>
     </details>
+
+    <!-- ページのtopまで戻るtopボタン -->
+    <a href="#top" class="topBtn" id="topBtn">TOP</a>
   </main>
 
-  <a href="#top" class="topBtn" id="topBtn">TOP</a>
-  <!--/固定ボタン-->
   <footer class="footer">
     <div class="page_title">
       <a href="">C3OpenCampus特設サイト</a>
@@ -146,5 +160,4 @@
     </div>
   </footer>
 </body>
-
 </html>
