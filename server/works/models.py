@@ -83,3 +83,10 @@ class Comment(models.Model):
     
     def __str__(self):
         return "[{}] {}".format(self.name, self.text)
+
+class LiveSchedule(models.Model):
+    start = models.DateTimeField(null=False)
+    end = models.DateTimeField(null=False)
+
+    def __str__(self):
+        return "{} - {}".format(self.start, self.end)
