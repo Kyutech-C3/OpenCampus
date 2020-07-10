@@ -1,0 +1,26 @@
+/* 画面外にいる状態 */
+.works{
+	/* 透明度を設定  */
+	opacity : 0.1;
+	transition : all 500ms;	/* 時間の指定  */
+}
+
+.up{
+	/* transform:移動やら回転やら  */
+	transform : translate(0, 100px);	/* translate(x,y):平行移動  */
+}
+
+.down{
+	transform : translate(0, -100px);
+}
+
+/* 画面内に入った状態 */
+.works.scrollin {
+	opacity : 1;
+	transform : translate(0, 0);
+}
+
+.works.scrollout {
+	opacity : 0.1;
+	transform : translate(0, 0);
+}

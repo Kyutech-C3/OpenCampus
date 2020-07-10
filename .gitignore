@@ -1,0 +1,5 @@
+db.sqlite3
+*.log
+local_settings.py
+__pycache__/
+/server/media/system/*

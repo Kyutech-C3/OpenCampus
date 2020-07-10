@@ -1,0 +1,20 @@
+<div class="card works">
+  <div style="background-color: {{ work.genre.card_color }};">
+    <div class="card-image">
+      <figure class="image is-1by1">
+        <img src="{{ work.card_image.url }}" alt="logo" width="800" height="800">
+      </figure>
+    </div>
+    <div class="card-content">
+      <div class="media">
+        <div class="media-content has-text-centered">
+          <p class="title">{{ work.title }}</p>
+          <p class="subtitle">制作チーム名：{{ work.team.name }}</p>
+        </div>
+      </div>
+      <div class="content">
+        <a href="{% url 'work' work.pk %}"><button class="gotoPlayWindow">詳細を見る!</button></a>
+      </div>
+    </div>
+  </div>
+</div>
