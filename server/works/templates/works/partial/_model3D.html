@@ -1,0 +1,34 @@
+{% load sass_tags %}
+
+<html>
+  <head>
+    <title>model3D tmp</title>
+    <meta charset="utf-8">
+  </head>
+    <body>
+      {% load sass_tags %}
+        <link ref="stylesheet" href="{% sass_src 'works/partial/_header.scss' %}">
+        <h1>Sketchfab3DTest</h1>
+
+        {% comment %} 仮実装の提出段階で実際に動くwork.idは3と4のみ {% endcomment %}
+
+        {% comment %} 
+        sketchfabで3Dモデルの埋め込み。無料版だと月に一つの作品しかアップロードできないので
+        完成した作品を埋め込むときはsketchfabのアカウントを新たに作る必要がある。 
+        また、大量のwarningと3行のUniform not in the scene hierarchyというエラーは
+        sketchfabのサイトの方でも出てきてたのでたぶん対処できない {% endcomment %}
+        <div class="sketchfab-embed-wrapper">
+            <iframe title="A 3D model" 
+                width="640" 
+                height="480" 
+                src="https://sketchfab.com/models/baac9ec5189f4d2789138ff8c9cde510/embed?autostart=1&amp;ui_controls=1&amp;ui_infos=1&amp;ui_inspector=1&amp;ui_stop=1&amp;ui_watermark=1&amp;ui_watermark_link=1" 
+                frameborder="0" 
+                allow="autoplay; fullscreen; vr" 
+                mozallowfullscreen="true" 
+                webkitallowfullscreen="true"></iframe>
+        </div>
+
+        {% block content %}
+        {% endblock %}
+    </body>
+</html>

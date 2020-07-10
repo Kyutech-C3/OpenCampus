@@ -1,5 +1,4 @@
 {% extends 'base.html'%}
-
 {% block content %}
 {% if work %}
 <title>OpenCampus2020_WorksPage</title>
@@ -27,6 +26,8 @@
             <iframe src="https://www.javadrive.jp/python/" width="800" height="500"></iframe>
             <iframe width="560" height="315" src="https://www.youtube.com/embed/9MjAJSoaoSo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </ul>
+    {% include 'works/partial/_model3D.html' %}
+    
 {% else %}
     <p>No polls are available.</p>
 {% endif %}
