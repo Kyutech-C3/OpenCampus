@@ -19,9 +19,12 @@
         </div>
         <!-- GOODボタン -->
         <div class="column has-text-right" style="flex-basis: 0;">
-          <a class="button is-medium is-primary is-rounded"><span class="icon"><i class="fas fa-thumbs-up right"></i></span><span>GOOD!!</span></a>
+          <form action="goods" method="post">
+            {% csrf_token %}
+            <button type="submit" class="button is-medium is-primary is-rounded" id="goods_btn"><span class="icon"><i class="fas fa-thumbs-up right"></i></span><span>GOOD!!</span></button>
+            <div class="good_counter"> {{ work.goods }} </div>
+          </form>
           <!-- GOODを押された数  -->
-          <div class="good_counter"> 999 </div>
         </div>
       </div>
     </div>
