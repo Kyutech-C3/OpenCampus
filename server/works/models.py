@@ -75,6 +75,7 @@ class Work(models.Model):
     type_choice = models.TextField(choices=WorkType.choices, default=WorkType.OTHER)
     card_image = models.ImageField(null=False, upload_to='images/system/')
     goods = models.IntegerField(null=False, default=0)
+    game = models.ForeignKey(Game, on_delete=models.CASCADE, null=True)
 
     def __str__(self):
         return self.title
