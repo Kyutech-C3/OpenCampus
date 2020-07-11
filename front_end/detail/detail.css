@@ -21,13 +21,40 @@ body{
     margin: 0 0 0 auto;
 }
 
-iframe {
-    border: 1px solid black;
+img {
     width: 100%;
+    height: auto;
+    vertical-align: middle;
+}
+img:-webkit-full-screen{
+  width: 100%;
+  height: auto;
+  vertical-align: middle;
+  transform: translateY(-50%);
+  margin-top: 50%;
 }
 
-.image{
+/*  作品の埋め込み要素  */
+#embed{
     object-fit: contain;
+}
+/* Chrome, Safari  */
+#embed:-webkit-full-screen{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* Firefox  */
+#embed:-moz-full-screen{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* Internet Explorer  */
+#embed:-ms-fullscreen{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .button{
@@ -46,4 +73,10 @@ iframe {
 
 .commentButton{
   text-align:center;
+}
+
+@media screen and (max-width: 599px) {
+  #embed{
+    display: none;
+  }
 }
