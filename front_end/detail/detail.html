@@ -12,6 +12,8 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <link rel="stylesheet" href="../css/footer.css">
   <!-- <script type="text/javascript" src="../js/footer.js"></script> -->
+  <script type="text/javascript" src="../js/screen.js"></script>
+</head>
 </head>
 
 <body>
@@ -63,10 +65,12 @@
     <div class="columns">
       <!-- 作品（ゲームやCGモデル等）  -->
       <div class="column is-half">
-        <figure calss="image is-16by9">
-          <iframe class="has-ratio" width="1920" height="480" src="img/gorilla.jpg" frameborder="0"
-            allowfullscreen></iframe>
+        <figure id="embed">
+          <img src="img/gorilla.jpg" frameborder="0"
+            allowfullscreen></img>
         </figure>
+        <!--切り替えボタン-->
+        <button id="fullscreenSwitch">フルスクリーンにする</button>
       </div>
       <!--作品の解説・使用方法 .etc-->
       <div class="column">
@@ -115,26 +119,26 @@
       </div>
     </div>
     <!-- コメント入力フォーム  -->
-    <div class="comment">
-      <div class="field">
-        <form method="post" class="commentForm" action="detail.html">
-          <div class="field">
-            <label class="label">お名前</label>
-            <div class="control">
-              <input class="input" type="text" value="名無しさん" placeholder="お名前" maxlength='30'>
+    <div class="columns is-centered">
+      <div class="column is-half comment">
+          <form method="post" action="detail.html">
+            <div class="field">
+              <label class="label">お名前</label>
+              <div class="control">
+                <input class="input" type="text" value="名無しさん" placeholder="お名前" maxlength='30'>
+              </div>
             </div>
-          </div>
-          <label class="label">コメント</label>
-          <div class="field is-grouped">
-            <p class="control is-expanded">
-              <input class="input is-medium" type="text" placeholder="コメント" required maxlength='100'>
+            <div class="field">
+              <label class="label">コメント</label>
+              <div class="control">
+                <textarea class="textarea" placeholder="コメント" required maxlength='100'></textarea>
+              </div>
+            </div>
+            <p class="help">※100文字まで</p>
+            <p class="control commentButton">
+              <input class="button is-link is-medium" type="submit" value="送信">
             </p>
-            <p class="control">
-              <input class="commentButton button is-medium" type="submit" value="送信">
-            </p>
-          </div>
-          <p class="help">※100文字まで</p>
-       </form>
+         </form>
       </div>
     </div>
     <!-- コメント一覧の表示枠  -->
@@ -147,6 +151,7 @@
       </div>
     </details>
 
+  <script type="text/javascript" src="../js/screen.js"></script>
     <!-- ページのtopまで戻るtopボタン -->
     <a href="#top" class="topBtn" id="topBtn">TOP</a>
   </main>
