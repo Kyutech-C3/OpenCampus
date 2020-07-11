@@ -1,12 +1,15 @@
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from .forms import CommentForm
+from django.utils import timezone
 
-from .models import Work, Team, Genre
+from .models import Work, Team, Genre, LiveSchedule
 
 def index(request):
     genres = Genre.objects.all()
+    live_schedules = LiveSchedule.objects.all()
     context = {
+            "isStreaming": isStreaming(live_schedules),
             "genres": genres,
         }
 
@@ -38,3 +41,11 @@ def comment(request, work_id):
             comment.work = work
             comment.save()
     return redirect(work)
+
+def isStreaming(schedules):
+    res = False
+    now = timezone.now()
+    for schedule in schedules:
+        if schedule.start <= now and schedule.end >= now:
+            res =  True
+    return res

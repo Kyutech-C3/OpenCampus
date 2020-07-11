@@ -24,6 +24,7 @@
     <header>
       <div id="header">
           <div class="columns is-gapless is-multiline">
+              {% if isStreaming %}
               <div class="column is-12">
                   <div id="youtube">
                       <div class="video">
@@ -31,6 +32,7 @@
                       </div>
                   </div>
               </div>
+              {% endif %}
               <div class="column is-8">
                   <div id="aboutC3">
                       <div style="background-color: #62e342">
