@@ -1,0 +1,74 @@
+body{
+    background:#CCCCCC;
+}
+.detail_title_section{
+    background: #c2edff;/*背景色*/
+    padding: 0.5em;/*文字まわり（上下左右）の余白*/
+    font-size: x-large;
+}
+
+.detail_title {
+    font-size: 1.25em;
+    font-weight: bold;
+}
+.detail_subtitle {
+    font-size: .75em;
+}
+
+.Subject{
+    font-size: 3ex;
+    font-weight: bold;
+    margin: 1%;
+}
+
+.Paragraph{
+    padding: 0.5em;/*文字まわり（上下左右）の余白*/
+}
+
+.right {
+    margin: 0 0 0 auto;
+}
+
+iframe {
+    border: 1px solid black;
+    width: 100%;
+}
+
+/*  作品の埋め込み要素  */
+#embed{
+    object-fit: contain;
+    margin: 1rem;
+}
+
+.button{
+    bottom: 0;
+}
+
+.good_counter {
+  display: inline-flex;
+  font-size: 1.25rem;
+  padding: calc(.5em - 1px) 1rem;
+  border: solid 1px #dbdbdb;
+  border-radius: 4px;
+  vertical-align: top;
+}
+
+.comment{
+  margin: 1%;
+  padding: 0.5em 1em;
+  background-color: rgba(235,235,235,0.5);
+}
+
+.commentList{
+  margin: 1%;
+}
+
+.commentButton{
+  text-align:center;
+}
+
+@media screen and (max-width: 599px) {
+  #embed{
+    display: none;
+  }
+}

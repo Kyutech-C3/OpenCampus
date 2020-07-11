@@ -1,4 +1,6 @@
 from django.db import models
+from django.urls import reverse
+from django.utils import timezone
 from colorfield.fields import ColorField
 from colour import Color
 
@@ -72,14 +74,22 @@ class Work(models.Model):
     team = models.ForeignKey(Team, on_delete=models.CASCADE)
     type_choice = models.TextField(choices=WorkType.choices, default=WorkType.OTHER)
     card_image = models.ImageField(null=False, upload_to='images/system/')
+    goods = models.IntegerField(null=False, default=0)
 
     def __str__(self):
         return self.title
 
+    def get_absolute_url(self):
+        return reverse("work", args=[str(self.id)])
+
 class Comment(models.Model):
+    created_at = models.DateTimeField(auto_now_add=True)
     work = models.ForeignKey(Work, on_delete=models.CASCADE)
     name = models.CharField(max_length=255)
     text = models.TextField()
     
     def __str__(self):
         return "[{}] {}".format(self.name, self.text)
+
+    def ja_created_at_str(self):
+        return self.created_at.strftime("%Y/%m/%d %H:%M")

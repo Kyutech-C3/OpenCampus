@@ -1,33 +1,142 @@
 {% extends 'base.html'%}
+{% load static %}
 
 {% block content %}
-{% if work %}
-<title>OpenCampus2020_WorksPage</title>
-<head><h1 center>OpenCampus2020_WorksPage</h1></head>
-    <head><strong>Works page test.</strong></head>
-    <ul>
-        <style>
-            .sample3_btn {
-                display: inline-block;
-                padding: 10px 20px 10px 20px;
-                text-decoration: none;
-                color: rgba(255, 255, 255, 0.534);
-                background: rgb(192, 214, 255);
-                font-weight: bold;
-                border: solid 4px rgb(192, 240, 255);
-                border-radius: 8px;
-            }
-            
-            .sample3_btn:hover {
-                background: white;
-                color: pink;
-            }
-        </style>
-            <li><a href="templates/base.html" class="sample3_btn">{{work.id}}</a></li>
-            <iframe src="https://www.javadrive.jp/python/" width="800" height="500"></iframe>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/9MjAJSoaoSo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </ul>
-{% else %}
-    <p>No polls are available.</p>
-{% endif %}
+<script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<link rel="stylesheet" href="{% static 'works/css/detail.css' %}">
+<link rel="stylesheet" href="{% static 'works/css/footer.css' %}"> 
+
+  <!-- main content -->
+  <main>
+    <!--  作品名とチーム名, GOODボタン, GOODを押された数をまとめた見出し  -->
+    <div class="detail_title_section" style="background-color: {{ work.genre.bg_color_lighten }}; color: {{ work.genre.text_color }}">
+      <div class="columns is-vcentered">
+        <!-- 作品名とチーム名 -->
+        <div class="column">
+          <h1 class="detail_title">作品名：<!-- Virtual Guy -->{{work.title}}</h1>
+          <p class="detail_subtitle">制作チーム名：<!-- 2dドット -->{{work.team}}</p>
+        </div>
+        <!-- GOODボタン -->
+        <div class="column has-text-right" style="flex-basis: 0;">
+          <form action="goods" method="post">
+            {% csrf_token %}
+            <button type="submit" class="button is-medium is-primary is-rounded" id="goods_btn"><span class="icon"><i class="fas fa-thumbs-up right"></i></span><span>GOOD!!</span></button>
+            <div class="good_counter"> {{ work.goods }} </div>
+          </form>
+          <!-- GOODを押された数  -->
+        </div>
+      </div>
+    </div>
+  </div>
+    <!--作品(ゲームやCGモデル等), 紹介, 操作方法など-->
+    <div class="columns">
+      <!-- 作品（ゲームやCGモデル等）  -->
+      <div class="column is-7">
+        <figure id="embed">
+        {% if work.type_choice == 'U3D' or type_choice == 'U2D'  %}<!-- Tipe of work is unity -->
+            {% include 'works/partial/_unity.html' %}
+        {% elif work.type_choice == 'VID' %}<!-- Tipe of work is video -->
+            {% include 'works/partial/_video.html' %}
+        {% elif work.type_choice == 'M3D' %}<!-- Tipe of work is model3D -->
+            {% include 'works/partial/_model3D.html' %}
+        {% elif work.type_choice == 'OTHER' %}<!-- Tipe of work is OTHER -->
+            {% include 'works/partial/_other.html' %}
+        {% endif %}</figure>
+      </div>
+      <!--作品の解説・使用方法 .etc-->
+      <div class="column">
+        <details>
+          <summary class="Subject">作品紹介</summary>
+          <p class="Paragraph">
+            <b>作品説明：</b><!--<br>
+             このゲームは、探索型2dアクションゲームです。<br>
+            マップを探索して鍵を集めて先に進み、ボスを倒せばゲームクリアです。-->
+            {{work.description}}
+          </p>
+          <p class="Paragraph">
+            <b>使用ツール：</b><br>
+            Unity 2019.3.14f1
+          </p>
+        </details>
+        <details>
+          <summary class="Subject">操作方法</summary>
+          <ul class="Paragraph">
+            <li>矢印← ... 左に移動</li>
+            <li>矢印→ ... 右に移動</li>
+            <li>矢印↑ ... ジャンプ</li>
+            <li>矢印↓ ... (すり抜け床の上にいるとき)床をすり抜ける</li>
+          </ul>
+          <p class="Paragraph">
+            敵は踏みつけたら倒せます。(マリオの踏みつけと同じ)<br>
+            敵に当たると体力が減ります。<br>
+            体力が無くなると、セーブポイントに戻されます。<br>
+            フルーツを取ると体力が回復します。<br>
+            <br>
+            鍵を取ると進める場所が増えます。<br>
+            マップ上には、アクションを増やすアイテムが存在します。<br>
+            もし先に進めなくなったら、アイテムを探してみましょう。
+          </p>
+        </details>
+        <details>
+          <summary class="Subject">制作者からひとこと</summary>
+          <p class="Paragraph">
+            <b>Kuroki：</b><br>
+            プレイヤー･敵キャラを作りました。<br>
+            このゲームで使ったUnityアセット「Pixel Adventure」は、<br>
+            無料かつ素材が豊富なのでぜひ使ってみてください。<br>
+            <b>Crucio：</b><br>
+            ステージ･ギミックを作りました。
+          </p>
+        </details>
+      </div>
+    </div>
+    <!-- コメント入力フォーム  -->
+    <div class="columns is-centered">
+      <div class="column is-half comment">
+          <form method="post" action="comment">
+            {% csrf_token %}
+            <div class="field">
+              <label class="label">お名前</label>
+              <div class="control">
+                <input class="input" type="text" name="name" value="名無しさん" placeholder="お名前" maxlength='30'>
+              </div>
+            </div>
+            <div class="field">
+              <label class="label">コメント</label>
+              <div class="control">
+                <textarea class="textarea" name="text" placeholder="コメント" required maxlength='100'></textarea>
+              </div>
+            </div>
+            <p class="help">※100文字まで</p>
+            <p class="control commentButton">
+              <input class="button is-link is-medium" type="submit" value="送信">
+            </p>
+         </form>
+      </div>
+    </div>
+    <!-- コメント一覧の表示枠  -->
+    <details>
+      <summary class="Subject">コメント一覧</summary>
+      <div class="box commentList">
+        {% for comment in comments %}
+        <p><b>{{ comment.ja_created_at_str }} {{ comment.name }}</b> {{ comment.text }}</p>
+        {% endfor %}
+      </div>
+    </details>
+
+    <!-- ページのtopまで戻るtopボタン -->
+    <a href="#top" class="topBtn" id="topBtn">TOP</a>
+  </main>
+
+  <footer class="footer">
+    <div class="page_title">
+      <a href="">C3OpenCampus特設サイト</a>
+    </div>
+    <div class="copyright">
+      C3©2020
+    </div>
+  </footer>
+
 {% endblock %}
+

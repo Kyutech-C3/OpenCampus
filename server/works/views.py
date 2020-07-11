@@ -1,5 +1,6 @@
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from .forms import CommentForm
 
 from .models import Work, Team, Genre
 
@@ -13,8 +14,27 @@ def index(request):
 
 def detail(request, work_id):
     work = Work.objects.get(pk=work_id)
-    team = work.team
+    comments = work.comment_set.all()
+    form = CommentForm()
     context = {
-        "work":work
+        "work":work,
+        "comments": comments,
+        "form": form
     }
     return render(request, 'works/detail.html', context)
+
+def goods(request, work_id):
+    work = Work.objects.get(pk=work_id)
+    work.goods += 1
+    work.save()
+    return redirect(work)
+
+def comment(request, work_id):
+    work = Work.objects.get(pk=work_id)
+    if request.method == "POST":
+        form = CommentForm(request.POST)
+        if form.is_valid():
+            comment = form.save(commit=False)
+            comment.work = work
+            comment.save()
+    return redirect(work)
