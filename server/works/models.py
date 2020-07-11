@@ -1,5 +1,6 @@
 from django.db import models
 from django.urls import reverse
+from django.utils import timezone
 from colorfield.fields import ColorField
 from colour import Color
 
@@ -82,9 +83,13 @@ class Work(models.Model):
         return reverse("work", args=[str(self.id)])
 
 class Comment(models.Model):
+    created_at = models.DateTimeField(auto_now_add=True)
     work = models.ForeignKey(Work, on_delete=models.CASCADE)
     name = models.CharField(max_length=255)
     text = models.TextField()
     
     def __str__(self):
         return "[{}] {}".format(self.name, self.text)
+
+    def ja_created_at_str(self):
+        return self.created_at.strftime("%Y/%m/%d %H:%M")
