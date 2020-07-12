@@ -33,6 +33,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'colorfield',
     'works',
+    'cloudinary_storage',
+    'cloudinary'
 ]
 
 MIDDLEWARE = [
