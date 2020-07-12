@@ -3,6 +3,7 @@ from django.urls import reverse
 from django.utils import timezone
 from colorfield.fields import ColorField
 from colour import Color
+from .validators import validate_is_glb
 
 
 # Create your models here.
@@ -22,9 +23,9 @@ class Video(models.Model):
         return self.url
 
 class Model3D(models.Model):
-    sketchfab_id = models.CharField(max_length=255)
+    glb = models.FileField(upload_to="3dmodels/", null=False, validators=[validate_is_glb])
     def __str__(self):
-        return self.sketchfab_id
+        return self.glb.url
 
 class Genre(models.Model):
     title = models.CharField(max_length=255, null=False, default="Genre")
@@ -75,7 +76,8 @@ class Work(models.Model):
     type_choice = models.TextField(choices=WorkType.choices, default=WorkType.OTHER)
     card_image = models.ImageField(null=False, upload_to='images/system/')
     goods = models.IntegerField(null=False, default=0)
-    game = models.ForeignKey(Game, on_delete=models.CASCADE, null=True)
+    game = models.ForeignKey(Game, on_delete=models.CASCADE, null=True, blank=True)
+    model3d = models.ForeignKey(Model3D, on_delete=models.CASCADE, null=True, blank=True)
 
     def __str__(self):
         return self.title
