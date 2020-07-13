@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="{% static 'works/css/hamburger.css' %}">
     <link rel="stylesheet" href="{% static 'works/css/fadeInOut.css' %}">
     <link rel="stylesheet" href="{% static 'works/css/index.css' %}">
-    <link rel="stylesheet" href="{% static 'works/css/footer.css' %}">
 
     <!-- JQuery の導入 -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -19,7 +18,6 @@
     <script src="{% static 'works/js/fadeInOut.js' %}"></script>
     <script src="{% static 'works/js/isSmartPhone.js' %}"></script>
     <script src="{% static 'works/js/hamburger.js' %}"></script>
-  <script type="text/javascript" src="{% static 'works/js/footer.js' %}"></script>
     <header>
       <div id="header">
           <div class="columns is-gapless is-multiline">
@@ -168,15 +166,5 @@
         <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
       </section>
       <!-- htmlが読まれた後にjsを読み込む（そうしないとaddEventListenerのプロパティがnullになる）  -->
-      <!--headerまで戻る固定ボタン-->
-      <a href="#top" class="topBtn" id="topBtn">TOP</a>
     </main>
-    <footer class="footer">
-      <div class="page_title">
-        <a href="">C3 OpenCampus特設サイト</a>
-      </div>
-      <div class="copyright">
-        C3©2020
-      </div>
-    </footer>
 {% endblock %}
