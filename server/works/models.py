@@ -5,6 +5,50 @@ from colorfield.fields import ColorField
 from colour import Color
 from .validators import validate_is_glb
 
+DEFAULT_DESCRIPTION = """
+<details>
+  <summary class="Subject">作品紹介</summary>
+  <p class="Paragraph">
+    <b>作品説明：</b><br>
+     このゲームは、探索型2dアクションゲームです。<br>
+    マップを探索して鍵を集めて先に進み、ボスを倒せばゲームクリアです。
+  </p>
+  <p class="Paragraph">
+    <b>使用ツール：</b><br>
+    Unity 2019.3.14f1
+  </p>
+</details>
+<details>
+  <summary class="Subject">操作方法</summary>
+  <ul class="Paragraph">
+    <li>矢印← ... 左に移動</li>
+    <li>矢印→ ... 右に移動</li>
+    <li>矢印↑ ... ジャンプ</li>
+    <li>矢印↓ ... (すり抜け床の上にいるとき)床をすり抜ける</li>
+  </ul>
+  <p class="Paragraph">
+    敵は踏みつけたら倒せます。(マリオの踏みつけと同じ)<br>
+    敵に当たると体力が減ります。<br>
+    体力が無くなると、セーブポイントに戻されます。<br>
+    フルーツを取ると体力が回復します。<br>
+    <br>
+    鍵を取ると進める場所が増えます。<br>
+    マップ上には、アクションを増やすアイテムが存在します。<br>
+    もし先に進めなくなったら、アイテムを探してみましょう。
+  </p>
+</details>
+<details>
+  <summary class="Subject">制作者からひとこと</summary>
+  <p class="Paragraph">
+    <b>Kuroki：</b><br>
+    プレイヤー･敵キャラを作りました。<br>
+    このゲームで使ったUnityアセット「Pixel Adventure」は、<br>
+    無料かつ素材が豊富なのでぜひ使ってみてください。<br>
+    <b>Crucio：</b><br>
+    ステージ･ギミックを作りました。
+  </p>
+</details>
+"""
 
 # Create your models here.
 class Team(models.Model):
@@ -70,7 +114,7 @@ class Work(models.Model):
         OTHER = 'OTHER', 'OTHER'
 
     title = models.CharField(max_length=255)
-    description = models.TextField(default="None")
+    description = models.TextField(default=DEFAULT_DESCRIPTION)
     genre = models.ForeignKey(Genre, on_delete=models.CASCADE, null=True)
     team = models.ForeignKey(Team, on_delete=models.CASCADE)
     type_choice = models.TextField(choices=WorkType.choices, default=WorkType.OTHER)
