@@ -3,7 +3,7 @@ from django.urls import reverse
 from django.utils import timezone
 from colorfield.fields import ColorField
 from colour import Color
-from .validators import validate_is_glb
+from .validators import validate_is_glb, validate_is_mp4
 
 DEFAULT_DESCRIPTION = """
 <details>
@@ -62,9 +62,9 @@ class Game(models.Model):
         return self.unityroom_url
 
 class Video(models.Model):
-    url = models.CharField(max_length=255)
+    mp4 = models.FileField(upload_to="videos/", null=False, validators=[validate_is_mp4])
     def __str__(self):
-        return self.url
+        return self.mp4.url
 
 class Model3D(models.Model):
     glb = models.FileField(upload_to="3dmodels/", null=False, validators=[validate_is_glb])
@@ -122,6 +122,7 @@ class Work(models.Model):
     goods = models.IntegerField(null=False, default=0)
     game = models.ForeignKey(Game, on_delete=models.CASCADE, null=True, blank=True)
     model3d = models.ForeignKey(Model3D, on_delete=models.CASCADE, null=True, blank=True)
+    video = models.ForeignKey(Video, on_delete=models.CASCADE, null=True, blank=True)
 
     def __str__(self):
         return self.title

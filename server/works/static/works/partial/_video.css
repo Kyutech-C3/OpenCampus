@@ -1,0 +1,59 @@
+/* ここのwidthとheightはビデオのwidthとheightと対応させる */
+.videos-class{
+    position: relative;
+    width: 640;
+    height: 264;
+  }
+  /* playアイコンとpause(stop)アイコンのアニメーション */
+  .fade-animation{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    position: absolute;
+    top: 17%;
+    left: 45%;
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(40px);
+    transition: all 3s;
+  }
+  .fade-animation.is-show{
+    opacity: 1;
+    visibility: visible;
+  }
+  .fade-animation.is-fadeout{
+    animation : fadeOut 1.5s;
+    animation-fill-mode: both;
+  }
+  @keyframes fadeOut {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
+  /* 動画の最後に出るreplayアイコンのアニメーション */
+  .replay-icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    position: absolute;
+    top: 0%;
+    left: 37%;
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(40px);
+    transition: all 3s;
+  }
+  .replay-icon.is-show{
+    opacity: 1;
+    visibility: visible;
+  }
