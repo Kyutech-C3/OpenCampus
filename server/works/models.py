@@ -4,6 +4,8 @@ from django.utils import timezone
 from colorfield.fields import ColorField
 from colour import Color
 from .validators import validate_is_glb, validate_is_mp4
+from cloudinary_storage.storage import VideoMediaCloudinaryStorage
+from cloudinary_storage.validators import validate_video
 
 DEFAULT_DESCRIPTION = """
 <details>
@@ -62,7 +64,7 @@ class Game(models.Model):
         return self.unityroom_url
 
 class Video(models.Model):
-    mp4 = models.FileField(upload_to="videos/", null=False, validators=[validate_is_mp4])
+    mp4 = models.ImageField(upload_to="videos/", null=False, storage=VideoMediaCloudinaryStorage(), validators=[validate_video])
     def __str__(self):
         return self.mp4.url
 
