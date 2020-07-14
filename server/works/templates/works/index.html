@@ -20,6 +20,7 @@
     <script src="{% static 'works/js/hamburger.js' %}"></script>
     <header>
       <div id="header">
+          {% include 'works/partial/_notify.html' %}
           <div class="columns is-gapless is-multiline">
               {% if isStreaming %}
               <div class="column is-12">

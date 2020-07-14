@@ -1,0 +1,42 @@
+.notify_container {
+  padding: 2rem;
+  background-color: #cffeff;
+}
+.notify_container .title {
+  display: inline-block;
+  margin-bottom: 2.5rem;
+}
+.notify_container .title .title_under_line{
+  margin-top: -10px;
+  border-bottom: solid 10px #fab18c;
+}
+
+.notify_container .subtitle {
+}
+
+.notify_container .button {
+  position: relative;
+  padding: 2rem 3rem;
+}
+
+.notify_container .reflector {
+  position: absolute;
+  left: 0;
+  margin-left: -70px;
+  height: 100%;
+  opacity: 0.3;
+  z-index: 10;
+  animation: reflection_anime 2s ease-out 0.5s infinite normal;
+}
+
+@keyframes reflection_anime {
+  0% {
+    margin-left: -70px;
+  }
+  80% {
+    margin-left: -70px;
+  }
+  100% {
+    margin-left: calc(100% + 70px);
+  }
+}
