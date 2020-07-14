@@ -59,9 +59,3 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
-
-DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.RawMediaCloudinaryStorage'
-
-CLOUDINARY_STORAGE = {
-        'STATIC_VIDEOS_EXTENSIONS': ['mp4']
-        }
