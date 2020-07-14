@@ -1,8 +1,15 @@
+.video_container {
+}
 /* ここのwidthとheightはビデオのwidthとheightと対応させる */
 .videos-class{
-    position: relative;
-    width: 640;
-    height: 264;
+  position: relative;
+  padding-bottom: 56.25%;
+    
+  }
+  .video-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
   }
   /* playアイコンとpause(stop)アイコンのアニメーション */
   .fade-animation{
