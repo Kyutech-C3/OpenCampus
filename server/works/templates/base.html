@@ -4,16 +4,17 @@
     <title>C3 OpenCampus 2020</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="{% static 'works/base.css' %}">
-    <link rel="stylesheet" href="{% static 'works/partial/_header.css' %}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+    <link rel="stylesheet" href="{% static 'works/base.css' %}">
   </head>
   <body>
-    <div class="wrapper">
-      {% include 'works/partial/_header.html' %}
-      {% block content %}
-      {% endblock %}
-      {% include 'works/partial/_footer.html' %}
+        {% include 'works/partial/_header.html' %}
+    <div class="centering_box">
+      <div class="wrapper">
+        {% block content %}
+        {% endblock %}
+      </div>
     </div>
+        {% include 'works/partial/_footer.html' %}
   </body>
 </html>

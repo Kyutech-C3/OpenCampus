@@ -1,11 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@900&display=swap');
-/* 1280px以上 */
-@media screen and (min-width: 1280px) {
-  body {
-    margin: 0 15%;
-  }
-}
-
 /* 1024px以上 */
 @media screen and (min-width: 1024px) {
   main div section {

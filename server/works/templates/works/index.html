@@ -98,13 +98,13 @@
         <nav class="global-nav">
           <ul class="global-nav__list">
             {% for genre in genres%}
-            <li class="global-nav__genre js-scroll-item" style="background-color: {{ genre.card_color }}"><a href="#{{ genre.pk }}">{{ genre.title }}</a></li>
+            <li class="global-nav__genre genre_button" data-scroll-to="#{{ genre.pk }}">{{ genre.title }}</li>
               {% for work in genre.work_set.all %}
               <li class="global-nav__item"><a href="{% url 'work' work.pk %}">{{ work.title }}</a></li>
               {% endfor %}
             {% endfor %}
-            <li class="global-nav__genre js-scroll-item"><a href="javascript:scrollClubPresident();">部長から一言</a></li>
-            <li class="global-nav__genre js-scroll-item"><a href="javascript:scrollClubJournal();">部誌</a></li>
+            <li class="global-nav__genre genre_button" data-scroll-to="#clubPresident">部長から一言</li>
+            <li class="global-nav__genre genre_button" data-scroll-to="#clubJournal">部誌</li>
           </ul>
         </nav>
         <!-- ハンバーガーの3本線  -->
@@ -120,7 +120,7 @@
       <nav class="content-nav">
         <ul class="content-nav__list flex-container">
           {% for genre in genres %}
-          <li class="content-nav__item flex-item genre_button" style="background-color: {{ genre.bg_color }}"><a href="#{{ genre.pk }}" style="color: {{ genre.text_color }}">{{ genre.title }}</a></li>
+          <li class="content-nav__item flex-item genre_button"  data-scroll-to="#{{ genre.pk }}" style="background-color: {{ genre.bg_color }}">{{ genre.title }}</li>
           {% endfor %}
         </ul>
       </nav>
