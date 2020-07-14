@@ -22,7 +22,7 @@
 .notify_container .reflector {
   position: absolute;
   left: 0;
-  margin-left: -70px;
+  margin-left: -100px;
   height: 100%;
   opacity: 0.3;
   z-index: 10;
@@ -31,12 +31,12 @@
 
 @keyframes reflection_anime {
   0% {
-    margin-left: -70px;
+    margin-left: -100px;
   }
   80% {
-    margin-left: -70px;
+    margin-left: -100px;
   }
   100% {
-    margin-left: calc(100% + 70px);
+    margin-left: calc(100% + 100px);
   }
 }
