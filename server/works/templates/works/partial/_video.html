@@ -15,35 +15,31 @@
     class="video-js vjs-big-play-centered"
     controls
     preload="auto"
-    width="640"
-    height="264"
     poster="{% static 'works/images/c3_logo.png' %}"
     data-setup="{}"
     >
-    <!-- 再生する動画ファイル -->
-    <source src="{{ work.video.mp4.url }}" type="video/mp4" />
-    <!-- <source src="MY_VIDEO.webm" type="video/webm" /> -->
-    <p class="vjs-no-js">
-      To view this video please enable JavaScript, and consider upgrading to a
-      web browser that
-      <a href="https://videojs.com/html5-video-support/" target="_blank"
-        >supports HTML5 video</a
-      >
-    </p>
+      <!-- 再生する動画ファイル -->
+      <source src="{{ work.video.mp4.url }}" type="video/mp4" />
+      <!-- <source src="MY_VIDEO.webm" type="video/webm" /> -->
+      <p class="vjs-no-js">
+        To view this video please enable JavaScript, and consider upgrading to a
+        web browser that
+        <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+      </p>
     </video>
   </div>
   
   <div class="element fade-animation">
     <!-- 一時停止ボタンのアニメーション用の画像 -->
-    <img id="stopC3"  src="{% static 'works/images/C3stop.png' %}"></div>
-    <div class="element fade-animation">
-      <!-- 再生ボタンのアニメーション用の画像 -->
-      <img id="playC3"  src="{% static 'works/images/C3play.png' %}"></div>
-      <div class="element replay-icon">
-        <!-- リプレイボタンのアニメーション用の画像 -->
-        <img id="replayC3"  src="{% static 'works/images/C3replay.png' %}"></div>
-      </div>
-    </div>
+    <img id="stopC3"  src="{% static 'works/images/C3stop.png' %}">
+  </div>
+  <div class="element fade-animation">
+    <!-- 再生ボタンのアニメーション用の画像 -->
+    <img id="playC3"  src="{% static 'works/images/C3play.png' %}">
+  </div>
+  <div class="element replay-icon">
+    <!-- リプレイボタンのアニメーション用の画像 -->
+    <img id="replayC3"  src="{% static 'works/images/C3replay.png' %}">
   </div>
 </div>
 
