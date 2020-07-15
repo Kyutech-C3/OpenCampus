@@ -21,6 +21,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__fil
 
 ALLOWED_HOSTS = ["*"]
 
+DEBUG = True
 
 # Application definition
 
@@ -33,8 +34,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'colorfield',
     'works',
-    'cloudinary_storage',
-    'cloudinary'
+    'storages'
 ]
 
 MIDDLEWARE = [
@@ -124,9 +124,3 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 MEDIA_URL = '/media/'
-
-DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
-
-CLOUDINARY_STORAGE = {
-        'STATIC_VIDEOS_EXTENSIONS': ['mp4']
-        }
