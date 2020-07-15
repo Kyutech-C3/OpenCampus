@@ -1,7 +1,7 @@
 $(function () {
   // renderer
   const canvas = document.querySelector("#vrm_canvas");
-  console.log(canvas);
+  console.log(canvas.dataset.vrmUrl);
   const renderer = new THREE.WebGLRenderer({
     canvas: canvas
   });
@@ -33,8 +33,7 @@ $(function () {
   loader.load(
 
       // URL of the VRM you want to load
-    //document.getElementById("vrm_camvas").dataset.vrmUrl
-    "https://files.slack.com/files-pri/TR9V11LLA-F016NEZUZST/download/jill_fin.vrm",
+    canvas.dataset.vrmUrl,
 
       // called when the resource is loaded
       ( gltf ) => {
