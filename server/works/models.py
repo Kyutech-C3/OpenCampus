@@ -3,9 +3,7 @@ from django.urls import reverse
 from django.utils import timezone
 from colorfield.fields import ColorField
 from colour import Color
-from cloudinary_storage.storage import VideoMediaCloudinaryStorage
-from cloudinary_storage.validators import validate_video
-from .validators import validate_is_glb, validate_is_mp4
+from .validators import validate_is_glb, validate_is_vrm, validate_is_mp4
 
 DEFAULT_DESCRIPTION = """
 <details>
@@ -64,14 +62,18 @@ class Game(models.Model):
         return self.unityroom_url
 
 class Video(models.Model):
-    mp4 = models.FileField(upload_to="videos/", null=False, storage=VideoMediaCloudinaryStorage(), validators=[validate_video])
+    mp4 = models.FileField(upload_to="videos/", null=False, validators=[validate_is_mp4])
     def __str__(self):
         return self.mp4.url
 
 class Model3D(models.Model):
-    glb = models.FileField(upload_to="3dmodels/", null=False, validators=[validate_is_glb])
+    glb = models.FileField(upload_to="3dmodels/", blank=True, null=True, validators=[validate_is_glb])
+    vrm = models.FileField(upload_to="3dmodels/", blank=True, null=True, validators=[validate_is_vrm])
     def __str__(self):
-        return self.glb.url
+        if self.vrm != None:
+            return self.vrm.url
+        else:
+            return self.glb.url
 
 class Genre(models.Model):
     title = models.CharField(max_length=255, null=False, default="Genre")

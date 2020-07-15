@@ -37,7 +37,11 @@
         {% elif work.type_choice == 'VID' %}<!-- Tipe of work is video -->
             {% include 'works/partial/_video.html' %}
         {% elif work.type_choice == 'M3D' %}<!-- Tipe of work is model3D -->
-            {% include 'works/partial/_model3D.html' %}
+            {% if work.model3d.vrm %}
+              {% include 'works/partial/_vrm.html' %}
+            {% elif work.model3d.glb %}
+              {% include 'works/partial/_model3D.html' %}
+            {% endif %}
         {% elif work.type_choice == 'OTHER' %}<!-- Tipe of work is OTHER -->
             {% include 'works/partial/_other.html' %}
         {% endif %}</figure>
