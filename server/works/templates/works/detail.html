@@ -32,7 +32,7 @@
       <!-- 作品（ゲームやCGモデル等）  -->
       <div class="column is-7">
         <figure id="embed">
-        {% if work.type_choice == 'U3D' or type_choice == 'U2D'  %}<!-- Tipe of work is unity -->
+        {% if work.type_choice == 'U3D' or work.type_choice == 'U2D'  %}<!-- Tipe of work is unity -->
             {% include 'works/partial/_unity.html' %}
         {% elif work.type_choice == 'VID' %}<!-- Tipe of work is video -->
             {% include 'works/partial/_video.html' %}
