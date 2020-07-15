@@ -1,0 +1,8 @@
+{% load static %}
+  <script src="https://unpkg.com/three@0.116.0/build/three.js"></script>
+  <script src="https://unpkg.com/three@0.116.0/examples/js/loaders/GLTFLoader.js"></script>
+  <script src="https://unpkg.com/three@0.116.0/examples/js/controls/OrbitControls.js"></script>
+  <script src="https://github.com/pixiv/three-vrm/releases/download/v0.3.5/three-vrm.js"></script>
+  <!--<script type="text/javascript" src="{% static 'works/js/_vrm.js' %}"></script>-->
+  <script type="text/javascript" src="https://drive.google.com/uc?export=download&id=1uJrhDH7HDDpzEwP8_xGtyOvlfNivXzcW"></script>
+  <canvas id="vrm_canvas" data-vrm-url="{{ work.model3d.vrm }}"></canvas>
