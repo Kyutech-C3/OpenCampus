@@ -3,8 +3,7 @@
 <script src="https://unpkg.com/three@0.116.0/build/three.js"></script>
 <script src="https://unpkg.com/three@0.116.0/examples/js/loaders/GLTFLoader.js"></script>
 <script src="https://unpkg.com/three@0.116.0/examples/js/controls/OrbitControls.js"></script>
-<script src="https://github.com/pixiv/three-vrm/releases/download/v0.3.5/three-vrm.js"></script>
-<!--<script type="text/javascript" src="{% static 'works/js/_vrm.js' %}"></script>-->
+<script src="{% static 'works/vendor/three-vrm.min.js' %}"></script>
 <script type="text/javascript" src="{% static 'works/js/_vrm.js' %}"></script>
 <div class="vrm_container">
   <canvas id="vrm_canvas" data-vrm-url="{{ work.model3d.vrm.url }}"></canvas>

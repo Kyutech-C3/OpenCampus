@@ -1,12 +1,25 @@
 $(function () {
+  function resize_vrm_canvas(e) {
+    const container = document.querySelector(".vrm_container");
+    const width = container.clientWidth;
+    const height = container.clientHeight;
+    renderer.setPixelRatio(window.devicePixelRatio);
+    renderer.setSize(width, height);
+    camera.aspect = width/height;
+    camera.updateProjectionMatrix();
+  }
+  window.addEventListener('resize', resize_vrm_canvas)
   // renderer
   const canvas = document.querySelector("#vrm_canvas");
   console.log(canvas.dataset.vrmUrl);
+  console.log(canvas.clientWidth);
   const renderer = new THREE.WebGLRenderer({
-    canvas: canvas
+    canvas: canvas,
+    alpha: true
   });
+  renderer.setClearColor(0x000000, 0);
 
-  renderer.setSize( canvas.innerWidth, canvas.innerHeight );
+  renderer.setSize( canvas.clientWidth, canvas.clientHeight );
   renderer.setPixelRatio( window.devicePixelRatio );
 
   // camera
@@ -65,9 +78,6 @@ $(function () {
   const gridHelper = new THREE.GridHelper( 10, 10 );
   scene.add( gridHelper );
 
-  const axesHelper = new THREE.AxesHelper( 5 );
-  scene.add( axesHelper );
-
   function animate() {
 
       requestAnimationFrame( animate );
@@ -77,4 +87,5 @@ $(function () {
   }
 
   animate();
+  resize_vrm_canvas();
 });
