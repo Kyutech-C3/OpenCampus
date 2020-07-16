@@ -16,27 +16,38 @@
 
 .notify_container .button {
   position: relative;
-  padding: 2rem 3rem;
+  padding: 2.5rem 3rem;
+  font-size: 1.5rem;
+  overflow: hidden;
 }
 
 .notify_container .reflector {
   position: absolute;
   left: 0;
-  margin-left: -100px;
-  height: 100%;
+  height: 200%;
+  transform: rotate(15deg) translateX(-50%);
   opacity: 0.3;
   z-index: 10;
+  border-left: solid 30px white;
   animation: reflection_anime 2s ease-out 0.5s infinite normal;
+  opacity: 0;
+  filter: blur(5px);
 }
 
 @keyframes reflection_anime {
   0% {
-    margin-left: -100px;
+    margin-left: 0px;
+    opacity: 0;
   }
   80% {
-    margin-left: -100px;
+    margin-left: 0px;
+    opacity: 0;
+  }
+  90% {
+    opacity: 0.6;
   }
   100% {
-    margin-left: calc(100% + 100px);
+    margin-left: calc(100%);
+    opacity: 0;
   }
 }
