@@ -1,5 +1,10 @@
 .link_img{
+    display: inline-block;
     position: relative;
+    margin: 0 2rem;
+}
+.link_img:hover img {
+  animation: link_hover_opacity 0.5s ease 0s normal forwards;
 }
 
 .link_img:hover{
@@ -9,21 +14,44 @@
 }
 
 .link_img:hover .balloon{
-    display: inline;
+  display: block;
 }
 
 /* リンク（のアイコン）の説明を表示 */
 .balloon {
     position   : absolute;                /* 親要素を基準 */
-    display: none;                        /* 要素を非表示 */
     padding: 2px;                         /* テキストの前後の余白 */
-    background-color: rgba(255, 255, 255, 0.8);       /* 背景色（透明度） */
-    width:200px;                          /* 吹き出し全体の幅 */
-    height: 100px;
-    top: 0px;
-    left : 0px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
     text-align: center;
-    font-size: 30px;                       /* 文字サイズ */
+    font-size: 1.2rem;                       /* 文字サイズ */
     font-weight: bold;
-    
+    white-space: nowrap;
+    opacity: 0;
+}
+
+.link_img:hover .balloon {
+  animation: link_hover_baloon 0.5s ease 0s normal forwards;
+}
+
+#clubJournal {
+  min-height: auto;
+  padding-bottom: 5rem;
+}
+
+@keyframes link_hover_opacity {
+  0% {
+  }
+  100% {
+    opacity: 0.2;
+  }
+}
+
+@keyframes link_hover_baloon {
+  0% {
+  }
+  100% {
+    opacity: 1;
+  }
 }
