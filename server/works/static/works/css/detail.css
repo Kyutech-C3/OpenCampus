@@ -71,10 +71,12 @@ iframe {
 
 @media screen and (max-width: 599px) {
   #embed{
-    display: none;
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 0;
   }
 }
 
 .topBtn {
-  display: none;
+  display: none!important;
 }

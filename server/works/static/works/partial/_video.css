@@ -44,22 +44,24 @@
     }
   }
 
-  /* 動画の最後に出るreplayアイコンのアニメーション */
-  .replay-icon{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  .element{
     cursor: pointer;
 
     position: absolute;
-    top: 0%;
-    left: 37%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20%;
 
     opacity: 0;
     visibility: hidden;
-    transform: translateY(40px);
     transition: all 3s;
   }
+  .element img {
+    width: 100%;
+  }
+
+  /* 動画の最後に出るreplayアイコンのアニメーション */
   .replay-icon.is-show{
     opacity: 1;
     visibility: visible;
