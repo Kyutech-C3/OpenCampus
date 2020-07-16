@@ -1,4 +1,6 @@
 $(function () {
+  const progress_container = document.querySelector("#vrm_progress");
+  const progress_percentage = document.querySelector("#vrm_progress_percentage");
   function resize_vrm_canvas(e) {
     const container = document.querySelector(".vrm_container");
     const width = container.clientWidth;
@@ -56,7 +58,7 @@ $(function () {
 
           // generate VRM instance from gltf
           THREE.VRM.from( gltf ).then( ( vrm ) => {
-
+              progress_container.style.display = 'none';
               console.log( vrm );
               scene.add( vrm.scene );
 
@@ -67,7 +69,10 @@ $(function () {
       },
 
       // called while loading is progressing
-      ( progress ) => console.log( 'Loading model...', 100.0 * ( progress.loaded / progress.total ), '%' ),
+      ( progress ) => {
+        console.log( 'Loading model...', 100.0 * ( progress.loaded / progress.total ), '%' )
+        progress_percentage.innerHTML = Math.round(100 * ( progress.loaded / progress.total )) + '%'
+      },
 
       // called when loading has errors
       ( error ) => console.error( error )
