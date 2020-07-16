@@ -8,13 +8,14 @@
     <link rel="stylesheet" href="{% static 'works/base.css' %}">
   </head>
   <body>
-        {% include 'works/partial/_header.html' %}
-    <div class="centering_box">
-      <div class="wrapper">
+    <div class="wrapper">
+      <a href="#top" class="topBtn" id="topBtn">TOP</a>
+          {% include 'works/partial/_header.html' %}
+      <div class="centering_box">
         {% block content %}
         {% endblock %}
       </div>
+          {% include 'works/partial/_footer.html' %}
     </div>
-        {% include 'works/partial/_footer.html' %}
   </body>
 </html>
