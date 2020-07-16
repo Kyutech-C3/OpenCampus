@@ -6,5 +6,11 @@
 <script src="{% static 'works/vendor/three-vrm.min.js' %}"></script>
 <script type="text/javascript" src="{% static 'works/js/_vrm.js' %}"></script>
 <div class="vrm_container">
+  <div id="vrm_progress">
+    <svg class="vrm_progress_circle">
+      <rect width="50" height="50" x="25" y="25" fill="none" stroke="black" stroke-width="10" />
+    </svg>
+    <p id="vrm_progress_percentage">0%</p>
+  </div>
   <canvas id="vrm_canvas" data-vrm-url="{{ work.model3d.vrm.url }}"></canvas>
 </div>

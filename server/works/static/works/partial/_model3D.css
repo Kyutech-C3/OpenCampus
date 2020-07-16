@@ -20,3 +20,29 @@ canvas {
   width: 100%;
   height: 100%;
 }
+
+#vrm_progress {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.vrm_progress_circle {
+  width: 100;
+  height: 100;
+  animation: loading_anime 1s linear 0s infinite;
+}
+
+#vrm_progress_percentage {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+@keyframes loading_anime {
+  0% {
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
