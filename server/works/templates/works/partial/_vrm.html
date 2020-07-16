@@ -1,0 +1,16 @@
+{% load static %}
+<link rel="stylesheet" href={% static 'works/partial/_model3D.css' %}>
+<script src="https://unpkg.com/three@0.116.0/build/three.js"></script>
+<script src="https://unpkg.com/three@0.116.0/examples/js/loaders/GLTFLoader.js"></script>
+<script src="https://unpkg.com/three@0.116.0/examples/js/controls/OrbitControls.js"></script>
+<script src="{% static 'works/vendor/three-vrm.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'works/js/_vrm.js' %}"></script>
+<div class="vrm_container">
+  <div id="vrm_progress">
+    <svg class="vrm_progress_circle">
+      <rect width="50" height="50" x="25" y="25" fill="none" stroke="black" stroke-width="10" />
+    </svg>
+    <p id="vrm_progress_percentage">0%</p>
+  </div>
+  <canvas id="vrm_canvas" data-vrm-url="{{ work.model3d.vrm.url }}"></canvas>
+</div>

@@ -1,10 +1,4 @@
-/* 1280px以上 */
-@media screen and (min-width: 1280px) {
-  body {
-    margin: 0 15%;
-  }
-}
-
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@900&display=swap');
 /* 1024px以上 */
 @media screen and (min-width: 1024px) {
   main div section {
@@ -17,7 +11,7 @@
     margin-left: -3rem;
     padding-top: 2rem;
     text-orientation: sideways; /* すべて縦方向に表示 */
-    height: 100%;
+    /* height: 100%; */
   }
 
   .works {
@@ -290,6 +284,9 @@ section.genre {
   background: -moz-linear-gradient(top, var(--white), var(--gray));
   background: -webkit-linear-gradient(top, var(--white), var(--gray));
   background: linear-gradient(to bottom,var(--white), var(--gray));
+}
+.clubPresident__Message {
+  font-family: "Noto Serif JP", sans-serif;
 }
 
 #clubJournal{

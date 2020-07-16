@@ -1,0 +1,116 @@
+{% load static %}
+<link href="https://vjs.zencdn.net/7.8.2/video-js.css" rel="stylesheet" />
+<link href="{% static 'works/partial/_video.css' %}" rel="stylesheet">
+
+<!-- If you'd like to support IE8 (for Video.js versions prior to v7) -->
+<script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
+
+<div class="videos-class">
+  <div class="only-video">
+    <!-- ビデオタグ -->
+    <!-- videoのwidth,heightと上にある「.videos-class」のwidth,heightの値は対応させる -->
+    <!-- posterは動画のサムネイルみたいなもの -->
+    <video
+    id="myvideo"
+    class="video-js vjs-big-play-centered"
+    controls
+    preload="auto"
+    poster="{% static 'works/images/c3_logo.png' %}"
+    data-setup="{}"
+    >
+      <!-- 再生する動画ファイル -->
+      <source src="{{ work.video.mp4.url }}" type="video/mp4" />
+      <!-- <source src="MY_VIDEO.webm" type="video/webm" /> -->
+      <p class="vjs-no-js">
+        To view this video please enable JavaScript, and consider upgrading to a
+        web browser that
+        <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+      </p>
+    </video>
+  </div>
+  
+  <div class="element fade-animation">
+    <!-- 一時停止ボタンのアニメーション用の画像 -->
+    <img id="stopC3"  src="{% static 'works/images/C3stop.png' %}">
+  </div>
+  <div class="element fade-animation">
+    <!-- 再生ボタンのアニメーション用の画像 -->
+    <img id="playC3"  src="{% static 'works/images/C3play.png' %}">
+  </div>
+  <div class="element replay-icon">
+    <!-- リプレイボタンのアニメーション用の画像 -->
+    <img id="replayC3"  src="{% static 'works/images/C3replay.png' %}">
+  </div>
+</div>
+
+<!-- スクリプト -->
+<script>
+  var myvideo = document.getElementById('myvideo'); //ビデオの要素を取得
+  // アニメーション用の画像の要素を取得。element[0]が一時停止ボタンの画像、[1]が再生ボタンの画像
+  var element = document.getElementsByClassName('fade-animation');  
+  // アニメーション用の画像の要素を取得。replayIcon[0]がリプレイボタンの画像。
+  var replayIcon = document.getElementsByClassName('replay-icon');
+  
+  // クリックを検出して一時停止中なら一時停止のアニメーション、
+  // 再生中なら再生中のアニメーションを表示
+  function c3LogoAppear(){
+    myvideo.addEventListener('click', function(){
+      element[0].style.display = "block"; 
+      element[1].style.display = "block"; 
+      
+      myvideo.addEventListener('pause',function(){
+        
+        element[0].classList.add('is-show');
+        element[0].classList.add('is-fadeout');
+        myvideo.addEventListener('ended',function(){
+          element[0].classList.remove('is-show');
+          element[0].classList.remove('is-fadeout');
+        });
+      });
+      myvideo.addEventListener('play',function(){
+        element[1].classList.add('is-show');
+        element[1].classList.add('is-fadeout');
+      });
+      element[0].classList.remove('is-show');
+      element[0].classList.remove('is-fadeout');
+      element[1].classList.remove('is-show');
+      element[1].classList.remove('is-fadeout');
+      
+      
+      setTimeout(function(){ 
+        element[0].style.display = "none"; 
+        element[1].style.display = "none"; 
+      }, 1500);
+    }, false);
+  }
+  // リプレイボタンのアニメーション
+  function replay(){
+    // 動画が終了したらリプレイボタンを表示
+    myvideo.addEventListener('ended',function(){
+      replayIcon[0].style.display = "block";
+      replayIcon[0].classList.add('is-show');
+      // 動画終了後、シークバーなどで動画の再生時間が変更された場合、残っていると邪魔なので消す
+      myvideo.addEventListener('timeupdate',function(){
+        replayIcon[0].style.display = "none";
+      });
+    });
+    // 動画が再生中ならリプレイボタンの画像を見えなくする
+    myvideo.addEventListener('play', function(){
+      replayIcon[0].style.display = "none";
+    });
+    // リプレイボタンの画像がクリックされたら動画の最初に戻って再生（リプレイ）
+    replayIcon[0].addEventListener('click',function(){
+      myvideo.currentTime = 0;
+      element[1].style.display = "block"; 
+      element[1].classList.add('is-show');
+      element[1].classList.add('is-fadeout');
+      setTimeout(function(){ 
+        element[1].style.display = "none"; 
+      }, 1500);
+      myvideo.play();
+    });
+  }
+  c3LogoAppear();
+  replay();
+</script>
+<script src="https://vjs.zencdn.net/7.8.2/video.js"></script>

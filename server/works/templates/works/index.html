@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="{% static 'works/css/hamburger.css' %}">
     <link rel="stylesheet" href="{% static 'works/css/fadeInOut.css' %}">
     <link rel="stylesheet" href="{% static 'works/css/index.css' %}">
-    <link rel="stylesheet" href="{% static 'works/css/footer.css' %}">
 
     <!-- JQuery の導入 -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -19,9 +18,9 @@
     <script src="{% static 'works/js/fadeInOut.js' %}"></script>
     <script src="{% static 'works/js/isSmartPhone.js' %}"></script>
     <script src="{% static 'works/js/hamburger.js' %}"></script>
-  <script type="text/javascript" src="{% static 'works/js/footer.js' %}"></script>
     <header>
       <div id="header">
+          {% include 'works/partial/_notify.html' %}
           <div class="columns is-gapless is-multiline">
               {% if isStreaming %}
               <div class="column is-12">
@@ -100,13 +99,13 @@
         <nav class="global-nav">
           <ul class="global-nav__list">
             {% for genre in genres%}
-            <li class="global-nav__genre js-scroll-item" style="background-color: {{ genre.card_color }}"><a href="#{{ genre.pk }}">{{ genre.title }}</a></li>
+            <li class="global-nav__genre genre_button" data-scroll-to="#{{ genre.pk }}">{{ genre.title }}</li>
               {% for work in genre.work_set.all %}
               <li class="global-nav__item"><a href="{% url 'work' work.pk %}">{{ work.title }}</a></li>
               {% endfor %}
             {% endfor %}
-            <li class="global-nav__genre js-scroll-item"><a href="javascript:scrollClubPresident();">部長から一言</a></li>
-            <li class="global-nav__genre js-scroll-item"><a href="javascript:scrollClubJournal();">部誌</a></li>
+            <li class="global-nav__genre genre_button" data-scroll-to="#clubPresident">部長から一言</li>
+            <li class="global-nav__genre genre_button" data-scroll-to="#clubJournal">部誌</li>
           </ul>
         </nav>
         <!-- ハンバーガーの3本線  -->
@@ -122,7 +121,7 @@
       <nav class="content-nav">
         <ul class="content-nav__list flex-container">
           {% for genre in genres %}
-          <li class="content-nav__item flex-item genre_button" style="background-color: {{ genre.bg_color }}"><a href="#{{ genre.pk }}" style="color: {{ genre.text_color }}">{{ genre.title }}</a></li>
+          <li class="content-nav__item flex-item genre_button"  data-scroll-to="#{{ genre.pk }}" style="background-color: {{ genre.bg_color }}">{{ genre.title }}</li>
           {% endfor %}
         </ul>
       </nav>
@@ -168,15 +167,5 @@
         <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
       </section>
       <!-- htmlが読まれた後にjsを読み込む（そうしないとaddEventListenerのプロパティがnullになる）  -->
-      <!--headerまで戻る固定ボタン-->
-      <a href="#top" class="topBtn" id="topBtn">TOP</a>
     </main>
-    <footer class="footer">
-      <div class="page_title">
-        <a href="">C3 OpenCampus特設サイト</a>
-      </div>
-      <div class="copyright">
-        C3©2020
-      </div>
-    </footer>
 {% endblock %}
