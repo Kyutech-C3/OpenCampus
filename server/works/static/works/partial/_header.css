@@ -1,3 +1,7 @@
 header {
   text-align: left;
 }
+.title a {
+  text-decoration: none;
+  color: white;
+}
