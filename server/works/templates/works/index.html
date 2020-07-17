@@ -21,7 +21,11 @@
     <script src="{% static 'works/js/hamburger.js' %}"></script>
     <header>
       <div id="header">
+        {% if live_stream %}
+          {% include 'works/partial/_live_view.html' %}
+        {% else %}
           {% include 'works/partial/_notify.html' %}
+        {% endif %}
           <div class="columns is-gapless is-multiline">
               {% if isStreaming %}
               <div class="column is-12">

@@ -1,0 +1,17 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'works/partial/_live_view.css' %}">
+<div class="columns has-text-centered" style="margin-bottom: 0; margin-left: 0; margin-right: 0;">
+  <div class="column is-12 is-primary" style="padding-bottom: 0; padding-left: 0; padding-right: 0;">
+    <div class="live_view_container">
+      <h1 class="title">
+        <span class="span_youtube_live">Youtube Live</span>にて発表会開催中！！
+        <div class="title_under_line"></div>
+      </h1>
+        <div class="live_container">
+          <div class="iframe_container">
+            <iframe width="100%" src="{{ live_stream.url }}?autoplay=1&mute=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>

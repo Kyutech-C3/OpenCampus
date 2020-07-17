@@ -8,6 +8,9 @@
 
   <!-- main content -->
   <main>
+    {% if live_stream %}
+      {% include 'works/partial/_live_view.html' %}
+    {% endif %}
     <!--  作品名とチーム名, GOODボタン, GOODを押された数をまとめた見出し  -->
     <div class="detail_title_section" style="background-color: {{ work.genre.bg_color_lighten }}; color: {{ work.genre.text_color }}">
       <div class="columns is-vcentered">

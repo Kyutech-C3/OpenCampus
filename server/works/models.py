@@ -148,8 +148,9 @@ class Comment(models.Model):
         return self.created_at.strftime("%Y/%m/%d %H:%M")
 
 class LiveSchedule(models.Model):
-    start = models.DateTimeField(null=False)
-    end = models.DateTimeField(null=False)
+    start = models.DateTimeField(null=False, blank=False)
+    end = models.DateTimeField(null=False, blank=False)
+    url = models.TextField(null=False, blank=False)
 
     def __str__(self):
-        return "{} - {}".format(self.start, self.end)
+        return "{} - {}: {}".format(self.start, self.end, self.url)

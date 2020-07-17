@@ -1,0 +1,39 @@
+.live_view_container {
+  padding: 2rem;
+  background-color: #cffeff;
+}
+.live_view_container .title {
+  display: inline-block;
+  margin-bottom: 2.5rem;
+}
+.live_view_container .title .title_under_line{
+  margin-top: -10px;
+  border-bottom: solid 10px #fab18c;
+}
+.iframe_container {
+  position: relative;
+  padding-bottom: 56.25%;
+}
+.iframe_container iframe {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+}
+.span_youtube_live {
+  font-size: 1.2em;
+  color: red;
+}
+@media screen and (min-width: 1280px){
+  .live_container {
+    margin: auto 20%;
+  }
+}
+@media screen and (max-width: 1279px){
+  .live_container {
+    margin: auto -2rem;
+  }
+  .live_view_container {
+    padding-bottom: 0;
+  }
+}
