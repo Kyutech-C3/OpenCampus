@@ -1,32 +1,25 @@
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render, redirect
+from django.core import serializers
 from .forms import CommentForm
 from django.utils import timezone
 
 from .models import Work, Team, Genre, LiveSchedule
 
-def index(request):
+def genres(request):
     genres = Genre.objects.all()
-    live_schedules = LiveSchedule.objects.all()
-    context = {
-            "live_stream": isStreaming(live_schedules),
-            "genres": genres,
-        }
+    data_json = serializers.serialize('json', genres)
+    print(data_json)
 
-    return render(request, 'works/index.html', context)
+    # return render(request, 'works/index.html', context)
+    return HttpResponse(data_json, content_type='application/json')
 
-def detail(request, work_id):
+def work(request, work_id):
     work = Work.objects.get(pk=work_id)
-    comments = work.comment_set.all()
-    form = CommentForm()
-    live_schedules = LiveSchedule.objects.all()
-    context = {
-        "work":work,
-        "comments": comments,
-        "form": form,
-        "live_stream": isStreaming(live_schedules)
-    }
-    return render(request, 'works/detail.html', context)
+    # comments = work.comment_set.all()
+    # live_schedules = LiveSchedule.objects.all()
+    data_json = serializers.serialize('json', work)
+    return HttpResponse(data_json, content_type='application/json')
 
 def goods(request, work_id):
     work = Work.objects.get(pk=work_id)
