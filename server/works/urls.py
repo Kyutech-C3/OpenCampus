@@ -1,10 +1,19 @@
+from django.conf.urls import url, include
 from django.urls import path
+from rest_framework import routers
+from rest_framework_nested import routers
 
 from . import views
 
-urlpatterns = [
-    path('genres', views.genres, name='genres'),
-    path('works/<int:work_id>', views.work, name='works'),
-    # path('<int:work_id>/goods', views.goods, name='work.goods'),
-    # path('<int:work_id>/comment', views.comment, name='work.comment'),
-]
+router = routers.DefaultRouter()
+router.register(r'genres', views.GenreViewSet)
+router.register(r'works', views.WorkViewSet)
+
+works_router = routers.NestedDefaultRouter(router, r'works', lookup='work')
+works_router.register(r'comments', views.CommentViewSet, basename='work-comments')
+
+
+urlpatterns = (
+    url(r'^', include(router.urls)),
+    url(r'^', include(works_router.urls))
+)

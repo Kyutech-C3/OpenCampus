@@ -1,46 +1,43 @@
+from copy import copy
+from django.core.exceptions import ValidationError
+from django.db.models import query
+from django.http.response import HttpResponseBadRequest
+from .serializer import CommentSerializer, GenreSerializer, WorkSerializer
 from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render, redirect
 from django.core import serializers
 from .forms import CommentForm
 from django.utils import timezone
+from rest_framework.renderers import JSONRenderer
+from rest_framework.parsers import JSONParser
+from rest_framework import generics, viewsets
+import io
 
-from .models import Work, Team, Genre, LiveSchedule
+from .models import Work, Genre, Comment
 
-def genres(request):
-    genres = Genre.objects.all()
-    data_json = serializers.serialize('json', genres)
-    print(data_json)
 
-    # return render(request, 'works/index.html', context)
-    return HttpResponse(data_json, content_type='application/json')
+class WorkViewSet(viewsets.ReadOnlyModelViewSet):
+    serializer_class = WorkSerializer
+    queryset = Work.objects.all()
 
-def work(request, work_id):
-    work = Work.objects.get(pk=work_id)
-    # comments = work.comment_set.all()
-    # live_schedules = LiveSchedule.objects.all()
-    data_json = serializers.serialize('json', work)
-    return HttpResponse(data_json, content_type='application/json')
+class GenreViewSet(viewsets.ReadOnlyModelViewSet):
+    serializer_class = GenreSerializer
+    queryset = Genre.objects.all()
 
-def goods(request, work_id):
-    work = Work.objects.get(pk=work_id)
-    work.goods += 1
-    work.save()
-    return redirect(work)
+class CommentViewSet(viewsets.ModelViewSet):
+    serializer_class = CommentSerializer
 
-def comment(request, work_id):
-    work = Work.objects.get(pk=work_id)
-    if request.method == "POST":
-        form = CommentForm(request.POST)
-        if form.is_valid():
-            comment = form.save(commit=False)
-            comment.work = work
-            comment.save()
-    return redirect(work)
-
-def isStreaming(schedules):
-    res = None
-    now = timezone.now()
-    for schedule in schedules:
-        if schedule.start <= now and schedule.end >= now:
-            res =  schedule
-    return res
+    def get_queryset(self):
+        print('kwargs', self.kwargs)
+        return Comment.objects.filter(work=self.kwargs['work_pk'])
+   
+    def create(self, request, work_pk=None):
+        work = generics.get_object_or_404(Work.objects, pk=work_pk)
+        temp_data = {
+            'name': request.data.get('name'),
+            'text': request.data.get('text'),
+            'work': work
+        }
+        request._full_data = temp_data
+        print(request.data)
+        return super(CommentViewSet, self).create(request)
