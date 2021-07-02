@@ -10,7 +10,10 @@ from .forms import CommentForm
 from django.utils import timezone
 from rest_framework.renderers import JSONRenderer
 from rest_framework.parsers import JSONParser
-from rest_framework import generics, viewsets
+from rest_framework import generics, viewsets, status
+from rest_framework.response import Response
+from rest_framework.mixins import CreateModelMixin
+from rest_framework.views import APIView
 import io
 
 from .models import Work, Genre, Comment
@@ -41,3 +44,18 @@ class CommentViewSet(viewsets.ModelViewSet):
         request._full_data = temp_data
         print(request.data)
         return super(CommentViewSet, self).create(request)
+
+class PostGoodsViewSet(viewsets.GenericViewSet, CreateModelMixin):
+
+    def create(self, request, *args, **kwargs):
+        print(kwargs)
+        work = Work.objects.get(pk=kwargs['work_pk'])
+        if work == None:
+            return Response(data='Specified work does not exist', status=status.HTTP_404_NOT_FOUND)
+
+        work.goods += 1
+        work.save()
+
+        serializer = WorkSerializer(instance=work)
+        headers = self.get_success_headers(serializer.data)
+        return Response(data=serializer.data, status=status.HTTP_201_CREATED, headers=headers)
