@@ -4,7 +4,7 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-asgiref = "==3.2.10"
+asgiref = "==3.4.1"
 astroid = "==2.4.2"
 boto3 = "==1.14.20"
 botocore = "==1.17.20"
@@ -43,11 +43,12 @@ toml = "==0.10.1"
 urllib3 = "==1.25.9"
 whitenoise = "==5.1.0"
 wrapt = "==1.12.1"
-Django = "==3.0.7"
+Django = "==3.2.5"
 Pillow = "==7.2.0"
 djangorestframework = "*"
 django-cors-headers = "*"
 drf-nested-routers = "*"
+uvicorn = "*"
 
 [dev-packages]
 
