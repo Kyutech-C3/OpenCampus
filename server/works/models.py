@@ -119,7 +119,7 @@ class Work(models.Model):
 
     title = models.CharField(max_length=255)
     description = models.TextField(default=DEFAULT_DESCRIPTION)
-    genre = models.ForeignKey(Genre, on_delete=models.CASCADE, null=True, blank=True)
+    genre = models.ForeignKey(Genre, related_name='works', on_delete=models.CASCADE, null=True, blank=True)
     team = models.ForeignKey(Team, on_delete=models.CASCADE)
     type_choice = models.TextField(choices=WorkType.choices, default=WorkType.OTHER)
     card_image = models.ImageField(null=False, upload_to='images/system/')
@@ -136,7 +136,7 @@ class Work(models.Model):
 
 class Comment(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
-    work = models.ForeignKey(Work, on_delete=models.CASCADE)
+    work = models.ForeignKey(Work, related_name='comments', on_delete=models.CASCADE)
     name = models.CharField(max_length=255)
     text = models.TextField()
     
