@@ -75,6 +75,13 @@ class Model3D(models.Model):
         else:
             return self.glb.url
 
+class Tag(models.Model):
+    name = models.TextField(null=False, blank=False)
+    color = ColorField(null=False, blank=False, default='#ff0000')
+
+    def __str__(self):
+        return self.name
+
 class Genre(models.Model):
     title = models.CharField(max_length=255, null=False, default="Genre")
     bg_color = ColorField(default="#ff0000")
@@ -127,6 +134,7 @@ class Work(models.Model):
     game = models.ForeignKey(Game, on_delete=models.SET_NULL, null=True, blank=True)
     model3d = models.ForeignKey(Model3D, on_delete=models.SET_NULL, null=True, blank=True)
     video = models.ForeignKey(Video, on_delete=models.SET_NULL, null=True, blank=True)
+    tags = models.ManyToManyField(Tag)
 
     def __str__(self):
         return self.title

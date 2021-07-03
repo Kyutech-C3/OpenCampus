@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Team, Work, Comment, Game, Video, Model3D, Genre, LiveSchedule
+from .models import Team, Work, Comment, Game, Video, Model3D, Genre, LiveSchedule, Tag
 
 # Register your models here.
 
@@ -11,3 +11,4 @@ admin.site.register(Video)
 admin.site.register(Model3D)
 admin.site.register(Genre)
 admin.site.register(LiveSchedule)
+admin.site.register(Tag)
