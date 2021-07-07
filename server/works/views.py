@@ -46,6 +46,7 @@ class CommentViewSet(viewsets.ModelViewSet):
         return super(CommentViewSet, self).create(request)
 
 class PostGoodsViewSet(viewsets.GenericViewSet, CreateModelMixin):
+    serializer_class = WorkSerializer
 
     def create(self, request, *args, **kwargs):
         print(kwargs)
