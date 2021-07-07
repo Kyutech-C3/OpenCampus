@@ -21,6 +21,7 @@ SECRET_KEY = 'ndlw&sdtzb5r7f3a!c!=90wddvmv58r3!ge_h)zau=yi+8y1@x'
 
 ALLOWED_HOSTS = ["*"]
 
+CORS_ALLOW_ALL_ORIGINS = True
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
