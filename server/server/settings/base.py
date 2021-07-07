@@ -129,8 +129,9 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 CORS_ALLOWED_ORIGINS = [
-    'https://shared-vps.compositecomputer.club',
-    'http://localhost:3000'
+    'https://oc2021.compositecomputer.club',
+    'http://localhost:3000',
+    'http://localhost:3003',
 ]
 
 
