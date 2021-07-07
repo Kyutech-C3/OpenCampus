@@ -1,0 +1,562 @@
+openapi: 3.0.2
+info:
+  title: ''
+  version: ''
+paths:
+  /api/v1/genres/:
+    get:
+      operationId: listGenres
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Genre'
+          description: ''
+      tags:
+      - api
+  /api/v1/genres/{id}/:
+    get:
+      operationId: retrieveGenre
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this genre.
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Genre'
+          description: ''
+      tags:
+      - api
+  /api/v1/works/:
+    get:
+      operationId: listWorks
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Work'
+          description: ''
+      tags:
+      - api
+  /api/v1/works/{id}/:
+    get:
+      operationId: retrieveWork
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this work.
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Work'
+          description: ''
+      tags:
+      - api
+  /api/v1/works/{work_pk}/comments/:
+    get:
+      operationId: listComments
+      description: ''
+      parameters:
+      - name: work_pk
+        in: path
+        required: true
+        description: ''
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Comment'
+          description: ''
+      tags:
+      - api
+    post:
+      operationId: createComment
+      description: ''
+      parameters:
+      - name: work_pk
+        in: path
+        required: true
+        description: ''
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Comment'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Comment'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Comment'
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Comment'
+          description: ''
+      tags:
+      - api
+  /api/v1/works/{work_pk}/comments/{id}/:
+    get:
+      operationId: retrieveComment
+      description: ''
+      parameters:
+      - name: work_pk
+        in: path
+        required: true
+        description: ''
+        schema:
+          type: string
+      - name: id
+        in: path
+        required: true
+        description: ''
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Comment'
+          description: ''
+      tags:
+      - api
+    put:
+      operationId: updateComment
+      description: ''
+      parameters:
+      - name: work_pk
+        in: path
+        required: true
+        description: ''
+        schema:
+          type: string
+      - name: id
+        in: path
+        required: true
+        description: ''
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Comment'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Comment'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Comment'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Comment'
+          description: ''
+      tags:
+      - api
+    patch:
+      operationId: partialUpdateComment
+      description: ''
+      parameters:
+      - name: work_pk
+        in: path
+        required: true
+        description: ''
+        schema:
+          type: string
+      - name: id
+        in: path
+        required: true
+        description: ''
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Comment'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Comment'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Comment'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Comment'
+          description: ''
+      tags:
+      - api
+    delete:
+      operationId: destroyComment
+      description: ''
+      parameters:
+      - name: work_pk
+        in: path
+        required: true
+        description: ''
+        schema:
+          type: string
+      - name: id
+        in: path
+        required: true
+        description: ''
+        schema:
+          type: string
+      responses:
+        '204':
+          description: ''
+      tags:
+      - api
+  /api/v1/works/{work_pk}/goods/:
+    post:
+      operationId: createWork
+      description: ''
+      parameters:
+      - name: work_pk
+        in: path
+        required: true
+        description: ''
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Work'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Work'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Work'
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Work'
+          description: ''
+      tags:
+      - api
+components:
+  schemas:
+    Genre:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        works:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: integer
+                readOnly: true
+              title:
+                type: string
+                maxLength: 255
+              description:
+                type: string
+              type_choice:
+                enum:
+                - U3D
+                - U2D
+                - VID
+                - M3D
+                - OTHER
+                type: string
+              card_image:
+                type: string
+                format: binary
+              goods:
+                type: integer
+              genre:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                    readOnly: true
+                  title:
+                    type: string
+                    maxLength: 255
+                  bg_color:
+                    type: string
+                    pattern: ^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$
+                    maxLength: 18
+                readOnly: true
+              team:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                    readOnly: true
+                  name:
+                    type: string
+                    maxLength: 255
+                required:
+                - name
+                readOnly: true
+              game:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                    readOnly: true
+                  unityroom_url:
+                    type: string
+                    maxLength: 255
+                required:
+                - unityroom_url
+                readOnly: true
+              model3d:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                    readOnly: true
+                  glb:
+                    type: string
+                    format: binary
+                    nullable: true
+                  vrm:
+                    type: string
+                    format: binary
+                    nullable: true
+                readOnly: true
+              video:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                    readOnly: true
+                  mp4:
+                    type: string
+                    format: binary
+                required:
+                - mp4
+                readOnly: true
+              tags:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                      readOnly: true
+                    name:
+                      type: string
+                    color:
+                      type: string
+                      pattern: ^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$
+                      maxLength: 18
+                  required:
+                  - name
+                readOnly: true
+            required:
+            - title
+            - card_image
+          readOnly: true
+        title:
+          type: string
+          maxLength: 255
+        bg_color:
+          type: string
+          pattern: ^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$
+          maxLength: 18
+    Work:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        title:
+          type: string
+          maxLength: 255
+        description:
+          type: string
+        genre:
+          type: object
+          properties:
+            id:
+              type: integer
+              readOnly: true
+            title:
+              type: string
+              maxLength: 255
+            bg_color:
+              type: string
+              pattern: ^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$
+              maxLength: 18
+          readOnly: true
+        team:
+          type: object
+          properties:
+            id:
+              type: integer
+              readOnly: true
+            name:
+              type: string
+              maxLength: 255
+          required:
+          - name
+          readOnly: true
+        type_choice:
+          enum:
+          - U3D
+          - U2D
+          - VID
+          - M3D
+          - OTHER
+          type: string
+        goods:
+          type: integer
+        comments:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: integer
+                readOnly: true
+              created_at:
+                type: string
+                format: date-time
+                readOnly: true
+              name:
+                type: string
+                maxLength: 255
+              text:
+                type: string
+              work:
+                type: integer
+            required:
+            - name
+            - text
+            - work
+          readOnly: true
+        tags:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: integer
+                readOnly: true
+              name:
+                type: string
+              color:
+                type: string
+                pattern: ^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$
+                maxLength: 18
+            required:
+            - name
+          readOnly: true
+      required:
+      - title
+    Comment:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        name:
+          type: string
+          maxLength: 255
+        text:
+          type: string
+        work:
+          type: object
+          properties:
+            id:
+              type: integer
+              readOnly: true
+            title:
+              type: string
+              maxLength: 255
+            description:
+              type: string
+            type_choice:
+              enum:
+              - U3D
+              - U2D
+              - VID
+              - M3D
+              - OTHER
+              type: string
+            card_image:
+              type: string
+              format: binary
+            goods:
+              type: integer
+            genre:
+              type: integer
+              nullable: true
+            team:
+              type: integer
+            game:
+              type: integer
+              nullable: true
+            model3d:
+              type: integer
+              nullable: true
+            video:
+              type: integer
+              nullable: true
+            tags:
+              type: array
+              items:
+                type: integer
+          required:
+          - title
+          - card_image
+          - team
+          - tags
+          readOnly: true
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+      required:
+      - name
+      - text

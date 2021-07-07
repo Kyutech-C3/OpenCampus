@@ -49,6 +49,8 @@ djangorestframework = "*"
 django-cors-headers = "*"
 drf-nested-routers = "*"
 uvicorn = "*"
+pyyaml = "*"
+uritemplate = "*"
 
 [dev-packages]
 
