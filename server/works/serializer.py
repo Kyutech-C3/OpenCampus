@@ -5,13 +5,6 @@ from rest_framework import serializers
 from .models import Genre, Tag, Work, Comment
 from datetime import datetime
 
-class GenreSerializer(serializers.ModelSerializer):
-
-	class Meta:
-		model = Genre
-		fields = ['id', 'works', 'title', 'bg_color']
-		depth = 2
-
 class TagSerializer(serializers.ModelSerializer):
 
 	class Meta:
@@ -23,8 +16,17 @@ class WorkSerializer(serializers.ModelSerializer):
 
 	class Meta:
 		model = Work
-		fields=['id', 'title', 'description', 'genre', 'team', 'type_choice', 'goods', 'comments', 'tags']
+		fields=['id', 'title', 'description', 'genre', 'team', 'thumbnail', 'goods', 'download_link', 'comments', 'tags', 'media_assets']
 		depth = 1
+
+class GenreSerializer(serializers.ModelSerializer):
+	works = WorkSerializer(many=True)
+
+	class Meta:
+		model = Genre
+		fields = ['id', 'works', 'title', 'bg_color']
+		depth = 2
+
 
 class CommentSerializer(serializers.ModelSerializer):
 

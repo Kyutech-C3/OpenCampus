@@ -1,9 +1,10 @@
+from django.core.validators import URLValidator
 from django.db import models
 from django.urls import reverse
 from django.utils import timezone
 from colorfield.fields import ColorField
 from colour import Color
-from .validators import validate_is_glb, validate_is_vrm, validate_is_mp4
+from django.core.exceptions import ValidationError
 
 DEFAULT_DESCRIPTION = """
 <details>
@@ -52,30 +53,13 @@ DEFAULT_DESCRIPTION = """
 
 # Create your models here.
 class Team(models.Model):
+    id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=255)
     def __str__(self):
         return self.name
 
-class Game(models.Model):
-    unityroom_url = models.CharField(max_length=255)
-    def __str__(self):
-        return self.unityroom_url
-
-class Video(models.Model):
-    mp4 = models.FileField(upload_to="videos/", null=False, validators=[validate_is_mp4])
-    def __str__(self):
-        return self.mp4.url
-
-class Model3D(models.Model):
-    glb = models.FileField(upload_to="3dmodels/", blank=True, null=True, validators=[validate_is_glb])
-    vrm = models.FileField(upload_to="3dmodels/", blank=True, null=True, validators=[validate_is_vrm])
-    def __str__(self):
-        if self.vrm != None:
-            return self.vrm.url
-        else:
-            return self.glb.url
-
 class Tag(models.Model):
+    id = models.AutoField(primary_key=True)
     name = models.TextField(null=False, blank=False)
     color = ColorField(null=False, blank=False, default='#ff0000')
 
@@ -83,6 +67,7 @@ class Tag(models.Model):
         return self.name
 
 class Genre(models.Model):
+    id = models.AutoField(primary_key=True)
     title = models.CharField(max_length=255, null=False, default="Genre")
     bg_color = ColorField(default="#ff0000")
 
@@ -117,32 +102,64 @@ class Genre(models.Model):
         return txt_c
 
 class Work(models.Model):
-    class WorkType(models.TextChoices):
-        UNITY_3D = 'U3D', 'Unity 3D'
-        UNITY_2D = 'U2D', 'Unity 2D'
-        VIDEO = 'VID', 'VIDEO'
-        MODEL_3D = 'M3D', 'MODEL 3D'
-        OTHER = 'OTHER', 'OTHER'
-
+    id = models.AutoField(primary_key=True)
     title = models.CharField(max_length=255)
     description = models.TextField(default=DEFAULT_DESCRIPTION)
     genre = models.ForeignKey(Genre, related_name='works', on_delete=models.CASCADE, null=True, blank=True)
     team = models.ForeignKey(Team, on_delete=models.CASCADE)
-    type_choice = models.TextField(choices=WorkType.choices, default=WorkType.OTHER)
-    card_image = models.ImageField(null=False, upload_to='images/system/')
+    thumbnail = models.ImageField(null=False, upload_to='images/system/')
     goods = models.IntegerField(null=False, default=0)
-    game = models.ForeignKey(Game, on_delete=models.SET_NULL, null=True, blank=True)
-    model3d = models.ForeignKey(Model3D, on_delete=models.SET_NULL, null=True, blank=True)
-    video = models.ForeignKey(Video, on_delete=models.SET_NULL, null=True, blank=True)
+    download_link = models.CharField(null=True, blank=True, max_length=255, validators=[URLValidator()])
+    
+    # model3d = models.ForeignKey(Model3D, on_delete=models.SET_NULL, null=True, blank=True)
+    # video = models.ForeignKey(Video, on_delete=models.SET_NULL, null=True, blank=True)
     tags = models.ManyToManyField(Tag)
 
     def __str__(self):
-        return self.title
+        return "%s - %s (%s)" % (self.team.name, self.title, self.genre.title)
 
     def get_absolute_url(self):
         return reverse("work", args=[str(self.id)])
 
+class MediaAsset(models.Model):
+    id = models.AutoField(primary_key=True)
+    work = models.ForeignKey(Work, related_name='media_assets', on_delete=models.CASCADE)
+    youtube_video_id = models.CharField(null=True, blank=True, max_length=16)
+    image = models.ImageField(null=True, blank=True, upload_to='images/system')
+    sketchfab_embed_html = models.TextField(null=True, blank=True)
+    soundcloud_embed_html = models.TextField(null=True, blank=True)
+
+    def clean(v):
+        # media_assets_must_have_least_an_asset 
+        # どれか一つのアセットタイプを指定する必要がある
+        error_message = 'アセットタイプは少なくともどれか一つだけ指定してください。'
+        contain_asset = False
+        if v.youtube_video_id:
+            if contain_asset:
+                raise ValidationError(error_message)
+            contain_asset = True
+
+        if v.image:
+            if contain_asset:
+                raise ValidationError(error_message)
+            contain_asset = True
+
+        if v.sketchfab_embed_html:
+            if contain_asset:
+                raise ValidationError(error_message)
+            contain_asset = True
+
+        if v.soundcloud_embed_html:
+            if contain_asset:
+                raise ValidationError(error_message)
+            contain_asset = True
+        
+        if not contain_asset:
+            raise ValidationError(error_message)
+            
+
 class Comment(models.Model):
+    id = models.AutoField(primary_key=True)
     created_at = models.DateTimeField(auto_now_add=True)
     work = models.ForeignKey(Work, related_name='comments', on_delete=models.CASCADE)
     name = models.CharField(max_length=255)
@@ -154,11 +171,3 @@ class Comment(models.Model):
 
     def ja_created_at_str(self):
         return self.created_at.strftime("%Y/%m/%d %H:%M")
-
-class LiveSchedule(models.Model):
-    start = models.DateTimeField(null=False, blank=False)
-    end = models.DateTimeField(null=False, blank=False)
-    url = models.TextField(null=False, blank=False)
-
-    def __str__(self):
-        return "{} - {}: {}".format(self.start, self.end, self.url)
