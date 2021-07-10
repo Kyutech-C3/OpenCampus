@@ -298,19 +298,6 @@ components:
                 maxLength: 255
               description:
                 type: string
-              type_choice:
-                enum:
-                - U3D
-                - U2D
-                - VID
-                - M3D
-                - OTHER
-                type: string
-              card_image:
-                type: string
-                format: binary
-              goods:
-                type: integer
               genre:
                 type: object
                 properties:
@@ -337,44 +324,45 @@ components:
                 required:
                 - name
                 readOnly: true
-              game:
-                type: object
-                properties:
-                  id:
-                    type: integer
-                    readOnly: true
-                  unityroom_url:
-                    type: string
-                    maxLength: 255
-                required:
-                - unityroom_url
-                readOnly: true
-              model3d:
-                type: object
-                properties:
-                  id:
-                    type: integer
-                    readOnly: true
-                  glb:
-                    type: string
-                    format: binary
-                    nullable: true
-                  vrm:
-                    type: string
-                    format: binary
-                    nullable: true
-                readOnly: true
-              video:
-                type: object
-                properties:
-                  id:
-                    type: integer
-                    readOnly: true
-                  mp4:
-                    type: string
-                    format: binary
-                required:
-                - mp4
+              thumbnail:
+                type: string
+                format: binary
+              goods:
+                type: integer
+              download_link:
+                type: string
+                nullable: true
+                format: uri
+                pattern: "^(?:[a-z0-9.+-]*)://(?:[^\\s:@/]+(?::[^\\s:@/]*)?@)?(?:(?:0|25[0-5]|2[0-4]\\\
+                  d|1\\d?\\d?|[1-9]\\d?)(?:\\.(?:0|25[0-5]|2[0-4]\\d|1\\d?\\d?|[1-9]\\\
+                  d?)){3}|\\[[0-9a-f:.]+\\]|([a-z\xA1-\uFFFF0-9](?:[a-z\xA1-\uFFFF\
+                  0-9-]{0,61}[a-z\xA1-\uFFFF0-9])?(?:\\.(?!-)[a-z\xA1-\uFFFF0-9-]{1,63}(?<!-))*\\\
+                  .(?!-)(?:[a-z\xA1-\uFFFF-]{2,63}|xn--[a-z0-9]{1,59})(?<!-)\\.?|localhost))(?::\\\
+                  d{2,5})?(?:[/?#][^\\s]*)?\\z"
+                maxLength: 255
+              comments:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                      readOnly: true
+                    created_at:
+                      type: string
+                      format: date-time
+                      readOnly: true
+                    name:
+                      type: string
+                      maxLength: 255
+                    text:
+                      type: string
+                    work:
+                      type: integer
+                  required:
+                  - name
+                  - text
+                  - work
                 readOnly: true
               tags:
                 type: array
@@ -393,10 +381,36 @@ components:
                   required:
                   - name
                 readOnly: true
+              media_assets:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                      readOnly: true
+                    youtube_video_id:
+                      type: string
+                      nullable: true
+                      maxLength: 16
+                    image:
+                      type: string
+                      format: binary
+                      nullable: true
+                    sketchfab_embed_html:
+                      type: string
+                      nullable: true
+                    soundcloud_embed_html:
+                      type: string
+                      nullable: true
+                    work:
+                      type: integer
+                  required:
+                  - work
+                readOnly: true
             required:
             - title
-            - card_image
-          readOnly: true
+            - thumbnail
         title:
           type: string
           maxLength: 255
@@ -404,6 +418,8 @@ components:
           type: string
           pattern: ^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$
           maxLength: 18
+      required:
+      - works
     Work:
       type: object
       properties:
@@ -441,16 +457,22 @@ components:
           required:
           - name
           readOnly: true
-        type_choice:
-          enum:
-          - U3D
-          - U2D
-          - VID
-          - M3D
-          - OTHER
+        thumbnail:
           type: string
+          format: binary
         goods:
           type: integer
+        download_link:
+          type: string
+          nullable: true
+          format: uri
+          pattern: "^(?:[a-z0-9.+-]*)://(?:[^\\s:@/]+(?::[^\\s:@/]*)?@)?(?:(?:0|25[0-5]|2[0-4]\\\
+            d|1\\d?\\d?|[1-9]\\d?)(?:\\.(?:0|25[0-5]|2[0-4]\\d|1\\d?\\d?|[1-9]\\d?)){3}|\\\
+            [[0-9a-f:.]+\\]|([a-z\xA1-\uFFFF0-9](?:[a-z\xA1-\uFFFF0-9-]{0,61}[a-z\xA1\
+            -\uFFFF0-9])?(?:\\.(?!-)[a-z\xA1-\uFFFF0-9-]{1,63}(?<!-))*\\.(?!-)(?:[a-z\xA1\
+            -\uFFFF-]{2,63}|xn--[a-z0-9]{1,59})(?<!-)\\.?|localhost))(?::\\d{2,5})?(?:[/?#][^\\\
+            s]*)?\\z"
+          maxLength: 255
         comments:
           type: array
           items:
@@ -492,8 +514,36 @@ components:
             required:
             - name
           readOnly: true
+        media_assets:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: integer
+                readOnly: true
+              youtube_video_id:
+                type: string
+                nullable: true
+                maxLength: 16
+              image:
+                type: string
+                format: binary
+                nullable: true
+              sketchfab_embed_html:
+                type: string
+                nullable: true
+              soundcloud_embed_html:
+                type: string
+                nullable: true
+              work:
+                type: integer
+            required:
+            - work
+          readOnly: true
       required:
       - title
+      - thumbnail
     Comment:
       type: object
       properties:
@@ -516,40 +566,34 @@ components:
               maxLength: 255
             description:
               type: string
-            type_choice:
-              enum:
-              - U3D
-              - U2D
-              - VID
-              - M3D
-              - OTHER
-              type: string
-            card_image:
+            thumbnail:
               type: string
               format: binary
             goods:
               type: integer
+            download_link:
+              type: string
+              nullable: true
+              format: uri
+              pattern: "^(?:[a-z0-9.+-]*)://(?:[^\\s:@/]+(?::[^\\s:@/]*)?@)?(?:(?:0|25[0-5]|2[0-4]\\\
+                d|1\\d?\\d?|[1-9]\\d?)(?:\\.(?:0|25[0-5]|2[0-4]\\d|1\\d?\\d?|[1-9]\\\
+                d?)){3}|\\[[0-9a-f:.]+\\]|([a-z\xA1-\uFFFF0-9](?:[a-z\xA1-\uFFFF0-9-]{0,61}[a-z\xA1\
+                -\uFFFF0-9])?(?:\\.(?!-)[a-z\xA1-\uFFFF0-9-]{1,63}(?<!-))*\\.(?!-)(?:[a-z\xA1\
+                -\uFFFF-]{2,63}|xn--[a-z0-9]{1,59})(?<!-)\\.?|localhost))(?::\\d{2,5})?(?:[/?#][^\\\
+                s]*)?\\z"
+              maxLength: 255
             genre:
               type: integer
               nullable: true
             team:
               type: integer
-            game:
-              type: integer
-              nullable: true
-            model3d:
-              type: integer
-              nullable: true
-            video:
-              type: integer
-              nullable: true
             tags:
               type: array
               items:
                 type: integer
           required:
           - title
-          - card_image
+          - thumbnail
           - team
           - tags
           readOnly: true
