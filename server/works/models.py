@@ -69,6 +69,7 @@ class Tag(models.Model):
 class Genre(models.Model):
     id = models.AutoField(primary_key=True)
     title = models.CharField(max_length=255, null=False, default="Genre")
+    description = models.TextField(null=False, blank=False, default="No description...")
     bg_color = ColorField(default="#ff0000")
 
     def __str__(self):

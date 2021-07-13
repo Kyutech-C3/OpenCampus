@@ -24,7 +24,7 @@ class GenreSerializer(serializers.ModelSerializer):
 
 	class Meta:
 		model = Genre
-		fields = ['id', 'works', 'title', 'bg_color']
+		fields = ['id', 'works', 'title', 'description', 'bg_color']
 		depth = 2
 
 
