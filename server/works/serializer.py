@@ -16,7 +16,7 @@ class WorkSerializer(serializers.ModelSerializer):
 
 	class Meta:
 		model = Work
-		fields=['id', 'title', 'description', 'genre', 'team', 'thumbnail', 'goods', 'download_link', 'comments', 'tags', 'media_assets']
+		fields=['id', 'title', 'description', 'genre', 'team', 'thumbnail', 'goods', 'download_link', 'work_link', 'comments', 'tags', 'media_assets']
 		depth = 1
 
 class GenreSerializer(serializers.ModelSerializer):
