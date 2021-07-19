@@ -133,6 +133,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 CORS_ALLOWED_ORIGINS = [
     'https://oc2021.compositecomputer.club',
+    'https://octest.compositecomputer.club',
     'http://localhost:3000',
     'http://localhost:3003',
 ]
