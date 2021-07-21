@@ -112,6 +112,7 @@ class Work(models.Model):
     goods = models.IntegerField(null=False, default=0)
     download_link = models.CharField(null=True, blank=True, max_length=255, validators=[URLValidator()])
     work_link = models.CharField(null=True, blank=True, max_length=255, validators=[URLValidator()])
+    downloaded_count = models.IntegerField(null=False, blank=False, default=0)
     
     # model3d = models.ForeignKey(Model3D, on_delete=models.SET_NULL, null=True, blank=True)
     # video = models.ForeignKey(Video, on_delete=models.SET_NULL, null=True, blank=True)

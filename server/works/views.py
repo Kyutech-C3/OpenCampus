@@ -1,7 +1,7 @@
 from copy import copy
 from django.core.exceptions import ValidationError
 from django.db.models import query
-from django.http.response import HttpResponseBadRequest
+from django.http.response import HttpResponseBadRequest, HttpResponseNotFound, HttpResponseRedirect
 from .serializer import CommentSerializer, GenreSerializer, WorkSerializer
 from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render, redirect
@@ -60,3 +60,14 @@ class PostGoodsViewSet(viewsets.GenericViewSet, CreateModelMixin):
         serializer = WorkSerializer(instance=work)
         headers = self.get_success_headers(serializer.data)
         return Response(data=serializer.data, status=status.HTTP_201_CREATED, headers=headers)
+
+class DownloadRedirectViewSet(viewsets.GenericViewSet):
+
+    def list(self, request, *args, **kwargs):
+        work = Work.objects.get(pk=kwargs['work_pk'])
+        url = work.download_link
+        if url == None:
+            return HttpResponseNotFound()
+        work.downloaded_count += 1
+        work.save()
+        return HttpResponseRedirect(url)

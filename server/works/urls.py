@@ -12,6 +12,7 @@ router.register(r'works', views.WorkViewSet)
 works_router = routers.NestedDefaultRouter(router, r'works', lookup='work')
 works_router.register(r'comments', views.CommentViewSet, basename='work-comments')
 works_router.register(r'goods', views.PostGoodsViewSet, basename='work-goods')
+works_router.register(r'download', views.DownloadRedirectViewSet, basename='work-download')
 
 
 urlpatterns = (
