@@ -20,8 +20,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__fil
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 ALLOWED_HOSTS = [
-    'localhost:8000',
-    'shared-vps.compositecomputer.club'
+    'localhost:8080',
+    'shared-vps-oc2022.compositecomputer.club'
 ]
 
 DEBUG = True
@@ -132,7 +132,7 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 CORS_ALLOWED_ORIGINS = [
-    'https://oc2021.compositecomputer.club',
+    'https://oc2022.compositecomputer.club',
     'https://octest.compositecomputer.club',
     'http://localhost:3000',
     'http://localhost:3003',
